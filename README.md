@@ -1,2 +1,2 @@
 # JemarJones.github.io
-My github site
+My little personal website @ JKJones.me
