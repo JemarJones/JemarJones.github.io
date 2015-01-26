@@ -3,11 +3,20 @@ body{
 	background-color: #ded7be;
 	color: #728999;
 }
-h1{
-	font-size: 3em;
+#header{
+	font-size: 2em;
 	font-family: Verdana;
+	/*text-decoration: underline;*/
+	letter-spacing: 7px;
+	height: 2.5em;
+	width: 20em;
+	margin: 0 auto;
+	border-bottom: 7px solid;
 }
-div{
+h1{
+	margin-top: 30px;
+}
+.button{
 	padding: 5px;
 	display: inline-block;
 	border: 3.5px solid #728999;
