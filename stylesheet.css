@@ -8,7 +8,7 @@ body{
 	font-family: Verdana;
 	letter-spacing: 7px;
 	height: 2.5em;
-	width: 20em;
+	width: 50.5%;
 	margin: 0 auto;
 	border-bottom: 7px solid;
 }
@@ -20,7 +20,6 @@ h1{
 	display: inline-block;
 	border: 3.5px solid rgba(114, 137, 153, 1.0);
 	border-radius: 5px;
-	back
 	text-align: center;
 	vertical-align: middle;
 }
