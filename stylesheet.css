@@ -1,12 +1,11 @@
 body{
 	text-align: center;
-	background-color: #ded7be;
-	color: #728999;
+	background-color: rgba(222, 215, 190, 1.0);
+	color: rgba(114, 137, 153, 1.0);
 }
 #header{
 	font-size: 2em;
 	font-family: Verdana;
-	/*text-decoration: underline;*/
 	letter-spacing: 7px;
 	height: 2.5em;
 	width: 20em;
@@ -19,7 +18,7 @@ h1{
 .button{
 	padding: 5px;
 	display: inline-block;
-	border: 3.5px solid #728999;
+	border: 3.5px solid rgba(114, 137, 153, 1.0);
 	border-radius: 5px;
 	back
 	text-align: center;
@@ -28,5 +27,5 @@ h1{
 a{
 	font-size: 2em;
 	text-decoration: none;
-	color: #728999;
+	color: rgba(114, 137, 153, 1.0);
 }
