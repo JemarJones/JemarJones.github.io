@@ -1,0 +1,23 @@
+body{
+	text-align: center;
+	background-color: #ded7be;
+	color: #728999;
+}
+h1{
+	font-size: 3em;
+	font-family: Verdana;
+}
+div{
+	padding: 5px;
+	display: inline-block;
+	border: 3.5px solid #728999;
+	border-radius: 5px;
+	back
+	text-align: center;
+	vertical-align: middle;
+}
+a{
+	font-size: 2em;
+	text-decoration: none;
+	color: #728999;
+}
