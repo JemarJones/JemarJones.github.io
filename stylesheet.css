@@ -3,7 +3,7 @@ body{
 	background-color: rgba(222, 215, 190, 1.0);
 	color: rgba(114, 137, 153, 1.0);
 }
-#header{
+header{
 	font-size: 2em;
 	font-family: Verdana;
 	letter-spacing: 7px;
