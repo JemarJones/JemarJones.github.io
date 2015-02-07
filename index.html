@@ -4,7 +4,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 	<meta charset="UTF-8">
 	<link type="text/css" rel="stylesheet" href="./css/stylesheet.css"/>
-	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Dosis">
+	<link href='http://fonts.googleapis.com/css?family=Dosis:400,800' rel='stylesheet' type='text/css'>
 	<title>JKJones | Home</title>
 </head>
 <body>
@@ -12,14 +12,28 @@
 		<div><img id="profile"src="./assets/profile.jpg" alt=""></div>
 		<nav id="navbar">
 			<ul>
-				<li class="button"><a href="http://JKJones.me">Home</a></li>
-				<li class="button"><a href="http://JKJones.me">Projects</a></li>
-				<li class="button"><a href="Jemar%20Jones%20Resume%202015.pdf">Resume</a></li>
+				<li class="button"><a id="home" class="selected" data-cont="#homecont" href="#">Home</a></li>
+				<li class="button"><a id="proj" data-cont="#projcont" href="#">Projects</a></li>
+				<li class="button"><a id="resume" data-cont="#resumecont" href="#">Resume</a></li>
 				<li class="button"><a href="https://github.com/JemarJones/">Github</a></li>
 				<li class="button"><a href="http://ca.linkedin.com/in/JemarJones">Linkedin</a></li>
 			</ul>	
 		</nav>
 	</header>
+	<div id="homecont" class="cont">
+		<h1>About Me</h1>
+		<p>Hello there, my name is <span class="bold">Jemar</span>. <br><br>I'm currently studying Software Engineering at McMaster University. <br>I like making and playing with <span class="bold">software, and tech.</span><br> I also like normal things like music, netflix (<3), and other such mundane things. 
+		</p>
+	</div>
+	<div id="projcont" class="cont hidden">
+		<h1>Projects</h1>
+		<p></p>
+	</div>
+	<div id="resumecont" class="hidden">
+		<iframe src="Jemar%20Jones%20Resume%202015.pdf" style="width: 100%; height: 3200px" frameborder="0"><p>It appears you don't have a PDF plugin for this browser.
+  No biggie... you can <a href="Jemar%20Jones%20Resume%202015.pdf">click here to
+  download the PDF file.</a></p></iframe>  
+	</div>
 	<script src="./js/jquery-1.11.2.min.js"></script>
 	<script src="./js/main.js" ></script>
 </body>
