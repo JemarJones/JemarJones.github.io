@@ -1,20 +1,23 @@
 var currCont = $('#homecont');
 var currSection = $('#home');
 $(document).ready(function(){
+	navbar = $(this).find("nav");
+	$('#filler').height(navbar.height());
 	// Checks the scroll position for proper navbar styling
 	$(document).on("scroll", function(){
-		navbar = $(this).find("nav");
 		if($(document).scrollTop() - ($('header').height()) <= 0){
-			//If the page is scrolled above the orignal navbar position, we dont un-fix it.
-			if (currCont.hasClass('adjusted')){
-				currCont.removeClass('adjusted');
+			//If the page is scrolled above the orignal navbar position, we un-fix it.
+			if (navbar.attr('id') === 'navbarFixed'){
+				// The filler div takes up the space previosly occupied by the navbar
+				$('#filler').hide();
+				navbar.attr('id','navbar');
 			}
-			navbar.attr('id','navbar');
 		}
 		if ($(document).scrollTop() - ($('header').height()- $('nav').height()) >= 0){
 			//If we scroll down beyond the header, we fix the navbar.
-			currCont.addClass('adjusted');
 			navbar.attr('id','navbarFixed');
+			// The filler div takes up the space previosly occupied by the navbar
+			$('#filler').show();
 		}
 	});
 	$('#home').on('click', navClick);
@@ -35,12 +38,6 @@ var switchCont = function(newSection, newCont){
 		newSection.addClass('selected');
 		currCont.hide();
 		newCont.show();
-		if (currCont.hasClass('adjusted')){
-			currCont = newCont;
-			currCont.addClass('adjusted');
-		} else{
-			currCont = newCont;
-			currCont.removeClass('adjusted');
-		}
+		currCont = newCont;
 	}
 }
