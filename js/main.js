@@ -1,6 +1,6 @@
 var currCont = $('#homecont');
 var currSection = $('#home');
-var projects = [{image: "./assets/fl_animated.gif", title: "Flash Learn", desc: "A crowdsourced flashcard platform. lorremmm", link: "http://flashlearn.github.io"}];
+var projects = [{image: "./assets/fl_animated.gif", title: "Flash Learn", desc: "A crowdsourced flashcard platform.", link: "http://flashlearn.github.io"}];
 $(document).ready(function(){
 	navbar = $(this).find("nav");
 	$('#filler').height(navbar.height());
