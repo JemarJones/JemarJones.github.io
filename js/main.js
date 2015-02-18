@@ -1,5 +1,6 @@
 var currCont = $('#homecont');
 var currSection = $('#home');
+var projects = [{image: "./assets/fl_animated.gif", title: "Flash Learn", desc: "A crowdsourced flashcard platform. lorremmm", link: "http://flashlearn.github.io"}];
 $(document).ready(function(){
 	navbar = $(this).find("nav");
 	$('#filler').height(navbar.height());
@@ -20,10 +21,42 @@ $(document).ready(function(){
 			$('#filler').show();
 		}
 	});
+	loadProjs();
 	$('#home').on('click', navClick);
 	$('#proj').on('click', navClick);
 	$('#resume').on('click', navClick);
 });
+var loadProjs = function(){
+	for (var i = 0; i < projects.length; ++i){
+		var link = $('<a></a>')
+		link.attr('href',projects[i].link);
+		var projBox = $('<div></div>');
+		projBox.addClass('projBox');
+		var imgCont = $('<div></div>');
+		imgCont.addClass('imgCont');
+		var projImg = $('<img>');
+		projImg.addClass('projImg');
+		projImg.attr('src',projects[i].image);
+		var scale = projImg.height()/projImg.width();
+		projImg.height(100);
+		projImg.width(100/scale);
+		imgCont.append(projImg);
+		projBox.append(imgCont);
+		var infoCont = $('<div></div>');
+		infoCont.addClass('infoCont');
+		var projTitle = $('<h1></h1>');
+		projTitle.addClass('projTitle');
+		projTitle.text(projects[i].title);
+		infoCont.append(projTitle);
+		var projDesc = $('<p></p>');
+		projDesc.addClass('projDesc');
+		projDesc.text(projects[i].desc);
+		infoCont.append(projDesc);
+		projBox.append(infoCont);
+		link.append(projBox);
+		$('#projcont').append(link);
+	}
+}
 var navClick = function(event){
 	event.preventDefault();
 	switchCont($(this),$($(this).data('cont')));

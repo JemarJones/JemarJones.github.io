@@ -4,6 +4,7 @@ body{
 	font-family: 'Dosis', sans-serif;
 	letter-spacing: 3px;
 	height: 1100px;
+	color: rgba(52, 73, 94,1.0);
 }
 header{
 	background-color: rgba(52, 73, 94,1.0);
@@ -42,14 +43,13 @@ header{
 	display: inline;
 	margin: 0 20px;
 }
-a:hover{
+li a:hover{
 	color: rgba(149, 165, 166,1.0);
 }
 .selected{
 	color: rgba(149, 165, 166,1.0);
-	/*top: -5px !important;*/
 }
-a{
+li a{
 	font-size: 2.5em;
 	text-decoration: none;
 	color: rgba(52, 73, 94,1.0);
@@ -91,4 +91,25 @@ section{
 }
 h1{
 	font-size: 2.5em;
+}
+.projBox{
+	margin: auto;
+	width: 95%;
+	background-color: rgba(52, 73, 94,0.2);
+	border-radius: 10px;
+}
+.imgCont{
+	display: inline-block;
+	vertical-align: middle;
+	border-right: 2px white solid;
+}
+.infoCont{
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 2%;
+	max-width: 70%;
+	position: relative;
+}
+a{
+	color: rgba(52, 73, 94,1.0);
 }
