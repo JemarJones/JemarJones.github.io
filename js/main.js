@@ -1,6 +1,6 @@
 var currCont = $('#homecont');
 var currSection = $('#home');
-var projects = [{image: "./assets/fl_animated.gif", title: "Flash Learn", desc: "A crowdsourced flashcard platform.", link: "http://flashlearn.github.io"}];
+var projects = [{image: "./assets/fl_animated.gif", title: "Flash Learn", desc: "A crowdsourced flashcard platform.", link: "http://flashlearn.github.io"},{image: "./assets/fmPromoMarq.png", title: "FontMe", desc: "An extension that helps you discover what Font is being used on a given HTML element.", link: "https://chrome.google.com/webstore/detail/fontme/jmflbifhkmjblfhmkpfdflfhphbinfjl"}];
 $(document).ready(function(){
 	navbar = $(this).find("nav");
 	$('#filler').height(navbar.height());

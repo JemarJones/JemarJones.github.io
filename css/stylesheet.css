@@ -94,6 +94,7 @@ h1{
 }
 .projBox{
 	margin: auto;
+	margin-bottom: 30px;
 	width: 95%;
 	background-color: rgba(52, 73, 94,0.2);
 	border-radius: 10px;
@@ -102,6 +103,7 @@ h1{
 	display: inline-block;
 	vertical-align: middle;
 	border-right: 2px white solid;
+	padding-right: 30px;
 }
 .infoCont{
 	display: inline-block;
