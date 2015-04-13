@@ -1,6 +1,6 @@
 var currCont = $('#homecont');
 var currSection = $('#home');
-var projects = [{image: "./assets/fl_animated.gif", title: "Flash Learn", desc: "A crowdsourced flashcard platform.", link: "http://flashlearn.github.io"},{image: "./assets/fmPromoMarq.png", title: "FontMe", desc: "An extension that helps you discover what Font is being used on a given HTML element.", link: "https://chrome.google.com/webstore/detail/fontme/jmflbifhkmjblfhmkpfdflfhphbinfjl"}];
+var projects = [{image: "./assets/webtunes_logo.png", title: "WebTunes",colab: [{name: "Niko Savas", link: "http://savas.ca/"},{name: "Samraj Nalwa", link: "http://nalwa.ca"}], desc: "An online service that lets you share your musical tastes.", link: "http://app-webtunes.rhcloud.com"},{image: "./assets/fl_animated.gif", title: "Flash Learn",colab: [{name: "Vicky Bilbily", link: "http://bickybilly.github.io/"}], desc: "A crowdsourced flashcard platform.", link: "http://flashlearn.github.io"},{image: "./assets/fmPromoMarq.png", title: "FontMe",colab: [], desc: "An extension that helps you discover what Font is being used on a given HTML element.", link: "https://chrome.google.com/webstore/detail/fontme/jmflbifhkmjblfhmkpfdflfhphbinfjl"}];
 $(document).ready(function(){
 	navbar = $(this).find("nav");
 	$('#filler').height(navbar.height());
@@ -38,8 +38,8 @@ var loadProjs = function(){
 		projImg.addClass('projImg');
 		projImg.attr('src',projects[i].image);
 		var scale = projImg.height()/projImg.width();
-		projImg.height(100);
-		projImg.width(100/scale);
+		projImg.width(350);
+		projImg.height(350/scale);
 		imgCont.append(projImg);
 		projBox.append(imgCont);
 		var infoCont = $('<div></div>');
@@ -48,6 +48,23 @@ var loadProjs = function(){
 		projTitle.addClass('projTitle');
 		projTitle.text(projects[i].title);
 		infoCont.append(projTitle);
+		if (projects[i].colab.length !== 0){
+			var projColab = $('<p>Collaborators: </p>');
+			projColab.addClass('projColab');
+			for (var j = 0; j < projects[i].colab.length; j++){
+				if (j !== 0){
+					projColab.append(', ');
+				}
+				if ((j== projects[i].colab.length - 1) && (j!==0)){
+					projColab.append('and ');
+				}
+				projColab.append('<a href="' + projects[i].colab[j].link + '"> ' + projects[i].colab[j].name + '</a>');
+				if ( j== projects[i].colab.length - 1){
+					projColab.append('.');
+				}
+			}
+			infoCont.append(projColab);
+		}
 		var projDesc = $('<p></p>');
 		projDesc.addClass('projDesc');
 		projDesc.text(projects[i].desc);
