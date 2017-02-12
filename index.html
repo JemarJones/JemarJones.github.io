@@ -13,9 +13,9 @@
 		<div><img id="profile"src="./assets/profile.jpg" alt=""></div>
 		<nav id="navbar">
 			<ul>
-				<li class="button"><a id="home" class="selected" data-cont="#homecont" href="#">Home</a></li>
-				<li class="button"><a id="proj" data-cont="#projcont" href="#">Projects</a></li>
-				<li class="button"><a id="resume" data-cont="#resumecont" href="#">Resume</a></li>
+				<li class="button"><a class="home" class="selected" data-cont="#homecont" href="#">Home</a></li>
+				<li class="button"><a class="projects" data-cont="#projectscont" href="#projects">Projects</a></li>
+				<li class="button"><a class="resume" data-cont="#resumecont" href="#">Resume</a></li>
 				<li class="button"><a href="https://github.com/JemarJones/">Github</a></li>
 				<li class="button"><a href="http://ca.linkedin.com/in/JemarJones">Linkedin</a></li>
 			</ul>	
@@ -27,15 +27,15 @@
 		<br>
 		<div id="homecont" class="cont">
 			<h1>About Me</h1>
-			<p>Hello there, my name is <span class="bold">Jemar</span>. <br><br>I'm currently studying Software Engineering at McMaster University. <br>I like making and playing with <span class="bold">software, and tech.</span><br> I also like normal things like music, netflix (<3), and other such mundane things. 
+			<p>Hey, i'm <span style='font-weight: bold;' >Jemar</span>. <br><br>I'm a Software Engineering student at McMaster University. Its difficult to put my experience as a developer into a box, i've worked on <a class="projects" data-cont="#projectscont" href="#projects">Projects</a> involving the backend, mobile, web, bots, and tons more. The one commonality is that i <span style='font-weight: bold;'>love</span> to solve problems and i feel the <span style='font-weight: bold;'>physical need</span> to put my best into what i craft.
 			</p>
 		</div>
-		<div id="projcont" class="cont hidden">
+		<div id="projectscont" class="cont hidden">
 			<h1>Projects</h1>
 		</div>
 		<div id="resumecont" class="hidden">
 			<iframe src="web/viewer.html" style="width: 100%; height: 1300px" frameborder="0"></iframe>
-			</div>
+		</div>
 		</section>
 		<script src="bower_components/jquery/dist/jquery.min.js"></script>
 		<script src="./js/main.min.js" ></script>
