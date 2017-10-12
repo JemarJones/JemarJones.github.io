@@ -4,6 +4,10 @@ var projects;
 
 $(document).ready(function(){
   const hash = window.location.hash.substring(1) || 'home';
+  if (hash == 'resume') {
+    window.location = '/resume.pdf';
+    return;
+  }
   switchCont($('.' + hash));
   $.getJSON('./js/projects.json', function(data) {
     projects = data;
@@ -30,7 +34,6 @@ $(document).ready(function(){
     loadProjs();
     $('.home').on('click', navClick);
     $('.projects').on('click', navClick);
-    $('.resume').on('click', navClick);
   });
 });
 var loadProjs = function(){
