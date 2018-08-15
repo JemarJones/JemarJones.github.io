@@ -1,0 +1,6 @@
+{
+    "files.exclude": {
+        // .css files are just compiled files here
+        "src/styles/*.css": true
+    }
+}
