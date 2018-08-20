@@ -1,0 +1,16 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $primary-color;
+  font-family: $font-family;
+  font-size: $base-font-size;
+}
+
+.container {
+  width: calc(100vw - 2*20px);
+  max-width: 1045px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: $primary-spacing;
+}
+

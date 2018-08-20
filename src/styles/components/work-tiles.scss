@@ -1,0 +1,23 @@
+.work-tiles {
+  display: grid;
+  grid-gap: $primary-spacing;
+  grid-template-columns: repeat(auto-fill, $mobile-tile-length);
+  justify-content: center;
+  height: 100%;
+
+  &__item {
+    @include box-shadow(false, true, true, false);
+    height: $mobile-tile-length;
+    padding: $primary-spacing;
+    border: 1px solid $border-color;
+    background-color: $white;
+  }
+
+  @include breakpoint(tablet) {
+    grid-template-columns: repeat(auto-fill, $desktop-tile-length);
+
+    &__item {
+      height: $desktop-tile-length;
+    }
+  }
+}

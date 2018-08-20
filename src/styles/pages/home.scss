@@ -1,0 +1,37 @@
+.home {
+  display: grid;
+  grid-template-areas:
+    'header'
+    'main'
+    'footer';
+  grid-template-rows: 250px 1fr 80px;
+  height: 100vh;
+
+  &__header {
+    @include inverted-colors;
+    @include bottom-box-shadow;
+
+    display: flex;
+    grid-area: header;
+    align-items: center;
+    font-size: 4rem;
+  }
+
+  &__main {
+    grid-area: main;
+  }
+
+  &__footer {
+    @include inverted-colors;
+    @include top-box-shadow;
+
+    grid-area: footer;
+  }
+
+  &__header .container,
+  &__footer .container {
+    @include center-horizontal;
+  }
+}
+
+

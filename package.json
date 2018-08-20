@@ -14,8 +14,8 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "build-css": "node-sass-chokidar src/ -o src/",
-    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch",
+    "build-css": "node-sass-chokidar src/styles/index.scss -o src/styles/",
+    "watch-css": "npm run build-css && node-sass-chokidar src/styles/index.scss -o src/styles/ --watch",
     "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
     "build-js": "react-scripts build",
@@ -32,6 +32,7 @@
     "gh-pages": "^1.2.0",
     "prettier": "^1.14.2",
     "stylelint": "^9.4.0",
-    "stylelint-config-standard": "^18.2.0"
+    "stylelint-config-property-sort-order-smacss": "^4.0.0",
+    "stylelint-config-sass-guidelines": "^5.0.0"
   }
 }

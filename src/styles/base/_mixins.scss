@@ -1,0 +1,48 @@
+@mixin breakpoint($point) {
+  @if $point == desktop {
+    @media (min-width: 1200px) { @content ; }
+  }
+  @else if $point == laptop {
+    @media (min-width: 992px) { @content ; }
+  }
+  @else if $point == tablet {
+    @media (min-width: 768px) { @content ; }
+  }
+  @else if $point == mobileonly {
+    @media (max-width: 767px) { @content ; }
+  }
+}
+
+@mixin inverted-colors {
+  background-color: $secondary-color;
+  color: $primary-color;
+}
+
+@mixin box-shadow($top, $right, $bottom, $left) {
+  $shadow-blur: 2px;
+  $shadow-offset: 3px;
+  $top-offset: if($top, -1*$shadow-offset, 0);
+  $right-offset: if($right, $shadow-offset, 0);
+  $bottom-offset: if($bottom, $shadow-offset, 0);
+  $left-offset: if($left, -1*$shadow-offset, 0);
+
+  box-shadow: $right-offset $bottom-offset $shadow-blur $border-color,
+    $left-offset $top-offset $shadow-blur $border-color;
+}
+@mixin top-box-shadow {
+  @include box-shadow(true, false, false, false);
+}
+@mixin right-box-shadow {
+  @include box-shadow(false, true, false, false);
+}
+@mixin bottom-box-shadow {
+  @include box-shadow(false, false, true, false);
+}
+@mixin left-box-shadow {
+  @include box-shadow(false, false, false, true);
+}
+
+@mixin center-horizontal {
+  display: flex;
+  justify-content: center;
+}
