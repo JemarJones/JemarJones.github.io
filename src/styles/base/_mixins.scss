@@ -18,9 +18,9 @@
   color: $primary-color;
 }
 
-@mixin box-shadow($top, $right, $bottom, $left) {
+@mixin box-shadow($top, $right, $bottom, $left, $multiplier: 1) {
   $shadow-blur: 2px;
-  $shadow-offset: 3px;
+  $shadow-offset: 3px*$multiplier;
   $top-offset: if($top, -1*$shadow-offset, 0);
   $right-offset: if($right, $shadow-offset, 0);
   $bottom-offset: if($bottom, $shadow-offset, 0);

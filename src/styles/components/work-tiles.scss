@@ -7,10 +7,16 @@
 
   &__item {
     @include box-shadow(false, true, true, false);
+    transition: box-shadow 0.2s ease-in-out;
     height: $mobile-tile-length;
     padding: $primary-spacing;
     border: 1px solid $border-color;
     background-color: $white;
+
+    &:hover, &:focus {
+      @include box-shadow(false, true, true, false, 2);
+      outline: initial;
+    }
   }
 
   @include breakpoint(tablet) {
