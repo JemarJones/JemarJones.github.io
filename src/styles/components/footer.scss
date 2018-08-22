@@ -1,0 +1,25 @@
+.footer {
+  @include inverted-colors;
+  @include top-box-shadow;
+  font-size: 2rem;
+
+  .container {
+    @include center-horizontal;
+  }
+
+  &__social-links {
+    display: flex;
+    margin: 0;
+    padding-left: $primary-spacing;
+    list-style-type: none;
+
+    li {
+      margin: 0 10px;
+    }
+
+    a {
+      color: $primary-color;
+      text-decoration: none;
+    }
+  }
+}

@@ -15,6 +15,10 @@
     grid-area: header;
     align-items: center;
     font-size: 4rem;
+
+    .container {
+      @include center-horizontal;
+    }
   }
 
   &__main {
@@ -22,15 +26,7 @@
   }
 
   &__footer {
-    @include inverted-colors;
-    @include top-box-shadow;
-
     grid-area: footer;
-  }
-
-  &__header .container,
-  &__footer .container {
-    @include center-horizontal;
   }
 }
 

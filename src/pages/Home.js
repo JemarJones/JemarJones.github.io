@@ -1,6 +1,7 @@
 import React from 'react';
 
 import WorkTiles from '../components/WorkTiles';
+import Footer from '../components/Footer';
 
 const Home = () => (
   <div className="home">
@@ -22,11 +23,7 @@ const Home = () => (
         ]}
       />
     </section>
-    <footer className="home__footer">
-      <div className="container">
-        my footermy footermy footermy footermy footermy footermy footermy footer
-      </div>
-    </footer>
+    <Footer className="home__footer" />
   </div>
 );
 
