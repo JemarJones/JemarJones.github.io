@@ -1,0 +1,6 @@
+- [ ] Card layout/info
+- [ ] Card click (Expand out)
+- [ ] Filter by jemar is a ____. 
+- [ ] Experiment with showing instagram in tiles??
+- [ ] Add resume somewhere
+- [ ] Add about me/ show dynamic description in header
