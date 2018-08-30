@@ -1,13 +1,12 @@
 import React from 'react';
 
+import HomeHeader from '../components/HomeHeader';
 import WorkTiles from '../components/WorkTiles';
 import Footer from '../components/Footer';
 
 const Home = () => (
   <div className="home">
-    <header className="home__header">
-      <div className="container">Jemar is a ____.</div>
-    </header>
+    <HomeHeader />
     <section className="home__main container">
       <WorkTiles
         workList={[

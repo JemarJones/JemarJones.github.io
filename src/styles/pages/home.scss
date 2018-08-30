@@ -19,6 +19,10 @@
     .container {
       @include center-horizontal;
     }
+
+    &__search {
+      max-width: 30rem;
+    }
   }
 
   &__main {
