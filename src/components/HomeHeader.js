@@ -1,4 +1,5 @@
 import React from 'react';
+import Select from 'react-select';
 
 class HomeHeader extends React.Component {
   constructor(props) {
@@ -9,10 +10,22 @@ class HomeHeader extends React.Component {
     };
   }
 
-  handleRoleChange = event => {
-    event.preventDefault();
-    this.setState({ jemarRole: event.target.value });
+  handleRoleChange = value => {
+    this.setState({ jemarRole: value });
   };
+
+  searchTheme = theme => ({
+    ...theme,
+    colors: {
+      ...theme.colors,
+      // primary: 'rgba(#555b6e, 0.2)',
+      primary: '#f4faff',
+      neutral0: '#555b6e',
+      neutral20: '#f4faff',
+      neutral80: '#f4faff',
+      primary25: '#000',
+    },
+  });
 
   render() {
     const { jemarRole } = this.state;
@@ -21,10 +34,16 @@ class HomeHeader extends React.Component {
         <div className="container">
           Jemar is a
           {
-            <input
+            <Select
               className="input home__header__search"
-              type="search"
-              placeholder="jack of all trades"
+              classNamePrefix="home__header__search"
+              theme={this.searchTheme}
+              placeholder="developer"
+              options={[
+                { value: 'fullstack', label: 'Full Stack Developer' },
+                { value: 'engineer', label: 'Engineer' },
+                { value: 'entrepreneur', label: 'Entrepreneur' },
+              ]}
               value={jemarRole}
               onChange={this.handleRoleChange}
             />
@@ -34,6 +53,16 @@ class HomeHeader extends React.Component {
       </header>
     );
   }
+}
+
+{
+  /* <input
+              className="input home__header__search"
+              type="search"
+              placeholder="jack of all trades"
+              value={jemarRole}
+              onChange={this.handleRoleChange}
+            /> */
 }
 
 export default HomeHeader;

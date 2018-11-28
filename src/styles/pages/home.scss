@@ -21,7 +21,12 @@
     }
 
     &__search {
-      max-width: 30rem;
+      width: 40rem;
+      
+    }
+
+    &__search__control {
+      @include focus-hover-1;
     }
   }
 
