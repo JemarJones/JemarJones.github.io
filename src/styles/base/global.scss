@@ -13,25 +13,3 @@ body {
   margin-left: auto;
   padding: $primary-spacing;
 }
-
-.input {
-  @include inverted-colors;
-  @include focus-hover-1;
-  margin: 0 $primary-spacing;
-  border-bottom: 3px solid $primary-color;
-  border-width: 0;
-  border-color: $secondary-color;
-
-  &::placeholder {
-    color: rgba($primary-color, 0.5);
-  }
-
-  &::-webkit-search-cancel-button,
-  &::-webkit-search-decoration,
-  &::-webkit-search-results-button,
-  &::-webkit-search-results-decoration {
-    // I need to use vendor prefixes if i want to disable a webkit feature..
-    /* stylelint-disable-next-line property-no-vendor-prefix */
-    -webkit-appearance: none;
-  }
-}

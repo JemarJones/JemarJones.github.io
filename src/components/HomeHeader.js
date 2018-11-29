@@ -18,14 +18,49 @@ class HomeHeader extends React.Component {
     ...theme,
     colors: {
       ...theme.colors,
-      // primary: 'rgba(#555b6e, 0.2)',
       primary: '#f4faff',
       neutral0: '#555b6e',
-      neutral20: '#f4faff',
-      neutral80: '#f4faff',
-      primary25: '#000',
+      primary25: 'rgba(244, 250, 255, 0.1)',
+      neutral50: 'rgba(244, 250, 255, 0.5)',
+    },
+    spacing: {
+      ...theme.spacing,
+      controlHeight: 20,
     },
   });
+
+  get customStyles() {
+    return {
+      control: provided => ({
+        ...provided,
+        fontSize: '4rem',
+      }),
+      container: provided => ({
+        ...provided,
+        marginTop: 0,
+        marginLeft: 20,
+        marginRight: 20,
+      }),
+      singleValue: (provided, state) => ({
+        ...provided,
+        color: state.hasValue ? state.theme.colors.primary : provided.color,
+      }),
+      input: (provided, state) => ({
+        ...provided,
+        color: state.theme.colors.primary,
+      }),
+      indicatorSeparator: (provided, state) => ({
+        ...provided,
+        backgroundColor: state.isFocused
+          ? state.theme.colors.primary
+          : provided.backgroundColor,
+      }),
+      dropdownIndicator: (provided, state) => ({
+        ...provided,
+        color: state.isFocused ? state.theme.colors.primary : provided.color,
+      }),
+    };
+  };
 
   render() {
     const { jemarRole } = this.state;
@@ -38,7 +73,8 @@ class HomeHeader extends React.Component {
               className="input home__header__search"
               classNamePrefix="home__header__search"
               theme={this.searchTheme}
-              placeholder="developer"
+              styles={this.customStyles}
+              placeholder="..."
               options={[
                 { value: 'fullstack', label: 'Full Stack Developer' },
                 { value: 'engineer', label: 'Engineer' },
@@ -53,16 +89,6 @@ class HomeHeader extends React.Component {
       </header>
     );
   }
-}
-
-{
-  /* <input
-              className="input home__header__search"
-              type="search"
-              placeholder="jack of all trades"
-              value={jemarRole}
-              onChange={this.handleRoleChange}
-            /> */
 }
 
 export default HomeHeader;

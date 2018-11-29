@@ -18,6 +18,7 @@
 
     .container {
       @include center-horizontal;
+      align-items: baseline;
     }
 
     &__search {
