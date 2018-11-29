@@ -15,6 +15,7 @@
     grid-area: header;
     align-items: center;
     font-size: 4rem;
+    // TODO: Fix mobile view
 
     .container {
       @include center-horizontal;

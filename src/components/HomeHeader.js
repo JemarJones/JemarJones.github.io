@@ -85,6 +85,7 @@ class HomeHeader extends React.Component {
         backgroundColor: state.isSelected
           ? state.theme.colors.neutral50
           : provided.backgroundColor,
+        fontSize: '3rem',
       }),
     };
   }
