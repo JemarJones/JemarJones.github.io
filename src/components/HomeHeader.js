@@ -1,14 +1,34 @@
 import React from 'react';
 import Select from 'react-select';
+import projects from '../data/projects';
 
 class HomeHeader extends React.Component {
   constructor(props) {
     super(props);
 
+    this.options = this.getOptions(projects);
     this.state = {
-      jemarRole: '',
+      jemarRole: this.options[0],
     };
   }
+
+  getOptions = projects => {
+    // TODO: Maybe sort this by most occurrences in projects?
+    return (
+      projects
+        // Get the list of tech from each project
+        .map(p => p.tech)
+        // Combine and dedupe the lists
+        .reduce(
+          (acc, curr) => {
+            return [...new Set([...acc, ...curr.map(tech => tech.name)])];
+          },
+          ['some things'],
+        )
+        // Format each item for react-select
+        .map(name => ({ value: name, label: name }))
+    );
+  };
 
   handleRoleChange = value => {
     this.setState({ jemarRole: value });
@@ -59,15 +79,22 @@ class HomeHeader extends React.Component {
         ...provided,
         color: state.isFocused ? state.theme.colors.primary : provided.color,
       }),
+      option: (provided, state) => ({
+        ...provided,
+        color: state.theme.primary,
+        backgroundColor: state.isSelected
+          ? state.theme.colors.neutral50
+          : provided.backgroundColor,
+      }),
     };
-  };
+  }
 
   render() {
     const { jemarRole } = this.state;
     return (
       <header className="home__header">
         <div className="container">
-          Jemar is a
+          Jemar knows
           {
             <Select
               className="input home__header__search"
@@ -75,11 +102,7 @@ class HomeHeader extends React.Component {
               theme={this.searchTheme}
               styles={this.customStyles}
               placeholder="..."
-              options={[
-                { value: 'fullstack', label: 'Full Stack Developer' },
-                { value: 'engineer', label: 'Engineer' },
-                { value: 'entrepreneur', label: 'Entrepreneur' },
-              ]}
+              options={this.options}
               value={jemarRole}
               onChange={this.handleRoleChange}
             />
