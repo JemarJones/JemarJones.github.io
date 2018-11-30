@@ -28,7 +28,7 @@
     "build-js": "react-scripts build",
     "build": "npm-run-all build-css build-js",
     "test": "react-scripts test --env=jsdom",
-    "lint-js": "eslint \"src/**/*.+(js|jsx|json)\"",
+    "lint-js": "eslint \"src/**/*.+(js|jsx)\"",
     "lint-style": "stylelint 'src/styles/*.scss'",
     "lint": "npm-run-all lint-js lint-style",
     "eject": "react-scripts eject"

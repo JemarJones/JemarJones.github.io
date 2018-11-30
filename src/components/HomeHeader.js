@@ -1,14 +1,20 @@
 import React from 'react';
 import Select from 'react-select';
+import PropTypes from 'prop-types';
+
 import projects from '../data/projects';
 
 class HomeHeader extends React.Component {
+  static propTypes = {
+    onSkillChange: PropTypes.func,
+  };
+
   constructor(props) {
     super(props);
 
     this.options = this.getOptions(projects);
     this.state = {
-      jemarRole: this.options[0],
+      jemarSkill: this.options[0],
     };
   }
 
@@ -30,8 +36,10 @@ class HomeHeader extends React.Component {
     );
   };
 
-  handleRoleChange = value => {
-    this.setState({ jemarRole: value });
+  handleSkillChange = value => {
+    const { onSkillChange } = this.props;
+    this.setState({ jemarSkill: value });
+    onSkillChange && onSkillChange(value);
   };
 
   searchTheme = theme => ({
@@ -51,10 +59,6 @@ class HomeHeader extends React.Component {
 
   get customStyles() {
     return {
-      control: provided => ({
-        ...provided,
-        fontSize: '4rem',
-      }),
       container: provided => ({
         ...provided,
         marginTop: 0,
@@ -91,24 +95,24 @@ class HomeHeader extends React.Component {
   }
 
   render() {
-    const { jemarRole } = this.state;
+    const { jemarSkill } = this.state;
     return (
       <header className="home__header">
         <div className="container">
-          Jemar knows
-          {
+          <span className="home__header__name">Jemar knows</span>
+          <div className="home__header__search__control-container">
             <Select
+              placeholder="..."
+              options={this.options}
+              value={jemarSkill}
+              onChange={this.handleSkillChange}
               className="input home__header__search"
               classNamePrefix="home__header__search"
               theme={this.searchTheme}
               styles={this.customStyles}
-              placeholder="..."
-              options={this.options}
-              value={jemarRole}
-              onChange={this.handleRoleChange}
             />
-          }
-          .
+            <span>.</span>
+          </div>
         </div>
       </header>
     );

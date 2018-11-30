@@ -2,5 +2,7 @@
     "files.exclude": {
         // .css files are just compiled files here
         "src/styles/**/*.css": true
-    }
+    },
+    "eslint.enable": true,
+    "tslint.enable": false,
 }
