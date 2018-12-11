@@ -15,7 +15,12 @@ const Footer = ({ className }) => {
         >
           {SOCIAL_INFO.map(item => (
             <li key={item.name}>
-              <a href={item.link} target="_blank" aria-label={item.description}>
+              <a
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={item.description}
+              >
                 <FontAwesomeIcon icon={item.icon} title={item.description} />
               </a>
             </li>
