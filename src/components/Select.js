@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactSelect from 'react-select';
+import classNames from 'classnames';
 
 /**
  * Light wrapper around react-select, mostly just for styling.
@@ -7,11 +8,11 @@ import ReactSelect from 'react-select';
 const Select = React.memo(props => (
   <ReactSelect
     placeholder="..."
-    className="jkj-select"
     classNamePrefix="jkj-select"
     theme={getSearchTheme}
     styles={customStyles}
     {...props}
+    className={classNames('jkj-select', props.className)}
   />
 ));
 
