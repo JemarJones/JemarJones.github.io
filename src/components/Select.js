@@ -1,7 +1,10 @@
 import React from 'react';
 import ReactSelect from 'react-select';
 
-const Select = props => (
+/**
+ * Light wrapper around react-select, mostly just for styling.
+ */
+const Select = React.memo(props => (
   <ReactSelect
     placeholder="..."
     className="jkj-select"
@@ -10,7 +13,7 @@ const Select = props => (
     styles={customStyles}
     {...props}
   />
-);
+));
 
 const getSearchTheme = theme => ({
   ...theme,
