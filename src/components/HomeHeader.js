@@ -1,8 +1,9 @@
 import React from 'react';
-import Select from 'react-select';
 import PropTypes from 'prop-types';
 
 import projects from '../data/projects';
+
+import Select from './Select';
 
 class HomeHeader extends React.PureComponent {
   static propTypes = {
@@ -42,58 +43,6 @@ class HomeHeader extends React.PureComponent {
     onSkillChange && onSkillChange(value);
   };
 
-  searchTheme = theme => ({
-    ...theme,
-    colors: {
-      ...theme.colors,
-      primary: '#f4faff',
-      neutral0: '#555b6e',
-      primary25: 'rgba(244, 250, 255, 0.1)',
-      neutral50: 'rgba(244, 250, 255, 0.5)',
-    },
-    spacing: {
-      ...theme.spacing,
-      controlHeight: 20,
-    },
-  });
-
-  get customStyles() {
-    return {
-      container: provided => ({
-        ...provided,
-        marginTop: 0,
-        marginLeft: 20,
-        marginRight: 20,
-      }),
-      singleValue: (provided, state) => ({
-        ...provided,
-        color: state.hasValue ? state.theme.colors.primary : provided.color,
-      }),
-      input: (provided, state) => ({
-        ...provided,
-        color: state.theme.colors.primary,
-      }),
-      indicatorSeparator: (provided, state) => ({
-        ...provided,
-        backgroundColor: state.isFocused
-          ? state.theme.colors.primary
-          : provided.backgroundColor,
-      }),
-      dropdownIndicator: (provided, state) => ({
-        ...provided,
-        color: state.isFocused ? state.theme.colors.primary : provided.color,
-      }),
-      option: (provided, state) => ({
-        ...provided,
-        color: state.theme.primary,
-        backgroundColor: state.isSelected
-          ? state.theme.colors.neutral50
-          : provided.backgroundColor,
-        fontSize: '3rem',
-      }),
-    };
-  }
-
   render() {
     const { jemarSkill } = this.state;
     return (
@@ -102,14 +51,9 @@ class HomeHeader extends React.PureComponent {
           <span className="home__header__name">Jemar knows</span>
           <div className="home__header__search__control-container">
             <Select
-              placeholder="..."
               options={this.options}
               value={jemarSkill}
               onChange={this.handleSkillChange}
-              className="input home__header__search"
-              classNamePrefix="home__header__search"
-              theme={this.searchTheme}
-              styles={this.customStyles}
             />
             <span>.</span>
           </div>

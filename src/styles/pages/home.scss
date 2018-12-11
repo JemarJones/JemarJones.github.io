@@ -31,20 +31,8 @@
 
     }
 
-    .home__header__search__value-container {
-      justify-content: center;
-
-      @include breakpoint(small-laptop) {
-        @include center-horizontal;
-        justify-content: initial;
-      }
-    }
     &__name {
       white-space: nowrap;
-    }
-
-    &__search {
-      width: 99%;
     }
 
     &__search__control-container {
@@ -52,15 +40,6 @@
       width: 100%;
       min-width: 20rem;
       max-width: 31rem;
-    }
-
-    &__search__control {
-      @include focus-hover-1;
-      font-size: 4rem;
-
-      @include breakpoint(extra-small-only) {
-        font-size: 3rem;
-      }
     }
   }
 
