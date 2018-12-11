@@ -5,11 +5,17 @@
   @else if $point == laptop {
     @media (min-width: 992px) { @content ; }
   }
+  @else if $point == small-laptop {
+    @media (min-width: 925px) { @content ; }
+  }
   @else if $point == tablet {
     @media (min-width: 768px) { @content ; }
   }
-  @else if $point == mobileonly {
+  @else if $point == mobile-only {
     @media (max-width: 767px) { @content ; }
+  }
+  @else if $point == extra-small-only {
+    @media (max-width: 425px) { @content ; }
   }
 }
 
@@ -44,5 +50,17 @@
 
 @mixin center-horizontal {
   display: flex;
+  flex-direction: row;
   justify-content: center;
+}
+
+@mixin focus-hover-1 {
+  transition: filter 0.2s ease-in-out;
+
+  &:hover,
+  &:focus,
+  &[class$='--is-focused'] {
+    filter: drop-shadow(6px 6px 2px rgba($black, 0.5));
+    outline: none;
+  }
 }

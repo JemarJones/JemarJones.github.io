@@ -5,6 +5,14 @@
   justify-content: center;
   height: 100%;
 
+  @include breakpoint(tablet) {
+    grid-template-columns: repeat(auto-fill, $desktop-tile-length);
+
+    &__item {
+      height: $desktop-tile-length;
+    }
+  }
+
   &__item {
     @include box-shadow(false, true, true, false);
     height: $mobile-tile-length;
@@ -13,17 +21,10 @@
     border: 1px solid $border-color;
     background-color: $white;
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       @include box-shadow(false, true, true, false, 2);
       outline: initial;
-    }
-  }
-
-  @include breakpoint(tablet) {
-    grid-template-columns: repeat(auto-fill, $desktop-tile-length);
-
-    &__item {
-      height: $desktop-tile-length;
     }
   }
 }

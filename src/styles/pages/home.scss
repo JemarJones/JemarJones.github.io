@@ -10,14 +10,36 @@
   &__header {
     @include inverted-colors;
     @include bottom-box-shadow;
-
     display: flex;
     grid-area: header;
     align-items: center;
     font-size: 4rem;
 
+    @include breakpoint(extra-small-only) {
+      font-size: 3rem;
+    }
+
     .container {
-      @include center-horizontal;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      @include breakpoint(small-laptop) {
+        @include center-horizontal;
+        align-items: baseline;
+      }
+
+    }
+
+    &__name {
+      white-space: nowrap;
+    }
+
+    &__search__control-container {
+      display: flex;
+      width: 100%;
+      min-width: 20rem;
+      max-width: 31rem;
     }
   }
 
