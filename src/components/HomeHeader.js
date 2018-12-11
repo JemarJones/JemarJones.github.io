@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import projects from '../data/projects';
 
-class HomeHeader extends React.Component {
+class HomeHeader extends React.PureComponent {
   static propTypes = {
     onSkillChange: PropTypes.func,
   };
