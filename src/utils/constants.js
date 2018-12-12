@@ -43,3 +43,5 @@ export const SOCIAL_INFO = [
     icon: 'phone',
   },
 ];
+
+export const SKILL_UNSELECTED = 'some things';

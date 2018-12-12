@@ -1,8 +1,8 @@
 [
   {
+    "name": "WebTunes",
     "image": "./assets/webtunes_logo.png",
-    "title": "WebTunes",
-    "colab": [
+    "collaborators": [
       {
         "name": "Nikolai Savas",
         "link": "http://savas.ca/"
@@ -12,7 +12,7 @@
         "link": "http://nalwa.ca"
       }
     ],
-    "tech": [
+    "skills": [
       {
         "name": "Node.js",
         "link": "https://nodejs.org/"
@@ -50,15 +50,15 @@
     "link": "http://webtunes.jkjones.me"
   },
   {
+    "name": "Survival of the Fittest",
     "image": "./assets/survival.png",
-    "title": "Survival of the Fittest",
-    "colab": [
+    "collaborators": [
       {
         "name": "Vicky Bilbily",
         "link": "http://bickybilly.github.io/"
       }
     ],
-    "tech": [
+    "skills": [
       {
         "name": "Node.js",
         "link": "https://nodejs.org/"
@@ -96,9 +96,9 @@
     "link": "http://survival.jkjones.me"
   },
   {
+    "name": "jQuery Flip",
     "image": "./assets/jquery-flip.png",
-    "title": "jQuery Flip",
-    "colab": [
+    "collaborators": [
       {
         "name": "Nattawat Nonsung (Author)",
         "link": "https://github.com/nnattawat"
@@ -108,7 +108,7 @@
         "link": "http://StijnDeWitt.com"
       }
     ],
-    "tech": [
+    "skills": [
       {
         "name": "JavaScript",
         "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
@@ -122,15 +122,15 @@
     "link": "http://nnattawat.github.io/flip/"
   },
   {
+    "name": "Flash Learn",
     "image": "./assets/fl_animated.gif",
-    "title": "Flash Learn",
-    "colab": [
+    "collaborators": [
       {
         "name": "Vicky Bilbily",
         "link": "http://bickybilly.github.io/"
       }
     ],
-    "tech": [
+    "skills": [
       {
         "name": "AngularJS",
         "link": "https://angularjs.org/"
@@ -156,10 +156,10 @@
     "link": "http://flashlearn.jkjones.me"
   },
   {
+    "name": "FontMe",
     "image": "./assets/fmPromoMarq.png",
-    "title": "FontMe",
-    "colab": [],
-    "tech": [
+    "collaborators": [],
+    "skills": [
       {
         "name": "JavaScript",
         "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"

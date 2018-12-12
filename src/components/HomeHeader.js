@@ -4,6 +4,8 @@ import memoize from 'memoize-one';
 
 import Select from './Select';
 
+import { SKILL_UNSELECTED } from '../utils/constants';
+
 class HomeHeader extends React.PureComponent {
   static propTypes = {
     projects: PropTypes.array.isRequired,
@@ -12,17 +14,17 @@ class HomeHeader extends React.PureComponent {
   };
 
   getOptions = memoize(projects => {
-    // TODO: Maybe sort this by most occurrences in projects?
+    // TODO: #16 - Maybe sort this by most occurrences in projects?
     return (
       projects
-        // Get the list of tech from each project
-        .map(p => p.tech)
+        // Get the list of skills from each project
+        .map(p => p.skills)
         // Combine and dedupe the lists
         .reduce(
           (acc, curr) => {
-            return [...new Set([...acc, ...curr.map(tech => tech.name)])];
+            return [...new Set([...acc, ...curr.map(skill => skill.name)])];
           },
-          ['some things'],
+          [SKILL_UNSELECTED],
         )
         // Format each item for react-select
         .map(name => ({ value: name, label: name }))
@@ -47,7 +49,7 @@ class HomeHeader extends React.PureComponent {
               options={options}
               value={selectedSkill || options[0]}
               onChange={this.handleSkillChange}
-              placeholder="some things"
+              placeholder={SKILL_UNSELECTED}
             />
             <span>.</span>
           </div>
