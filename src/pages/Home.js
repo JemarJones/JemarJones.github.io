@@ -19,7 +19,7 @@ class Home extends React.Component {
   handleSkillChange = selectedSkill => {
     this.setState({
       selectedSkill,
-      // TODO: Optimise? Might be a problem if i get many more projects..
+      // TODO: optimize? Might be a problem if i get many more projects..
       filteredProjects: projects.filter(
         project =>
           selectedSkill.value === SKILL_UNSELECTED ||
