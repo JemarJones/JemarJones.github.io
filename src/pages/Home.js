@@ -4,16 +4,32 @@ import HomeHeader from '../components/HomeHeader';
 import WorkTiles from '../components/WorkTiles';
 import Footer from '../components/Footer';
 
+import projects from '../data/projects';
+
 class Home extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      skill: undefined,
+    };
+  }
   handleSkillChange = skill => {
     // TODO: Implement
     console.log(skill);
+    this.setState({ skill });
   };
 
   render() {
+    const { skill } = this.state;
+
     return (
       <div className="home">
-        <HomeHeader onSkillChange={this.handleSkillChange} />
+        <HomeHeader
+          projects={projects}
+          onSkillChange={this.handleSkillChange}
+          selectedSkill={skill}
+        />
         <section className="home__main container">
           <WorkTiles
             workList={[
