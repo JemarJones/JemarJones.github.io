@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { wrapGrid } from 'animate-css-grid';
 
-class WorkTiles extends React.Component {
+class WorkTiles extends React.PureComponent {
   static propTypes = {
     workList: PropTypes.array,
   };
@@ -18,10 +18,10 @@ class WorkTiles extends React.Component {
   }
 
   handleTileSelect = item => {
-    console.error('Implement work tile select');
+    console.log('Implement work tile select', item);
   };
 
-  handleKeyDown = (item, e) => {
+  handleKeyDown = (e, item) => {
     if (e.keyCode === 13) {
       this.handleTileSelect(item);
     }
@@ -36,8 +36,8 @@ class WorkTiles extends React.Component {
             className="work-tiles__item"
             key={item.name}
             tabIndex="0"
-            onKeyDown={this.handleKeyDown.bind(this, item)}
-            onClick={this.handleTileSelect}
+            onKeyDown={e => this.handleKeyDown(e, item)}
+            onClick={() => this.handleTileSelect(item)}
           >
             {item.name}
           </div>

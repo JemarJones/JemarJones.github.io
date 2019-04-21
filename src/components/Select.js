@@ -24,6 +24,7 @@ const getSearchTheme = theme => ({
     neutral0: '#555b6e',
     primary25: 'rgba(244, 250, 255, 0.1)',
     neutral50: 'rgba(244, 250, 255, 0.5)',
+    primary50: 'rgba(244, 250, 255, 0.5)',
   },
   spacing: {
     ...theme.spacing,
