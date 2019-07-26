@@ -4,14 +4,13 @@ import HomeHeader from '../components/HomeHeader';
 import WorkTiles from '../components/WorkTiles';
 import Footer from '../components/Footer';
 
-import projects, { Project } from '../data/projects';
-import { SKILL_UNSELECTED } from '../utils/constants';
-import { DefaultOptionType } from '../components/Select';
+import projects, { Project, Skill } from '../data/projects';
+import { GENERIC_SKILL } from '../utils/constants';
 
 interface iProps {}
 
 interface iState {
-  selectedSkill?: DefaultOptionType | null;
+  selectedSkill?: Skill | null;
   filteredProjects: Project[];
 }
 
@@ -24,15 +23,15 @@ class Home extends React.Component<iProps, iState> {
       filteredProjects: projects,
     };
   }
-  handleSkillChange = (selectedSkill: DefaultOptionType | null | undefined) => {
+  handleSkillChange = (selectedSkill: Skill | null | undefined) => {
     this.setState({
       selectedSkill,
       // TODO: optimize? Might be a problem if i get many more projects..
       filteredProjects: selectedSkill
         ? projects.filter(
             project =>
-              selectedSkill.value === SKILL_UNSELECTED ||
-              project.skills.some(skill => skill.name === selectedSkill.value),
+              selectedSkill.name === GENERIC_SKILL ||
+              project.skills.some(skill => skill.name === selectedSkill.name),
           )
         : projects,
     });

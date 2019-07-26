@@ -1,6 +1,6 @@
-export interface JemarSkill {
+export interface Skill {
   name: string;
-  link: string;
+  link?: string;
 }
 
 export interface Project {
@@ -10,7 +10,7 @@ export interface Project {
     name: string;
     link: string;
   }[];
-  skills: JemarSkill[];
+  skills: Skill[];
   desc: string;
   link: string;
 }

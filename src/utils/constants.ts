@@ -54,4 +54,4 @@ export const SOCIAL_INFO: SocialMediaItem[] = [
   },
 ];
 
-export const SKILL_UNSELECTED = 'some things';
+export const GENERIC_SKILL = 'some things';
