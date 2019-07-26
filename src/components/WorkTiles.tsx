@@ -19,7 +19,7 @@ class WorkTiles extends React.PureComponent<iProps> {
     if (this.tileGrid.current) {
       wrapGrid(this.tileGrid.current);
     } else {
-      console.log('HELP: tileGrid not initialized in time!!');
+      console.error('HELP: tileGrid not initialized in time!!');
     }
   }
 

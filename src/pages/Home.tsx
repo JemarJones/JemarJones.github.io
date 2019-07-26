@@ -9,7 +9,7 @@ import { PROJECTS, Project, Skill, GENERIC_SKILL } from '../utils/constants';
 interface iProps {}
 
 interface iState {
-  selectedSkill?: Skill | null;
+  selectedSkill?: Skill;
   filteredProjects: Project[];
 }
 
@@ -22,7 +22,7 @@ class Home extends React.Component<iProps, iState> {
       filteredProjects: PROJECTS,
     };
   }
-  handleSkillChange = (selectedSkill: Skill | null | undefined) => {
+  handleSkillChange = (selectedSkill: Skill | undefined) => {
     this.setState({
       selectedSkill,
       // TODO: optimize? Might be a problem if i get many more projects..

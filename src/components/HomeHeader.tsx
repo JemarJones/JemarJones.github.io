@@ -8,8 +8,8 @@ import { GENERIC_SKILL, Project, Skill } from '../utils/constants';
 
 interface iProps {
   projects: Project[];
-  onSelectedSkillChange: (skill: Skill | null | undefined) => void;
-  selectedSkill?: Skill | null | undefined;
+  onSelectedSkillChange: (skill: Skill | undefined) => void;
+  selectedSkill?: Skill;
 }
 
 class HomeHeader extends React.PureComponent<iProps> {
@@ -27,6 +27,12 @@ class HomeHeader extends React.PureComponent<iProps> {
 
   getSkillText = (skill: Skill) => {
     return skill.name;
+  };
+
+  onSelectedSkillChange = (skill: Skill | undefined | null) => {
+    // We've either not selected a skill yet, or we have,
+    // No need for null in this case.
+    this.props.onSelectedSkillChange(skill || undefined);
   };
 
   render() {

@@ -17,7 +17,7 @@ export interface iProps<OptionType> extends Props<OptionType> {
   ) => void;
 }
 
-function Select<OptionType>(props: Props<OptionType>) {
+function Select<OptionType>(props: Props<OptionType>): JSX.Element {
   const onChange = (
     value: ValueType<OptionType>,
     actionMeta: ActionMeta,
