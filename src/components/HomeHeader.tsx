@@ -4,18 +4,13 @@ import uniqBy from 'lodash.uniqby';
 
 import Select from './Select';
 
-import { GENERIC_SKILL } from '../utils/constants';
-import { Project, Skill } from '../data/projects';
+import { GENERIC_SKILL, Project, Skill } from '../utils/constants';
 
 interface iProps {
   projects: Project[];
-  onSkillChange: (skill: Skill | null | undefined) => void;
+  onSelectedSkillChange: (skill: Skill | null | undefined) => void;
   selectedSkill?: Skill | null | undefined;
 }
-
-const genericSkillOption: Skill = {
-  name: GENERIC_SKILL,
-};
 
 class HomeHeader extends React.PureComponent<iProps> {
   getOptions = memoize(
@@ -25,7 +20,7 @@ class HomeHeader extends React.PureComponent<iProps> {
         // Get the list of skills from each project
         .map(p => p.skills)
         .flat();
-      skills.unshift(genericSkillOption);
+      skills.unshift(GENERIC_SKILL);
       return uniqBy(skills, (skill: Skill) => skill.name);
     },
   );
@@ -35,7 +30,7 @@ class HomeHeader extends React.PureComponent<iProps> {
   };
 
   render() {
-    const { projects, selectedSkill, onSkillChange } = this.props;
+    const { projects, selectedSkill, onSelectedSkillChange } = this.props;
     const options: Skill[] = this.getOptions(projects);
 
     return (
@@ -48,8 +43,8 @@ class HomeHeader extends React.PureComponent<iProps> {
               value={selectedSkill || options[0]}
               getOptionLabel={this.getSkillText}
               getOptionValue={this.getSkillText}
-              onSingleChange={onSkillChange}
-              placeholder={GENERIC_SKILL}
+              onSingleChange={onSelectedSkillChange}
+              placeholder={GENERIC_SKILL.name}
             />
             <span>.</span>
           </div>

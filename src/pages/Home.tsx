@@ -4,8 +4,7 @@ import HomeHeader from '../components/HomeHeader';
 import WorkTiles from '../components/WorkTiles';
 import Footer from '../components/Footer';
 
-import projects, { Project, Skill } from '../data/projects';
-import { GENERIC_SKILL } from '../utils/constants';
+import { PROJECTS, Project, Skill, GENERIC_SKILL } from '../utils/constants';
 
 interface iProps {}
 
@@ -20,7 +19,7 @@ class Home extends React.Component<iProps, iState> {
 
     this.state = {
       selectedSkill: undefined,
-      filteredProjects: projects,
+      filteredProjects: PROJECTS,
     };
   }
   handleSkillChange = (selectedSkill: Skill | null | undefined) => {
@@ -28,12 +27,12 @@ class Home extends React.Component<iProps, iState> {
       selectedSkill,
       // TODO: optimize? Might be a problem if i get many more projects..
       filteredProjects: selectedSkill
-        ? projects.filter(
+        ? PROJECTS.filter(
             project =>
-              selectedSkill.name === GENERIC_SKILL ||
+              selectedSkill.name === GENERIC_SKILL.name ||
               project.skills.some(skill => skill.name === selectedSkill.name),
           )
-        : projects,
+        : PROJECTS,
     });
   };
 
@@ -43,8 +42,8 @@ class Home extends React.Component<iProps, iState> {
     return (
       <div className="home">
         <HomeHeader
-          projects={projects}
-          onSkillChange={this.handleSkillChange}
+          projects={PROJECTS}
+          onSelectedSkillChange={this.handleSkillChange}
           selectedSkill={selectedSkill}
         />
         <section className="home__main container">

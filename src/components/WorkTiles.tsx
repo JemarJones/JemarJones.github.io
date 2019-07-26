@@ -1,6 +1,6 @@
 import React from 'react';
 import { wrapGrid } from 'animate-css-grid';
-import { Project } from '../data/projects';
+import { Project } from '../utils/constants';
 
 interface iProps {
   workList: Project[];
