@@ -1,5 +1,15 @@
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
+
 // Data for social media contact info
-export const SOCIAL_INFO = [
+
+export interface SocialMediaItem {
+  name: string;
+  description: string;
+  link: string;
+  icon: IconProp;
+}
+
+export const SOCIAL_INFO: SocialMediaItem[] = [
   {
     name: 'github',
     description: 'Github Profile',

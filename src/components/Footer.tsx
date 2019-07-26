@@ -1,11 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { SOCIAL_INFO } from '../utils/constants';
 
-const Footer = ({ className }) => {
+interface iProps {
+  className?: string;
+}
+
+const Footer: React.SFC<iProps> = ({ className }) => {
   return (
     <footer className={classNames('footer', className)}>
       <div className="container">
@@ -29,10 +32,6 @@ const Footer = ({ className }) => {
       </div>
     </footer>
   );
-};
-
-Footer.propTypes = {
-  className: PropTypes.string,
 };
 
 export default Footer;

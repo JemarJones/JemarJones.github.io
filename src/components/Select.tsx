@@ -1,11 +1,20 @@
 import React from 'react';
 import ReactSelect from 'react-select';
+import { Props } from 'react-select/lib/Select';
+import { Theme } from 'react-select/lib/types';
+import { Styles } from 'react-select/lib/styles';
 import classNames from 'classnames';
 
 /**
  * Light wrapper around react-select, mostly just for styling.
  */
-const Select = React.memo(props => (
+
+export interface DefaultOptionType {
+  label: string;
+  value: string;
+}
+
+const Select = React.memo((props: Props) => (
   <ReactSelect
     placeholder="..."
     classNamePrefix="jkj-select"
@@ -16,7 +25,7 @@ const Select = React.memo(props => (
   />
 ));
 
-const getSearchTheme = theme => ({
+const getSearchTheme = (theme: Theme): Theme => ({
   ...theme,
   colors: {
     ...theme.colors,
@@ -32,7 +41,7 @@ const getSearchTheme = theme => ({
   },
 });
 
-const customStyles = {
+const customStyles: Partial<Styles> = {
   container: provided => ({
     ...provided,
     marginTop: 0,

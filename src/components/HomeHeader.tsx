@@ -1,19 +1,20 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import memoize from 'memoize-one';
 
-import Select from './Select';
+import Select, { DefaultOptionType } from './Select';
 
 import { SKILL_UNSELECTED } from '../utils/constants';
+import { Project } from '../data/projects';
+import { ValueType } from 'react-select/lib/types';
 
-class HomeHeader extends React.PureComponent {
-  static propTypes = {
-    projects: PropTypes.array.isRequired,
-    onSkillChange: PropTypes.func.isRequired,
-    selectedSkill: PropTypes.object,
-  };
+interface iProps {
+  projects: Project[];
+  onSkillChange: (skill: DefaultOptionType | null | undefined) => void;
+  selectedSkill?: DefaultOptionType | null | undefined;
+}
 
-  getOptions = memoize(projects => {
+class HomeHeader extends React.PureComponent<iProps> {
+  getOptions = memoize((projects: Project[]) => {
     // TODO: #16 - Maybe sort this by most occurrences in projects?
     return (
       projects
@@ -31,14 +32,16 @@ class HomeHeader extends React.PureComponent {
     );
   });
 
-  handleSkillChange = value => {
-    this.setState({ jemarSkill: value });
-    this.props.onSkillChange(value);
+  handleSkillChange = (value: ValueType<DefaultOptionType>): void => {
+    const skill = value || null;
+    // TODO: Fix this type.. it thinks it can be an array but we're not using
+    // a multiselect...
+    this.props.onSkillChange(skill as DefaultOptionType | null | undefined);
   };
 
   render() {
     const { projects, selectedSkill } = this.props;
-    const options = this.getOptions(projects);
+    const options: DefaultOptionType[] = this.getOptions(projects);
 
     return (
       <header className="home__header">

@@ -4,11 +4,19 @@ import HomeHeader from '../components/HomeHeader';
 import WorkTiles from '../components/WorkTiles';
 import Footer from '../components/Footer';
 
-import projects from '../data/projects';
+import projects, { Project } from '../data/projects';
 import { SKILL_UNSELECTED } from '../utils/constants';
+import { DefaultOptionType } from '../components/Select';
 
-class Home extends React.Component {
-  constructor(props) {
+interface iProps {}
+
+interface iState {
+  selectedSkill?: DefaultOptionType | null;
+  filteredProjects: Project[];
+}
+
+class Home extends React.Component<iProps, iState> {
+  constructor(props: iProps) {
     super(props);
 
     this.state = {
@@ -16,15 +24,17 @@ class Home extends React.Component {
       filteredProjects: projects,
     };
   }
-  handleSkillChange = selectedSkill => {
+  handleSkillChange = (selectedSkill: DefaultOptionType | null | undefined) => {
     this.setState({
       selectedSkill,
       // TODO: optimize? Might be a problem if i get many more projects..
-      filteredProjects: projects.filter(
-        project =>
-          selectedSkill.value === SKILL_UNSELECTED ||
-          project.skills.some(skill => skill.name === selectedSkill.value),
-      ),
+      filteredProjects: selectedSkill
+        ? projects.filter(
+            project =>
+              selectedSkill.value === SKILL_UNSELECTED ||
+              project.skills.some(skill => skill.name === selectedSkill.value),
+          )
+        : projects,
     });
   };
 
