@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useMemo, ReactElement } from 'react';
 
 import HomeHeader from '../components/HomeHeader';
 import WorkTiles from '../components/WorkTiles';
@@ -8,51 +8,36 @@ import { PROJECTS, Project, Skill, GENERIC_SKILL } from '../utils/constants';
 
 interface iProps {}
 
-interface iState {
-  selectedSkill?: Skill;
-  filteredProjects: Project[];
-}
-
-class Home extends React.Component<iProps, iState> {
-  constructor(props: iProps) {
-    super(props);
-
-    this.state = {
-      selectedSkill: undefined,
-      filteredProjects: PROJECTS,
-    };
-  }
-  handleSkillChange = (selectedSkill: Skill | undefined) => {
-    this.setState({
-      selectedSkill,
-      // TODO: optimize? Might be a problem if i get many more projects..
-      filteredProjects: selectedSkill
+const Home: React.FC<iProps> = (): ReactElement | null => {
+  const [selectedSkill, setSelectedSkill] = useState<Skill | undefined>();
+  const filteredProjects = useMemo(
+    (): Project[] => {
+      return selectedSkill
         ? PROJECTS.filter(
-            project =>
+            (project): boolean =>
               selectedSkill.name === GENERIC_SKILL.name ||
-              project.skills.some(skill => skill.name === selectedSkill.name),
+              project.skills.some(
+                (skill: Skill): boolean => skill.name === selectedSkill.name
+              )
           )
-        : PROJECTS,
-    });
-  };
+        : PROJECTS;
+    },
+    [selectedSkill]
+  );
 
-  render() {
-    const { selectedSkill, filteredProjects } = this.state;
-
-    return (
-      <div className="home">
-        <HomeHeader
-          projects={PROJECTS}
-          onSelectedSkillChange={this.handleSkillChange}
-          selectedSkill={selectedSkill}
-        />
-        <section className="home__main container">
-          <WorkTiles workList={filteredProjects} />
-        </section>
-        <Footer className="home__footer" />
-      </div>
-    );
-  }
-}
+  return (
+    <div className="home">
+      <HomeHeader
+        projects={PROJECTS}
+        onSelectedSkillChange={setSelectedSkill}
+        selectedSkill={selectedSkill}
+      />
+      <section className="home__main container">
+        <WorkTiles workList={filteredProjects} />
+      </section>
+      <Footer className="home__footer" />
+    </div>
+  );
+};
 
 export default Home;

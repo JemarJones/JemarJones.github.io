@@ -8,8 +8,12 @@
             "error",
             {
                 "singleQuote": true,
-                "trailingComma": "all"
+                "trailingComma": "es5"
             }
-        ]
-    }    
+        ],
+        "@typescript-eslint/explicit-function-return-type": "warn",
+        "react/jsx-no-bind": "warn",
+        "react/jsx-key": "error"
+
+    }
 }
