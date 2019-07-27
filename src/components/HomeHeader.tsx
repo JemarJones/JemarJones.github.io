@@ -36,7 +36,7 @@ class HomeHeader extends React.PureComponent<iProps> {
   };
 
   render() {
-    const { projects, selectedSkill, onSelectedSkillChange } = this.props;
+    const { projects, selectedSkill } = this.props;
     const options: Skill[] = this.getOptions(projects);
 
     return (
@@ -49,7 +49,7 @@ class HomeHeader extends React.PureComponent<iProps> {
               value={selectedSkill || options[0]}
               getOptionLabel={this.getSkillText}
               getOptionValue={this.getSkillText}
-              onSingleChange={onSelectedSkillChange}
+              onSingleChange={this.onSelectedSkillChange}
               placeholder={GENERIC_SKILL.name}
             />
             <span>.</span>
