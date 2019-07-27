@@ -19,7 +19,9 @@ const HomeHeader: React.FC<iProps> = ({
   const options: Skill[] = useMemo(
     (): Skill[] => {
       // Get the list of skills from each project
-      let skills = projects.map((p: Project): Skill[] => p.skills).flat();
+      let skills: Skill[] = projects
+        .map((p: Project): Skill[] => p.skills)
+        .flat();
 
       // Create a map of skill -> number of occurances,
       // to be used for sorting skills by frequency
