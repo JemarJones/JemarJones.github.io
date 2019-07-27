@@ -4,27 +4,35 @@ import HomeHeader from '../components/HomeHeader';
 import WorkTiles from '../components/WorkTiles';
 import Footer from '../components/Footer';
 
-import projects from '../data/projects';
-import { SKILL_UNSELECTED } from '../utils/constants';
+import { PROJECTS, Project, Skill, GENERIC_SKILL } from '../utils/constants';
 
-class Home extends React.Component {
-  constructor(props) {
+interface iProps {}
+
+interface iState {
+  selectedSkill?: Skill;
+  filteredProjects: Project[];
+}
+
+class Home extends React.Component<iProps, iState> {
+  constructor(props: iProps) {
     super(props);
 
     this.state = {
       selectedSkill: undefined,
-      filteredProjects: projects,
+      filteredProjects: PROJECTS,
     };
   }
-  handleSkillChange = selectedSkill => {
+  handleSkillChange = (selectedSkill: Skill | undefined) => {
     this.setState({
       selectedSkill,
       // TODO: optimize? Might be a problem if i get many more projects..
-      filteredProjects: projects.filter(
-        project =>
-          selectedSkill.value === SKILL_UNSELECTED ||
-          project.skills.some(skill => skill.name === selectedSkill.value),
-      ),
+      filteredProjects: selectedSkill
+        ? PROJECTS.filter(
+            project =>
+              selectedSkill.name === GENERIC_SKILL.name ||
+              project.skills.some(skill => skill.name === selectedSkill.name),
+          )
+        : PROJECTS,
     });
   };
 
@@ -34,8 +42,8 @@ class Home extends React.Component {
     return (
       <div className="home">
         <HomeHeader
-          projects={projects}
-          onSkillChange={this.handleSkillChange}
+          projects={PROJECTS}
+          onSelectedSkillChange={this.handleSkillChange}
           selectedSkill={selectedSkill}
         />
         <section className="home__main container">

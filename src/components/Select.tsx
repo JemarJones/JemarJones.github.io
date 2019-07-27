@@ -1,22 +1,52 @@
 import React from 'react';
 import ReactSelect from 'react-select';
+import { Props } from 'react-select/lib/Select';
+import { Theme, ValueType, ActionMeta } from 'react-select/lib/types';
+import { Styles } from 'react-select/lib/styles';
 import classNames from 'classnames';
 
 /**
  * Light wrapper around react-select, mostly just for styling.
  */
-const Select = React.memo(props => (
-  <ReactSelect
-    placeholder="..."
-    classNamePrefix="jkj-select"
-    theme={getSearchTheme}
-    styles={customStyles}
-    {...props}
-    className={classNames('jkj-select', props.className)}
-  />
-));
 
-const getSearchTheme = theme => ({
+export type SingleValueType<OptionType> = OptionType | null | undefined;
+export interface iProps<OptionType> extends Props<OptionType> {
+  onSingleChange?: (
+    value: SingleValueType<OptionType>,
+    actionMeta: ActionMeta,
+  ) => void;
+}
+
+function Select<OptionType>(props: Props<OptionType>): JSX.Element {
+  const onChange = (
+    value: ValueType<OptionType>,
+    actionMeta: ActionMeta,
+  ): void => {
+    // react-select types are 🗑 when it comes to differentiating multi and single Select's..
+    // This helps.
+    if (props.onSingleChange && !props.isMulti) {
+      props.onSingleChange(value as SingleValueType<OptionType>);
+    }
+
+    if (props.onChange) {
+      props.onChange(value, actionMeta);
+    }
+  };
+
+  return (
+    <ReactSelect
+      placeholder="..."
+      classNamePrefix="jkj-select"
+      theme={getSearchTheme}
+      styles={customStyles}
+      {...props}
+      onChange={onChange}
+      className={classNames('jkj-select', props.className)}
+    />
+  );
+}
+
+const getSearchTheme = (theme: Theme): Theme => ({
   ...theme,
   colors: {
     ...theme.colors,
@@ -32,7 +62,7 @@ const getSearchTheme = theme => ({
   },
 });
 
-const customStyles = {
+const customStyles: Partial<Styles> = {
   container: provided => ({
     ...provided,
     marginTop: 0,
