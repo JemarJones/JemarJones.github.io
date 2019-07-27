@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo } from 'react';
+import React, { useCallback, useMemo, ReactElement } from 'react';
 import uniqBy from 'lodash.uniqby';
 
 import Select from './Select';
@@ -15,26 +15,26 @@ const HomeHeader: React.FC<iProps> = ({
   projects,
   selectedSkill,
   onSelectedSkillChange,
-}) => {
+}): ReactElement | null => {
   const options: Skill[] = useMemo(
-    () => {
+    (): Skill[] => {
       // TODO: #16 - Maybe sort this by most occurrences in projects?
       const skills = projects
         // Get the list of skills from each project
-        .map(p => p.skills)
+        .map((p: Project): Skill[] => p.skills)
         .flat();
       skills.unshift(GENERIC_SKILL);
-      return uniqBy(skills, (skill: Skill) => skill.name);
+      return uniqBy(skills, (skill: Skill): string => skill.name);
     },
     [projects],
   );
 
-  const getSkillText = useCallback((skill: Skill) => {
+  const getSkillText = useCallback((skill: Skill): string => {
     return skill.name;
   }, []);
 
   const handleSelectedSkillChange = useCallback(
-    (skill: Skill | undefined | null) => {
+    (skill: Skill | undefined | null): void => {
       // We've either not selected a skill yet, or we have.
       // No need for null in this case.
       onSelectedSkillChange(skill || undefined);

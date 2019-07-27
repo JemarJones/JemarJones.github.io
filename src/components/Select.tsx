@@ -1,4 +1,9 @@
-import React, { useCallback, useMemo } from 'react';
+import React, {
+  useCallback,
+  useMemo,
+  ReactElement,
+  CSSProperties,
+} from 'react';
 import ReactSelect from 'react-select';
 import { Props } from 'react-select/lib/Select';
 import { Theme, ValueType, ActionMeta } from 'react-select/lib/types';
@@ -23,7 +28,7 @@ const Select = <OptionType extends {}>({
   onSingleChange,
   onChange,
   ...props
-}: iProps<OptionType>) => {
+}: iProps<OptionType>): ReactElement | null => {
   const getSearchTheme = useCallback(
     (theme: Theme): Theme => ({
       ...theme,
@@ -44,33 +49,39 @@ const Select = <OptionType extends {}>({
   );
 
   const customStyles: Partial<Styles> = useMemo(
-    () => ({
-      container: provided => ({
+    (): Partial<Styles> => ({
+      container: (provided: CSSProperties): CSSProperties => ({
         ...provided,
         marginTop: 0,
         marginLeft: 20,
         marginRight: 20,
         width: '100%',
       }),
-      singleValue: (provided, state) => ({
+      singleValue: (provided: CSSProperties, state: any): CSSProperties => ({
         ...provided,
         color: state.hasValue ? state.theme.colors.primary : provided.color,
       }),
-      input: (provided, state) => ({
+      input: (provided: CSSProperties, state: any): CSSProperties => ({
         ...provided,
         color: state.theme.colors.primary,
       }),
-      indicatorSeparator: (provided, state) => ({
+      indicatorSeparator: (
+        provided: CSSProperties,
+        state: any,
+      ): CSSProperties => ({
         ...provided,
         backgroundColor: state.isFocused
           ? state.theme.colors.primary
           : provided.backgroundColor,
       }),
-      dropdownIndicator: (provided, state) => ({
+      dropdownIndicator: (
+        provided: CSSProperties,
+        state: any,
+      ): CSSProperties => ({
         ...provided,
         color: state.isFocused ? state.theme.colors.primary : provided.color,
       }),
-      option: (provided, state) => ({
+      option: (provided: CSSProperties, state: any): CSSProperties => ({
         ...provided,
         color: state.theme.primary,
         backgroundColor: state.isSelected
