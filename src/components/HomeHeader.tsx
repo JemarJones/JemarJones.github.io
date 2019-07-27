@@ -1,5 +1,4 @@
-import React from 'react';
-import memoize from 'memoize-one';
+import React, { useCallback, useMemo } from 'react';
 import uniqBy from 'lodash.uniqby';
 
 import Select from './Select';
@@ -12,9 +11,13 @@ interface iProps {
   selectedSkill?: Skill;
 }
 
-class HomeHeader extends React.PureComponent<iProps> {
-  getOptions = memoize(
-    (projects: Project[]): Skill[] => {
+const HomeHeader: React.FC<iProps> = ({
+  projects,
+  selectedSkill,
+  onSelectedSkillChange,
+}) => {
+  const options: Skill[] = useMemo(
+    () => {
       // TODO: #16 - Maybe sort this by most occurrences in projects?
       const skills = projects
         // Get the list of skills from each project
@@ -23,41 +26,40 @@ class HomeHeader extends React.PureComponent<iProps> {
       skills.unshift(GENERIC_SKILL);
       return uniqBy(skills, (skill: Skill) => skill.name);
     },
+    [projects],
   );
 
-  getSkillText = (skill: Skill) => {
+  const getSkillText = useCallback((skill: Skill) => {
     return skill.name;
-  };
+  }, []);
 
-  onSelectedSkillChange = (skill: Skill | undefined | null) => {
-    // We've either not selected a skill yet, or we have,
-    // No need for null in this case.
-    this.props.onSelectedSkillChange(skill || undefined);
-  };
+  const handleSelectedSkillChange = useCallback(
+    (skill: Skill | undefined | null) => {
+      // We've either not selected a skill yet, or we have.
+      // No need for null in this case.
+      onSelectedSkillChange(skill || undefined);
+    },
+    [onSelectedSkillChange],
+  );
 
-  render() {
-    const { projects, selectedSkill } = this.props;
-    const options: Skill[] = this.getOptions(projects);
-
-    return (
-      <header className="home__header">
-        <div className="container">
-          <span className="home__header__name">Jemar knows</span>
-          <div className="home__header__search__control-container">
-            <Select
-              options={options}
-              value={selectedSkill || options[0]}
-              getOptionLabel={this.getSkillText}
-              getOptionValue={this.getSkillText}
-              onSingleChange={this.onSelectedSkillChange}
-              placeholder={GENERIC_SKILL.name}
-            />
-            <span>.</span>
-          </div>
+  return (
+    <header className="home__header">
+      <div className="container">
+        <span className="home__header__name">Jemar knows</span>
+        <div className="home__header__search__control-container">
+          <Select
+            options={options}
+            value={selectedSkill || options[0]}
+            getOptionLabel={getSkillText}
+            getOptionValue={getSkillText}
+            onSingleChange={handleSelectedSkillChange}
+            placeholder={GENERIC_SKILL.name}
+          />
+          <span>.</span>
         </div>
-      </header>
-    );
-  }
-}
+      </div>
+    </header>
+  );
+};
 
 export default HomeHeader;
