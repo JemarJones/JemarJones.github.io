@@ -18,13 +18,36 @@ const HomeHeader: React.FC<iProps> = ({
 }): ReactElement | null => {
   const options: Skill[] = useMemo(
     (): Skill[] => {
-      // TODO: #16 - Maybe sort this by most occurrences in projects?
-      const skills = projects
-        // Get the list of skills from each project
+      // Get the list of skills from each project
+      let skills: Skill[] = projects
         .map((p: Project): Skill[] => p.skills)
         .flat();
+
+      // Create a map of skill -> number of occurances,
+      // to be used for sorting skills by frequency
+      interface SkillFrequencyMap {
+        [skillName: string]: number;
+      }
+      const skillFreqMap: SkillFrequencyMap = skills.reduce(
+        (skillFreqMap: SkillFrequencyMap, skill: Skill): SkillFrequencyMap => {
+          skillFreqMap[skill.name] = (skillFreqMap[skill.name] || 0) + 1;
+          return skillFreqMap;
+        },
+        {}
+      );
+
+      // Dedupe the list of skills
+      skills = uniqBy(skills, (skill: Skill): string => skill.name);
+      // Sort by frequency of skill occurance
+      skills.sort(
+        (a: Skill, b: Skill): number => {
+          return skillFreqMap[b.name] - skillFreqMap[a.name];
+        }
+      );
+      // and finally, add the generic skill to the beginning
       skills.unshift(GENERIC_SKILL);
-      return uniqBy(skills, (skill: Skill): string => skill.name);
+
+      return skills;
     },
     [projects]
   );
