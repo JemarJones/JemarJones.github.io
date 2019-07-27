@@ -26,7 +26,7 @@ const HomeHeader: React.FC<iProps> = ({
       skills.unshift(GENERIC_SKILL);
       return uniqBy(skills, (skill: Skill): string => skill.name);
     },
-    [projects],
+    [projects]
   );
 
   const getSkillText = useCallback((skill: Skill): string => {
@@ -39,7 +39,7 @@ const HomeHeader: React.FC<iProps> = ({
       // No need for null in this case.
       onSelectedSkillChange(skill || undefined);
     },
-    [onSelectedSkillChange],
+    [onSelectedSkillChange]
   );
 
   return (

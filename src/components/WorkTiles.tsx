@@ -27,7 +27,7 @@ const WorkTiles: React.FC<iProps> = ({ workList }): ReactElement | null => {
             item={item}
             onTileSelect={handleTileSelect}
           />
-        ),
+        )
       )}
     </div>
   );
@@ -53,7 +53,7 @@ const WorkTile: React.FC<iWorkTileProps> = ({
         onTileSelect(item);
       }
     },
-    [item, onTileSelect],
+    [item, onTileSelect]
   );
 
   return (

@@ -18,7 +18,7 @@ export type SingleValueType<OptionType> = OptionType | null | undefined;
 export interface iProps<OptionType> extends Props<OptionType> {
   onSingleChange?: (
     value: SingleValueType<OptionType>,
-    actionMeta: ActionMeta,
+    actionMeta: ActionMeta
   ) => void;
 }
 
@@ -45,7 +45,7 @@ const Select = <OptionType extends {}>({
         controlHeight: 20,
       },
     }),
-    [],
+    []
   );
 
   const customStyles: Partial<Styles> = useMemo(
@@ -67,7 +67,7 @@ const Select = <OptionType extends {}>({
       }),
       indicatorSeparator: (
         provided: CSSProperties,
-        state: any,
+        state: any
       ): CSSProperties => ({
         ...provided,
         backgroundColor: state.isFocused
@@ -76,7 +76,7 @@ const Select = <OptionType extends {}>({
       }),
       dropdownIndicator: (
         provided: CSSProperties,
-        state: any,
+        state: any
       ): CSSProperties => ({
         ...provided,
         color: state.isFocused ? state.theme.colors.primary : provided.color,
@@ -90,7 +90,7 @@ const Select = <OptionType extends {}>({
         fontSize: '3rem',
       }),
     }),
-    [],
+    []
   );
 
   const handleChange = useCallback(
@@ -105,7 +105,7 @@ const Select = <OptionType extends {}>({
         onChange(value, actionMeta);
       }
     },
-    [onChange, onSingleChange, props.isMulti],
+    [onChange, onSingleChange, props.isMulti]
   );
 
   return (

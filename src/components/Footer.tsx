@@ -28,7 +28,7 @@ const Footer: React.FC<iProps> = ({ className }): ReactElement | null => {
                   <FontAwesomeIcon icon={item.icon} title={item.description} />
                 </a>
               </li>
-            ),
+            )
           )}
         </ul>
       </div>
