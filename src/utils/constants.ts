@@ -5,13 +5,14 @@ export interface Skill {
   link?: string;
 }
 
+export interface Collaborator {
+  name: string;
+  link: string;
+}
 export interface Project {
   name: string;
   image: string;
-  collaborators: {
-    name: string;
-    link: string;
-  }[];
+  collaborators: Collaborator[];
   skills: Skill[];
   desc: string;
   link: string;
