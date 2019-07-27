@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, ReactElement } from 'react';
 import { wrapGrid } from 'animate-css-grid';
 import { Project } from '../utils/constants';
 
@@ -6,51 +6,67 @@ interface iProps {
   workList: Project[];
 }
 
-class WorkTiles extends React.PureComponent<iProps> {
-  tileGrid: React.RefObject<HTMLDivElement>;
-
-  constructor(props: iProps) {
-    super(props);
-
-    this.tileGrid = React.createRef();
-  }
-
-  componentDidMount() {
-    if (this.tileGrid.current) {
-      wrapGrid(this.tileGrid.current);
-    } else {
-      console.error('HELP: tileGrid not initialized in time!!');
+const WorkTiles: React.FC<iProps> = ({ workList }): ReactElement | null => {
+  const wrapGripRef = useCallback((node: HTMLDivElement | null): void => {
+    if (node) {
+      // FIXME #15: This doesn't seem to be working??
+      wrapGrid(node);
     }
-  }
+  }, []);
 
-  handleTileSelect = (item: Project) => {
-    console.log('Implement work tile select', item);
-  };
+  const handleTileSelect = useCallback((item: Project): void => {
+    console.warn('TODO: Implement work tile select', item);
+  }, []);
 
-  handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>, item: Project) => {
-    if (e.keyCode === 13) {
-      this.handleTileSelect(item);
-    }
-  };
-
-  render() {
-    const { workList } = this.props;
-    return (
-      <div className="work-tiles" ref={this.tileGrid}>
-        {workList.map(item => (
-          <div
-            className="work-tiles__item"
+  return (
+    <div className="work-tiles" ref={wrapGripRef}>
+      {workList.map(
+        (item: Project): JSX.Element => (
+          <WorkTile
             key={item.name}
-            tabIndex={0}
-            onKeyDown={e => this.handleKeyDown(e, item)}
-            onClick={() => this.handleTileSelect(item)}
-          >
-            {item.name}
-          </div>
-        ))}
-      </div>
-    );
-  }
+            item={item}
+            onTileSelect={handleTileSelect}
+          />
+        ),
+      )}
+    </div>
+  );
+};
+
+interface iWorkTileProps {
+  item: Project;
+  onTileSelect: (item: Project) => void;
 }
+
+const WorkTile: React.FC<iWorkTileProps> = ({
+  item,
+  onTileSelect,
+}): ReactElement | null => {
+  const handleClick = useCallback((): void => onTileSelect(item), [
+    item,
+    onTileSelect,
+  ]);
+
+  const handleKeyDown = useCallback(
+    (e: React.KeyboardEvent<HTMLDivElement>): void => {
+      if (e.keyCode === 13) {
+        onTileSelect(item);
+      }
+    },
+    [item, onTileSelect],
+  );
+
+  return (
+    <div
+      className="work-tiles__item"
+      key={item.name}
+      tabIndex={0}
+      onKeyDown={handleKeyDown}
+      onClick={handleClick}
+    >
+      {item.name}
+    </div>
+  );
+};
 
 export default WorkTiles;
