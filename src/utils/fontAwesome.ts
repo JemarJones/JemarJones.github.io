@@ -8,7 +8,7 @@ import {
   faStackOverflow,
 } from '@fortawesome/free-brands-svg-icons';
 
-export const setupFontAwesome = () => {
+export const setupFontAwesome = (): void => {
   library.add(faGithub);
   library.add(faLinkedinIn);
   library.add(faInstagram);
@@ -17,3 +17,5 @@ export const setupFontAwesome = () => {
   library.add(faPhone);
   library.add(faStackOverflow);
 };
+
+export const resetFontAwesome = library.reset;

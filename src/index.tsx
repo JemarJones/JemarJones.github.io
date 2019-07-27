@@ -1,12 +1,24 @@
-import React from 'react';
+import React, { ReactElement, useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 
 import './styles/index.scss';
 import Home from './pages/Home';
-import { setupFontAwesome } from './utils/fontAwesome';
+import { setupFontAwesome, resetFontAwesome } from './utils/fontAwesome';
 
-setupFontAwesome();
+const App: React.FC = (): ReactElement | null => {
+  const [ready, setReady] = useState<boolean>(false);
 
-const App = () => <Home />;
+  useEffect((): (() => void) => {
+    setupFontAwesome();
+    setReady(true);
+
+    return (): void => {
+      resetFontAwesome();
+      setReady(false);
+    };
+  }, []);
+
+  return ready ? <Home /> : null;
+};
 
 ReactDOM.render(<App />, document.getElementById('root'));
