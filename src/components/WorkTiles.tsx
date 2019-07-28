@@ -59,7 +59,6 @@ const WorkTile: React.FC<iWorkTileProps> = ({
   return (
     <div
       className="work-tiles__item"
-      key={item.name}
       tabIndex={0}
       onKeyDown={handleKeyDown}
       onClick={handleClick}
