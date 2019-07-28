@@ -1,12 +1,21 @@
 import React, { useCallback, ReactElement } from 'react';
 import { wrapGrid } from 'animate-css-grid';
 import { Project } from '../utils/constants';
+import classNames from 'classnames';
 
-interface iProps {
-  workList: Project[];
+export interface SelectedProjectMapping {
+  [projectName: string]: boolean;
 }
 
-const WorkTiles: React.FC<iProps> = ({ workList }): ReactElement | null => {
+interface iProps {
+  projects: Project[];
+  selectedProjectMapping: SelectedProjectMapping;
+}
+
+const WorkTiles: React.FC<iProps> = ({
+  projects,
+  selectedProjectMapping,
+}): ReactElement | null => {
   const wrapGripRef = useCallback((node: HTMLDivElement | null): void => {
     if (node) {
       // FIXME #15: This doesn't seem to be working??
@@ -20,11 +29,12 @@ const WorkTiles: React.FC<iProps> = ({ workList }): ReactElement | null => {
 
   return (
     <div className="work-tiles" ref={wrapGripRef}>
-      {workList.map(
+      {projects.map(
         (item: Project): JSX.Element => (
           <WorkTile
             key={item.name}
             item={item}
+            show={selectedProjectMapping[item.name]}
             onTileSelect={handleTileSelect}
           />
         )
@@ -36,11 +46,13 @@ const WorkTiles: React.FC<iProps> = ({ workList }): ReactElement | null => {
 interface iWorkTileProps {
   item: Project;
   onTileSelect: (item: Project) => void;
+  show: boolean;
 }
 
 const WorkTile: React.FC<iWorkTileProps> = ({
   item,
   onTileSelect,
+  show,
 }): ReactElement | null => {
   const handleClick = useCallback((): void => onTileSelect(item), [
     item,
@@ -58,7 +70,9 @@ const WorkTile: React.FC<iWorkTileProps> = ({
 
   return (
     <div
-      className="work-tiles__item"
+      className={classNames('work-tiles__item', {
+        'work-tiles__item--hidden': !show,
+      })}
       tabIndex={0}
       onKeyDown={handleKeyDown}
       onClick={handleClick}

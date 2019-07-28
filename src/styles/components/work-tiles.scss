@@ -26,5 +26,9 @@
       @include box-shadow(false, true, true, false, 2);
       outline: initial;
     }
+
+    &--hidden {
+      display: none;
+    }
   }
 }
