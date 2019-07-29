@@ -18,7 +18,6 @@ const WorkTiles: React.FC<iProps> = ({
 }): ReactElement | null => {
   const wrapGripRef = useCallback((node: HTMLDivElement | null): void => {
     if (node) {
-      // FIXME #15: This doesn't seem to be working??
       wrapGrid(node);
     }
   }, []);
@@ -71,8 +70,10 @@ const WorkTile: React.FC<iWorkTileProps> = ({
   return (
     <div
       className={classNames('work-tiles__item', {
+        // For animate-css-grid to work, we have to hide elements rather than remove
         'work-tiles__item--hidden': !show,
       })}
+      aria-hidden={!show}
       tabIndex={0}
       onKeyDown={handleKeyDown}
       onClick={handleClick}

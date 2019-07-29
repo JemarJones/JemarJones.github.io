@@ -11,6 +11,7 @@
     @include inverted-colors;
     @include bottom-box-shadow;
     display: flex;
+    z-index: $z-index-medium;
     grid-area: header;
     align-items: center;
     font-size: 4rem;
@@ -48,6 +49,7 @@
   }
 
   &__footer {
+    z-index: $z-index-medium;
     grid-area: footer;
   }
 }
