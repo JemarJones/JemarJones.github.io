@@ -1,5 +1,4 @@
-import React, { useState, useMemo, ReactElement, useCallback } from 'react';
-import { wrapGrid } from 'animate-css-grid';
+import React, { useState, useMemo, ReactElement } from 'react';
 
 import HomeHeader from '../components/HomeHeader';
 import WorkTiles, { SelectedWorkItemMapping } from '../components/WorkTiles';
@@ -37,16 +36,8 @@ const Home: React.FC<iProps> = (): ReactElement | null => {
     [selectedSkill]
   );
 
-  const wrapGripRef = useCallback((node: HTMLDivElement | null): void => {
-    if (node) {
-      wrapGrid(node, {
-        easing: 'linear',
-      });
-    }
-  }, []);
-
   return (
-    <div className="home" ref={wrapGripRef}>
+    <div className="home">
       <HomeHeader
         workItems={WORK_ITEMS}
         onSelectedSkillChange={setSelectedSkill}
