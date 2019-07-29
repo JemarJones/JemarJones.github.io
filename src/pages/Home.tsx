@@ -1,39 +1,62 @@
-import React, { useState, useMemo, ReactElement } from 'react';
+import React, { useState, useMemo, ReactElement, useCallback } from 'react';
+import { wrapGrid } from 'animate-css-grid';
 
 import HomeHeader from '../components/HomeHeader';
-import WorkTiles from '../components/WorkTiles';
+import WorkTiles, { SelectedWorkItemMapping } from '../components/WorkTiles';
 import Footer from '../components/Footer';
 
-import { PROJECTS, Project, Skill, GENERIC_SKILL } from '../utils/constants';
+import { WORK_ITEMS, WorkItem, Skill, GENERIC_SKILL } from '../utils/constants';
 
 interface iProps {}
 
 const Home: React.FC<iProps> = (): ReactElement | null => {
   const [selectedSkill, setSelectedSkill] = useState<Skill | undefined>();
-  const filteredProjects = useMemo(
-    (): Project[] => {
-      return selectedSkill
-        ? PROJECTS.filter(
-            (project): boolean =>
-              selectedSkill.name === GENERIC_SKILL.name ||
-              project.skills.some(
-                (skill: Skill): boolean => skill.name === selectedSkill.name
-              )
-          )
-        : PROJECTS;
+
+  const selectedWorkItemMapping = useMemo(
+    (): SelectedWorkItemMapping => {
+      return WORK_ITEMS.reduce(
+        (
+          mapping: SelectedWorkItemMapping,
+          workItem: WorkItem
+        ): SelectedWorkItemMapping => {
+          const selected =
+            // When nothing is selected, we show everything
+            !selectedSkill ||
+            // When generic skill is selected, we show everything
+            selectedSkill.name === GENERIC_SKILL.name ||
+            // Otherwise, select matching work items
+            workItem.skills.some(
+              (skill: Skill): boolean => skill.name === selectedSkill.name
+            );
+          mapping[workItem.name] = selected;
+          return mapping;
+        },
+        {}
+      );
     },
     [selectedSkill]
   );
 
+  const wrapGripRef = useCallback((node: HTMLDivElement | null): void => {
+    if (node) {
+      wrapGrid(node, {
+        easing: 'linear',
+      });
+    }
+  }, []);
+
   return (
-    <div className="home">
+    <div className="home" ref={wrapGripRef}>
       <HomeHeader
-        projects={PROJECTS}
+        workItems={WORK_ITEMS}
         onSelectedSkillChange={setSelectedSkill}
         selectedSkill={selectedSkill}
       />
       <section className="home__main container">
-        <WorkTiles workList={filteredProjects} />
+        <WorkTiles
+          workItems={WORK_ITEMS}
+          selectedWorkItemMapping={selectedWorkItemMapping}
+        />
       </section>
       <Footer className="home__footer" />
     </div>
