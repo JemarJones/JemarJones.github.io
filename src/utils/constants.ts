@@ -1,4 +1,9 @@
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import webtunesBanner from '../assets/webtunes_banner.png';
+import survivalOfTheFittestBanner from '../assets/survival_fittest_banner.png';
+import jqueryFlipBanner from '../assets/jquery_flip_banner.png';
+import flashLearnBanner from '../assets/flash_learn_banner.png';
+import fontMeBanner from '../assets/font_me_banner.png';
 
 export interface Skill {
   name: string;
@@ -14,7 +19,7 @@ export interface WorkItem {
   image: string;
   collaborators: Collaborator[];
   skills: Skill[];
-  desc: string;
+  description: string;
   link: string;
 }
 
@@ -25,7 +30,7 @@ export const GENERIC_SKILL: Skill = {
 export const WORK_ITEMS: WorkItem[] = [
   {
     name: 'WebTunes',
-    image: './assets/webtunes_logo.png',
+    image: webtunesBanner,
     collaborators: [
       {
         name: 'Nikolai Savas',
@@ -70,12 +75,12 @@ export const WORK_ITEMS: WorkItem[] = [
         link: 'https://www.w3.org/Style/CSS/',
       },
     ],
-    desc: 'An online service that lets you share your musical tastes.',
+    description: 'An online service that lets you share your musical tastes.',
     link: 'http://webtunes.jkjones.me',
   },
   {
     name: 'Survival of the Fittest',
-    image: './assets/survival.png',
+    image: survivalOfTheFittestBanner,
     collaborators: [
       {
         name: 'Vicky Bilbily',
@@ -116,13 +121,13 @@ export const WORK_ITEMS: WorkItem[] = [
         link: 'https://www.w3.org/Style/CSS/',
       },
     ],
-    desc:
+    description:
       "An interesting multiplayer take on the heavily studied cellular automaton, Conway's Game of Life.",
     link: 'http://survival.jkjones.me',
   },
   {
     name: 'jQuery Flip',
-    image: './assets/jquery-flip.png',
+    image: jqueryFlipBanner,
     collaborators: [
       {
         name: 'Nattawat Nonsung (Author)',
@@ -143,12 +148,13 @@ export const WORK_ITEMS: WorkItem[] = [
         link: 'https://jquery.com/',
       },
     ],
-    desc: 'A lightweight jQuery plugin to make 3D card flipping animation',
+    description:
+      'A lightweight jQuery plugin to make 3D card flipping animation',
     link: 'http://nnattawat.github.io/flip/',
   },
   {
     name: 'Flash Learn',
-    image: './assets/fl_animated.gif',
+    image: flashLearnBanner,
     collaborators: [
       {
         name: 'Vicky Bilbily',
@@ -177,12 +183,12 @@ export const WORK_ITEMS: WorkItem[] = [
         link: 'https://www.w3.org/Style/CSS/',
       },
     ],
-    desc: 'A crowdsourced flashcard platform.',
+    description: 'A crowdsourced flashcard platform.',
     link: 'http://flashlearn.jkjones.me',
   },
   {
     name: 'FontMe',
-    image: './assets/fmPromoMarq.png',
+    image: fontMeBanner,
     collaborators: [],
     skills: [
       {
@@ -202,7 +208,7 @@ export const WORK_ITEMS: WorkItem[] = [
         link: 'https://www.w3.org/Style/CSS/',
       },
     ],
-    desc:
+    description:
       'An extension that helps you discover what Font is being used on a given HTML element.',
     link:
       'https://chrome.google.com/webstore/detail/fontme/jmflbifhkmjblfhmkpfdflfhphbinfjl',

@@ -68,7 +68,7 @@ const WorkTile: React.FC<iWorkTileProps> = ({
   );
 
   return (
-    <div
+    <article
       className={classNames('work-tiles__item', {
         // For animate-css-grid to work, we have to hide elements rather than remove
         'work-tiles__item--hidden': !show,
@@ -78,8 +78,16 @@ const WorkTile: React.FC<iWorkTileProps> = ({
       onKeyDown={handleKeyDown}
       onClick={handleClick}
     >
-      {workItem.name}
-    </div>
+      {/* Through experimentation it seems that animate-css-grid
+        only works if the item has one child ¯\_(ツ)_/¯ */}
+      <div className="work-tiles__item__child">
+        <div className="work-tiles__item__child__text-content">
+          <h1>{workItem.name}</h1>
+          <p>{workItem.description}</p>
+        </div>
+        <img src={workItem.image} alt={workItem.name} />
+      </div>
+    </article>
   );
 };
 
