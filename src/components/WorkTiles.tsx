@@ -1,20 +1,20 @@
 import React, { useCallback, ReactElement } from 'react';
 import { wrapGrid } from 'animate-css-grid';
-import { Project } from '../utils/constants';
+import { WorkItem } from '../utils/constants';
 import classNames from 'classnames';
 
-export interface SelectedProjectMapping {
-  [projectName: string]: boolean;
+export interface SelectedWorkItemMapping {
+  [workItemName: string]: boolean;
 }
 
 interface iProps {
-  projects: Project[];
-  selectedProjectMapping: SelectedProjectMapping;
+  workItems: WorkItem[];
+  selectedWorkItemMapping: SelectedWorkItemMapping;
 }
 
 const WorkTiles: React.FC<iProps> = ({
-  projects,
-  selectedProjectMapping,
+  workItems,
+  selectedWorkItemMapping,
 }): ReactElement | null => {
   const wrapGripRef = useCallback((node: HTMLDivElement | null): void => {
     if (node) {
@@ -22,19 +22,19 @@ const WorkTiles: React.FC<iProps> = ({
     }
   }, []);
 
-  const handleTileSelect = useCallback((item: Project): void => {
-    console.warn('TODO: Implement work tile select', item);
+  const handleWorkItemSelect = useCallback((workItem: WorkItem): void => {
+    console.warn('TODO: Implement work tile select', workItem);
   }, []);
 
   return (
     <div className="work-tiles" ref={wrapGripRef}>
-      {projects.map(
-        (item: Project): JSX.Element => (
+      {workItems.map(
+        (workItem: WorkItem): JSX.Element => (
           <WorkTile
-            key={item.name}
-            item={item}
-            show={selectedProjectMapping[item.name]}
-            onTileSelect={handleTileSelect}
+            key={workItem.name}
+            workItem={workItem}
+            show={selectedWorkItemMapping[workItem.name]}
+            onWorkItemSelect={handleWorkItemSelect}
           />
         )
       )}
@@ -43,28 +43,28 @@ const WorkTiles: React.FC<iProps> = ({
 };
 
 interface iWorkTileProps {
-  item: Project;
-  onTileSelect: (item: Project) => void;
+  workItem: WorkItem;
+  onWorkItemSelect: (workItem: WorkItem) => void;
   show: boolean;
 }
 
 const WorkTile: React.FC<iWorkTileProps> = ({
-  item,
-  onTileSelect,
+  workItem,
+  onWorkItemSelect,
   show,
 }): ReactElement | null => {
-  const handleClick = useCallback((): void => onTileSelect(item), [
-    item,
-    onTileSelect,
+  const handleClick = useCallback((): void => onWorkItemSelect(workItem), [
+    workItem,
+    onWorkItemSelect,
   ]);
 
   const handleKeyDown = useCallback(
     (e: React.KeyboardEvent<HTMLDivElement>): void => {
       if (e.keyCode === 13) {
-        onTileSelect(item);
+        onWorkItemSelect(workItem);
       }
     },
-    [item, onTileSelect]
+    [workItem, onWorkItemSelect]
   );
 
   return (
@@ -78,7 +78,7 @@ const WorkTile: React.FC<iWorkTileProps> = ({
       onKeyDown={handleKeyDown}
       onClick={handleClick}
     >
-      {item.name}
+      {workItem.name}
     </div>
   );
 };

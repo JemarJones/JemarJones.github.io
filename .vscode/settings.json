@@ -3,7 +3,5 @@
         // .css files are just compiled files here
         "src/styles/**/*.css": true
     },
-    // My global settings now have tslint, so now i need this until i maybe make this project TS?
     "eslint.enable": true,
-    "tslint.enable": false,
 }

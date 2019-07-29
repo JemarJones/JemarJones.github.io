@@ -9,7 +9,7 @@ export interface Collaborator {
   name: string;
   link: string;
 }
-export interface Project {
+export interface WorkItem {
   name: string;
   image: string;
   collaborators: Collaborator[];
@@ -22,7 +22,7 @@ export const GENERIC_SKILL: Skill = {
   name: 'some things',
 };
 
-export const PROJECTS: Project[] = [
+export const WORK_ITEMS: WorkItem[] = [
   {
     name: 'WebTunes',
     image: './assets/webtunes_logo.png',

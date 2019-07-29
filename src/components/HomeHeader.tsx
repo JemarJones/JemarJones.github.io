@@ -3,24 +3,24 @@ import uniqBy from 'lodash.uniqby';
 
 import Select from './Select';
 
-import { GENERIC_SKILL, Project, Skill } from '../utils/constants';
+import { GENERIC_SKILL, WorkItem, Skill } from '../utils/constants';
 
 interface iProps {
-  projects: Project[];
+  workItems: WorkItem[];
   onSelectedSkillChange: (skill: Skill | undefined) => void;
   selectedSkill?: Skill;
 }
 
 const HomeHeader: React.FC<iProps> = ({
-  projects,
+  workItems,
   selectedSkill,
   onSelectedSkillChange,
 }): ReactElement | null => {
   const options: Skill[] = useMemo(
     (): Skill[] => {
-      // Get the list of skills from each project
-      let skills: Skill[] = projects
-        .map((p: Project): Skill[] => p.skills)
+      // Get the list of skills from each work item
+      let skills: Skill[] = workItems
+        .map((p: WorkItem): Skill[] => p.skills)
         .flat();
 
       // Create a map of skill -> number of occurances,
@@ -49,7 +49,7 @@ const HomeHeader: React.FC<iProps> = ({
 
       return skills;
     },
-    [projects]
+    [workItems]
   );
 
   const getSkillText = useCallback((skill: Skill): string => {
