@@ -62,13 +62,12 @@
       position: fixed;
       z-index: $z-index-high;
       top: 25%;
-      left: 50%;
+      left: 10%;
       // I'd love to set max width/heights for this guy
       // But it proves difficult to do that and still center
       // while being position fixed :/
       width: 80%;
       height: 50%;
-      margin-left: calc(-40% - #{$primary-spacing});
       padding: $primary-spacing/4;
     }
 
@@ -80,13 +79,17 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-
       max-width: 700px;
-      height: 100%;
-      margin: 0 auto;
+      // Set height to 100% - the margin top (aka $primary-spacing*1.5).
+      height: calc(100% - #{$primary-spacing*1.5});
+      margin: auto;
+      margin-top: $primary-spacing*1.5;
+      overflow-y: scroll;
+
 
       h1 {
-        margin: $primary-spacing/2 0;
+        margin-top: 0;
+        margin-bottom: $primary-spacing/2;
       }
 
       &__meta-links {
@@ -102,12 +105,11 @@
       &__close-btn {
         @include focus-hover-2;
         position: absolute;
-        top: $primary-spacing/1.33;
-        right: $primary-spacing/1.33;
+        top: $primary-spacing/2;
+        right: $primary-spacing/2;
         border: 0;
         background: none;
         color: $dark-color;
-        font-size: 1.5rem;
         cursor: pointer;
       }
     }
