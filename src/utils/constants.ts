@@ -7,24 +7,27 @@ import fontMeBanner from '../assets/font_me_banner.png';
 
 export interface Skill {
   name: string;
-  link?: string;
+  link: string;
 }
 
 export interface Collaborator {
   name: string;
   link: string;
 }
+
 export interface WorkItem {
   name: string;
   image: string;
-  collaborators: Collaborator[];
+  collaborators?: Collaborator[];
   skills: Skill[];
   description: string;
+  longDescription: string;
   link: string;
 }
 
 export const GENERIC_SKILL: Skill = {
   name: 'some things',
+  link: '#',
 };
 
 export const WORK_ITEMS: WorkItem[] = [
@@ -33,11 +36,11 @@ export const WORK_ITEMS: WorkItem[] = [
     image: webtunesBanner,
     collaborators: [
       {
-        name: 'Nikolai Savas',
+        name: 'Niko Savas',
         link: 'http://savas.ca/',
       },
       {
-        name: 'Samraj Nalwa',
+        name: 'Sam Nalwa',
         link: 'http://nalwa.ca',
       },
     ],
@@ -76,6 +79,8 @@ export const WORK_ITEMS: WorkItem[] = [
       },
     ],
     description: 'An online service that lets you share your musical tastes.',
+    longDescription:
+      'bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem ',
     link: 'http://webtunes.jkjones.me',
   },
   {
@@ -123,6 +128,8 @@ export const WORK_ITEMS: WorkItem[] = [
     ],
     description:
       "An interesting multiplayer take on the heavily studied cellular automaton, Conway's Game of Life.",
+    longDescription:
+      'bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem ',
     link: 'http://survival.jkjones.me',
   },
   {
@@ -130,7 +137,7 @@ export const WORK_ITEMS: WorkItem[] = [
     image: jqueryFlipBanner,
     collaborators: [
       {
-        name: 'Nattawat Nonsung (Author)',
+        name: 'Nattawat Nonsung',
         link: 'https://github.com/nnattawat',
       },
       {
@@ -150,6 +157,8 @@ export const WORK_ITEMS: WorkItem[] = [
     ],
     description:
       'A lightweight jQuery plugin to make 3D card flipping animation',
+    longDescription:
+      'bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem ',
     link: 'http://nnattawat.github.io/flip/',
   },
   {
@@ -184,12 +193,13 @@ export const WORK_ITEMS: WorkItem[] = [
       },
     ],
     description: 'A crowdsourced flashcard platform.',
+    longDescription:
+      'bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem ',
     link: 'http://flashlearn.jkjones.me',
   },
   {
     name: 'FontMe',
     image: fontMeBanner,
-    collaborators: [],
     skills: [
       {
         name: 'JavaScript',
@@ -210,6 +220,8 @@ export const WORK_ITEMS: WorkItem[] = [
     ],
     description:
       'An extension that helps you discover what Font is being used on a given HTML element.',
+    longDescription:
+      'bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem ',
     link:
       'https://chrome.google.com/webstore/detail/fontme/jmflbifhkmjblfhmkpfdflfhphbinfjl',
   },
@@ -268,3 +280,9 @@ export const SOCIAL_INFO: SocialMediaItem[] = [
     icon: 'phone',
   },
 ];
+
+// Add as needed
+export enum Key {
+  ENTER = 'Enter',
+  ESCAPE = 'Escape',
+}

@@ -6,12 +6,12 @@ $mobile-tile-length: 275px;
 $desktop-tile-length: 230px;
 
 // Colors: https://coolors.co/fafafa-cecfc7-f9fbf2-f9efe3-f4faff
-$primary-color: #f4faff;
-$secondary-color: #555b6e;
-$accent-color: #f9efe3;
+$light-color: #f4faff;
+$dark-color: #555b6e;
+$shaded-dark-color: rgba($dark-color, 0.8);
 $white: #fff;
 $black: #000;
-$border-color: rgba($secondary-color, 0.2);
+$border-color: rgba($dark-color, 0.2);
 
 // Other
 $font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;

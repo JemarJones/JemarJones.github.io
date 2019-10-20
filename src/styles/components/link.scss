@@ -1,0 +1,12 @@
+.link {
+  @include focus-hover-2;
+  display: flex;
+  align-items: baseline;
+  color: $dark-color;
+  text-decoration: none;
+
+  &__icon {
+    padding-left: $primary-spacing/4;
+    font-size: 0.8rem;
+  }
+}

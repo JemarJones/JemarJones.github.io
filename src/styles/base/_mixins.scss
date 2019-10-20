@@ -20,8 +20,8 @@
 }
 
 @mixin inverted-colors {
-  background-color: $secondary-color;
-  color: $primary-color;
+  background-color: $dark-color;
+  color: $light-color;
 }
 
 @mixin box-shadow($top, $right, $bottom, $left, $multiplier: 1) {
@@ -63,4 +63,17 @@
     filter: drop-shadow(6px 6px 2px rgba($black, 0.5));
     outline: none;
   }
+}
+
+@mixin focus-hover-2 {
+  &:hover,
+  &:focus,
+  &[class$='--is-focused'] {
+    color: $shaded-dark-color;
+  }
+}
+
+@mixin rounded-border-1 {
+  border: 2px solid;
+  border-radius: 4px;
 }

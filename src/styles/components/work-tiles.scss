@@ -15,6 +15,7 @@
 
   &__item {
     @include box-shadow(false, true, true, false);
+    @include rounded-border-1;
     height: $mobile-tile-length;
     padding: $primary-spacing;
     transition: box-shadow 0.2s ease-in-out;
@@ -32,14 +33,14 @@
       display: none;
     }
 
-    &__child {
+    &--collapsed &__child {
       display: flex;
       flex-direction: column;
       width: 100%;
       height: 100%;
 
       &__text-content {
-        flex: 2;
+        flex: 1;
       }
 
       h1 {
@@ -47,11 +48,68 @@
       }
 
       img {
-        flex: 2;
+        flex: 1;
         max-width: 100%;
         max-height: 50%;
       }
     }
 
+    &--expanding {
+      z-index: $z-index-high;
+    }
+
+    &--selected {
+      position: fixed;
+      z-index: $z-index-high;
+      top: 25%;
+      left: 50%;
+      // I'd love to set max width/heights for this guy
+      // But it proves difficult to do that and still center
+      // while being position fixed :/
+      width: 80%;
+      height: 50%;
+      margin-left: calc(-40% - #{$primary-spacing});
+      padding: $primary-spacing/4;
+    }
+
+    &--selected.work-tiles__item--expanding &__child {
+      display: none;
+    }
+
+    &--selected &__child {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      max-width: 700px;
+      height: 100%;
+      margin: 0 auto;
+
+      h1 {
+        margin: $primary-spacing/2 0;
+      }
+
+      &__meta-links {
+        display: flex;
+        flex-direction: column;
+      }
+
+      img {
+        max-height: 25%;
+        margin-top: $primary-spacing/2;
+      }
+
+      &__close-btn {
+        @include focus-hover-2;
+        position: absolute;
+        top: $primary-spacing/1.33;
+        right: $primary-spacing/1.33;
+        border: 0;
+        background: none;
+        color: $dark-color;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+    }
   }
 }
