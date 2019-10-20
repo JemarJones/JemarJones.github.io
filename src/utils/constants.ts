@@ -1,3 +1,5 @@
+import { dedent } from './';
+
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import webtunesBanner from '../assets/webtunes_banner.png';
 import survivalOfTheFittestBanner from '../assets/survival_fittest_banner.png';
@@ -79,8 +81,13 @@ export const WORK_ITEMS: WorkItem[] = [
       },
     ],
     description: 'An online service that lets you share your musical tastes.',
-    longDescription:
-      'bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem ',
+    longDescription: dedent(
+      `bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum
+       bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum
+       bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum
+       bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum
+       bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum`
+    ),
     link: 'http://webtunes.jkjones.me',
   },
   {
@@ -128,8 +135,13 @@ export const WORK_ITEMS: WorkItem[] = [
     ],
     description:
       "An interesting multiplayer take on the heavily studied cellular automaton, Conway's Game of Life.",
-    longDescription:
-      'bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem ',
+    longDescription: dedent(
+      `bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum
+       bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum
+       bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum
+       bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum
+       bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum`
+    ),
     link: 'http://survival.jkjones.me',
   },
   {
@@ -157,8 +169,13 @@ export const WORK_ITEMS: WorkItem[] = [
     ],
     description:
       'A lightweight jQuery plugin to make 3D card flipping animation',
-    longDescription:
-      'bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem ',
+    longDescription: dedent(
+      `bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum
+       bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum
+       bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum
+       bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum
+       bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum`
+    ),
     link: 'http://nnattawat.github.io/flip/',
   },
   {
@@ -193,8 +210,13 @@ export const WORK_ITEMS: WorkItem[] = [
       },
     ],
     description: 'A crowdsourced flashcard platform.',
-    longDescription:
-      'bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem ',
+    longDescription: dedent(
+      `bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum
+       bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum
+       bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum
+       bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum
+       bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum`
+    ),
     link: 'http://flashlearn.jkjones.me',
   },
   {
@@ -220,8 +242,13 @@ export const WORK_ITEMS: WorkItem[] = [
     ],
     description:
       'An extension that helps you discover what Font is being used on a given HTML element.',
-    longDescription:
-      'bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum sit amet eu lorem ',
+    longDescription: dedent(
+      `bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum
+       bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum
+       bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum
+       bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum
+       bibendum sit amet eu lorem bibendum sit amet eu lorem bibendum`
+    ),
     link:
       'https://chrome.google.com/webstore/detail/fontme/jmflbifhkmjblfhmkpfdflfhphbinfjl',
   },
@@ -280,9 +307,3 @@ export const SOCIAL_INFO: SocialMediaItem[] = [
     icon: 'phone',
   },
 ];
-
-// Add as needed
-export enum Key {
-  ENTER = 'Enter',
-  ESCAPE = 'Escape',
-}

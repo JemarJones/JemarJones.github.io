@@ -14,7 +14,8 @@ import ExternalReferenceList from './ExternalReferenceList';
 import Link from './Link';
 
 import useOnClickOutside from '../hooks/useOnClickOutside';
-import { WorkItem, Key } from '../utils/constants';
+import { Key } from '../utils';
+import { WorkItem } from '../utils/constants';
 
 export interface SelectedWorkItemMapping {
   [workItemName: string]: boolean;
