@@ -102,6 +102,10 @@
         margin-top: $primary-spacing/2;
       }
 
+      p {
+        margin: $primary-spacing/1.25 $primary-spacing;
+      }
+
       &__close-btn {
         @include focus-hover-2;
         position: absolute;

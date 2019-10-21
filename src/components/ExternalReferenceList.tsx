@@ -21,16 +21,20 @@ const ExternalReferenceList: React.FC<iExternalReferenceListProps> = ({
       <ul>
         {externalReferences.map(
           (externalReference: ExternalReference, i: number): JSX.Element => (
-            <li key={externalReference.name}>
+            <React.Fragment key={externalReference.name}>
               {/* For last element in multi element lists, add an 'and'. */}
               {i === externalReferences.length - 1 && i !== 0 ? (
                 <span className="external-reference-list__and">and</span>
               ) : null}
-              <Link to={externalReference.link}>{externalReference.name}</Link>
-              {/* For every element other than the last one, add a ','.
+              <li>
+                <Link to={externalReference.link}>
+                  {externalReference.name}
+                </Link>
+                {/* For every element other than the last one, add a ','.
                 Add a '. for the last element. */}
-              {i !== externalReferences.length - 1 ? ',' : '.'}
-            </li>
+                {i !== externalReferences.length - 1 ? ',' : '.'}
+              </li>
+            </React.Fragment>
           )
         )}
       </ul>
