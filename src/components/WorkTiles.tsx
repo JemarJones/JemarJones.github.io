@@ -178,6 +178,7 @@ const WorkTile: React.ForwardRefExoticComponent<
               <button
                 className="work-tiles__item__child__close-btn"
                 onClick={handleClose}
+                title="Close"
               >
                 <FontAwesomeIcon icon="times" />
               </button>
@@ -199,7 +200,10 @@ const WorkTile: React.ForwardRefExoticComponent<
                 ) : null}
               </div>
               <img src={workItem.image} alt={workItem.name} />
-              <p>{workItem.longDescription}</p>
+              <p
+                // I promise it's not that dangerous.. there's no user input here :)
+                dangerouslySetInnerHTML={{ __html: workItem.longDescription }}
+              />
             </>
           )}
         </div>

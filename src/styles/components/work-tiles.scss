@@ -33,6 +33,10 @@
       display: none;
     }
 
+    &--collapsed {
+      cursor: pointer;
+    }
+
     &--collapsed &__child {
       display: flex;
       flex-direction: column;
