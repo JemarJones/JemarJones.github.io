@@ -14,7 +14,7 @@ import ExternalReferenceList from './ExternalReferenceList';
 import Link from './Link';
 
 import useOnClickOutside from '../hooks/useOnClickOutside';
-import { Key } from '../utils';
+import { KeyCode } from '../utils';
 import { WorkItem } from '../utils/constants';
 
 export interface SelectedWorkItemMapping {
@@ -127,9 +127,9 @@ const WorkTile: React.ForwardRefExoticComponent<
 
     const handleKeyDown = useCallback(
       (e: React.KeyboardEvent<HTMLDivElement>): void => {
-        if (e.key === Key.ENTER) {
+        if (e.key === KeyCode.ENTER) {
           handleWorkItemChosen();
-        } else if (e.key === Key.ESCAPE) {
+        } else if (e.key === KeyCode.ESCAPE) {
           handleClose();
         }
       },
