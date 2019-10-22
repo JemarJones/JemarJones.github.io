@@ -3,7 +3,8 @@ import uniqBy from 'lodash.uniqby';
 
 import Select from './Select';
 
-import { GENERIC_SKILL, WorkItem, Skill } from '../utils/constants';
+import { WorkItem, Skill } from '../utils/constants';
+import { GENERIC_SKILL } from '../data/workItems';
 
 interface iProps {
   workItems: WorkItem[];

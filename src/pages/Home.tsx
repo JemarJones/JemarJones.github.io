@@ -4,7 +4,8 @@ import HomeHeader from '../components/HomeHeader';
 import WorkTiles, { SelectedWorkItemMapping } from '../components/WorkTiles';
 import Footer from '../components/Footer';
 
-import { WORK_ITEMS, WorkItem, Skill, GENERIC_SKILL } from '../utils/constants';
+import { WorkItem, Skill } from '../utils/constants';
+import { WORK_ITEMS, GENERIC_SKILL } from '../data/workItems';
 
 interface iProps {}
 

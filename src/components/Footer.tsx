@@ -2,7 +2,8 @@ import React, { ReactElement } from 'react';
 import classNames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { SOCIAL_INFO, SocialMediaItem } from '../utils/constants';
+import { SocialMediaItem } from '../utils/constants';
+import { SOCIAL_INFO } from '../data/socialInfo';
 
 interface iProps {
   className?: string;
