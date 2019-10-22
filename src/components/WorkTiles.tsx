@@ -33,9 +33,30 @@ const WorkTiles: React.FC<iProps> = ({
   const [expandedItem, setExpandedItem] = useState<WorkItem | null>(null);
   const [isExpandingItem, setIsExpandingItem] = useState<boolean>(false);
 
+  // Used to work with the selected tile for animation purposes and
+  // to detect outside clicks.
   const selectedTileRef = useRef<HTMLElement>(null);
+
+  // Handle controlling what the expanded work item is.
+  const handleSettingWorkItem = useCallback((item: WorkItem | null): void => {
+    setIsExpandingItem(Boolean(item));
+    setExpandedItem(item);
+  }, []);
+
+  const handleOutsideClick = useCallback(
+    (): void => {
+      handleSettingWorkItem(null);
+    },
+    [handleSettingWorkItem]
+  );
+  useOnClickOutside(selectedTileRef, handleOutsideClick);
+
+  // Animation handling
   const onGridAnimationEnd = useCallback(
     (animatedChildren: HTMLElement[]): void => {
+      // Here we determine whether the currently selected item has just finished
+      // animating. This should mean that it has finished explanding. We can
+      // set that value in state for use by the work tile itself for styling purposes.
       if (selectedTileRef.current) {
         const selectedTileFinishedAnimating = animatedChildren.some(
           (el): boolean => el === selectedTileRef.current
@@ -56,19 +77,6 @@ const WorkTiles: React.FC<iProps> = ({
     [onGridAnimationEnd]
   );
 
-  const handleSettingWorkItem = useCallback((item: WorkItem | null): void => {
-    setIsExpandingItem(Boolean(item));
-    setExpandedItem(item);
-  }, []);
-
-  const handleOutsideClick = useCallback(
-    (): void => {
-      handleSettingWorkItem(null);
-    },
-    [handleSettingWorkItem]
-  );
-  useOnClickOutside(selectedTileRef, handleOutsideClick);
-
   return (
     <div className="work-tiles" ref={wrapGripRef}>
       {workItems.map(
@@ -83,7 +91,9 @@ const WorkTiles: React.FC<iProps> = ({
               setWorkItem={handleSettingWorkItem}
               visible={selectedWorkItemMapping[workItem.name]}
               selected={isSelected}
-              expanding={isSelected && isExpandingItem}
+              // If we're explanding the selected item and this is the selected item
+              // then this item is expanding.
+              expanding={isExpandingItem && isSelected}
             />
           );
         }
