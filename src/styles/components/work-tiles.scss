@@ -35,6 +35,8 @@
 
     &--collapsed {
       cursor: pointer;
+      // Get rid of weird blue highlight on click
+      -webkit-tap-highlight-color: rgba($white, 0);
     }
 
     &--collapsed &__child {
