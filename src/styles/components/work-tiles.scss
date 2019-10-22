@@ -15,11 +15,13 @@
 
   &__item {
     @include box-shadow(false, true, true, false);
+    @include rounded-border-1;
     height: $mobile-tile-length;
     padding: $primary-spacing;
     transition: box-shadow 0.2s ease-in-out;
     border: 1px solid $border-color;
     background-color: $white;
+    text-align: center;
 
     &:hover,
     &:focus {
@@ -29,6 +31,97 @@
 
     &--hidden {
       display: none;
+    }
+
+    &--collapsed {
+      cursor: pointer;
+      // Get rid of weird blue highlight on click
+      -webkit-tap-highlight-color: rgba($white, 0);
+    }
+
+    &--collapsed &__child {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+
+      &__text-content {
+        flex: 1;
+      }
+
+      h1 {
+        font-size: 1.2em;
+      }
+
+      img {
+        flex: 1;
+        max-width: 100%;
+        max-height: 50%;
+      }
+    }
+
+    &--expanding {
+      z-index: $z-index-high;
+    }
+
+    &--selected {
+      position: fixed;
+      z-index: $z-index-high;
+      top: 25%;
+      left: 10%;
+      // I'd love to set max width/heights for this guy
+      // But it proves difficult to do that and still center
+      // while being position fixed :/
+      width: 80%;
+      height: 50%;
+      padding: $primary-spacing/4;
+    }
+
+    &--selected.work-tiles__item--expanding &__child {
+      display: none;
+    }
+
+    &--selected &__child {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 700px;
+      // Set height to 100% - the margin top (aka $primary-spacing*1.5).
+      height: calc(100% - #{$primary-spacing*1.5});
+      margin: auto;
+      margin-top: $primary-spacing*1.5;
+      overflow-y: scroll;
+
+
+      h1 {
+        margin-top: 0;
+        margin-bottom: $primary-spacing/2;
+      }
+
+      &__meta-links {
+        display: flex;
+        flex-direction: column;
+      }
+
+      img {
+        max-height: 25%;
+        margin-top: $primary-spacing/2;
+      }
+
+      p {
+        margin: $primary-spacing/1.25 $primary-spacing;
+      }
+
+      &__close-btn {
+        @include focus-hover-2;
+        position: absolute;
+        top: $primary-spacing/2;
+        right: $primary-spacing/2;
+        border: 0;
+        background: none;
+        color: $dark-color;
+        cursor: pointer;
+      }
     }
   }
 }

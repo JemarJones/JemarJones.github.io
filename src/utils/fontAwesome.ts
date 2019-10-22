@@ -1,5 +1,10 @@
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faEnvelopeOpen, faPhone } from '@fortawesome/free-solid-svg-icons';
+import {
+  faEnvelopeOpen,
+  faPhone,
+  faLink,
+  faTimes,
+} from '@fortawesome/free-solid-svg-icons';
 import {
   faGithub,
   faLinkedinIn,
@@ -16,6 +21,8 @@ export const setupFontAwesome = (): void => {
   library.add(faEnvelopeOpen);
   library.add(faPhone);
   library.add(faStackOverflow);
+  library.add(faLink);
+  library.add(faTimes);
 };
 
 export const resetFontAwesome = library.reset;
