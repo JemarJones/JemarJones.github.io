@@ -8,15 +8,14 @@ import flashLearnBanner from '../assets/flash_learn_banner.png';
 import fontMeBanner from '../assets/font_me_banner.png';
 import macCoinBanner from '../assets/maccoin_banner.png';
 
-export interface Skill {
+export interface ExternalReference {
   name: string;
   link: string;
 }
 
-export interface Collaborator {
-  name: string;
-  link: string;
-}
+export interface Skill extends ExternalReference {}
+
+export interface Collaborator extends ExternalReference {}
 
 export interface WorkItem {
   name: string;

@@ -2,9 +2,7 @@ import React, { ReactElement } from 'react';
 
 import Link from './Link';
 
-import { Skill, Collaborator } from '../utils/constants';
-
-type ExternalReference = Skill | Collaborator;
+import { ExternalReference } from '../utils/constants';
 
 interface iExternalReferenceListProps {
   heading: string;
