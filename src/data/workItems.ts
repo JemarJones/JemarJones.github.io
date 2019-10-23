@@ -7,6 +7,7 @@ import jqueryFlipBanner from '../assets/jquery_flip_banner.png';
 import flashLearnBanner from '../assets/flash_learn_banner.png';
 import fontMeBanner from '../assets/font_me_banner.png';
 import macCoinBanner from '../assets/maccoin_banner.png';
+import jkjonesDotMeBanner from '../assets/jkjones_dot_me_banner.png';
 
 export const SKILLS: { [key: string]: Skill } = {
   generic: {
@@ -64,6 +65,18 @@ export const SKILLS: { [key: string]: Skill } = {
   angular: {
     name: 'AngularJS',
     link: 'https://angularjs.org/',
+  },
+  typescript: {
+    name: 'TypeScript',
+    link: 'https://www.typescriptlang.org/',
+  },
+  scss: {
+    name: 'SCSS',
+    link: 'https://sass-lang.com/',
+  },
+  responsiveDesign: {
+    name: 'Responsive Design',
+    link: 'https://en.wikipedia.org/wiki/Responsive_web_design',
   },
 };
 
@@ -212,6 +225,29 @@ export const WORK_ITEMS: WorkItem[] = [
     ),
     link:
       'https://chrome.google.com/webstore/detail/fontme/jmflbifhkmjblfhmkpfdflfhphbinfjl',
+  },
+  {
+    name: 'JKJones.me',
+    image: jkjonesDotMeBanner,
+    skills: [
+      SKILLS.react,
+      SKILLS.typescript,
+      SKILLS.javascript,
+      SKILLS.scss,
+      SKILLS.css,
+      SKILLS.html,
+      SKILLS.responsiveDesign,
+    ],
+    description: "This portfolio site you're on right now!",
+    longDescription: dedent(
+      `This portfolio site you're on right now! Purposely overengineered for what it is
+       as a showcase of what I can do. Here I had a chance to publicly showcase
+       my experience with modern web tech such as react and typescript, while
+       also experimenting with the new CSS Grid API, and even throwing my hat
+       in the ring with some responsive UI/UX design. Take a peak at the link
+       above for a look under the hood on GitHub!`
+    ),
+    link: 'https://github.com/JemarJones/JemarJones.github.io',
   },
   {
     name: 'Flash Learn',
