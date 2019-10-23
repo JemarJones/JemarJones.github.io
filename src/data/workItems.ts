@@ -8,96 +8,107 @@ import flashLearnBanner from '../assets/flash_learn_banner.png';
 import fontMeBanner from '../assets/font_me_banner.png';
 import macCoinBanner from '../assets/maccoin_banner.png';
 
-// Skills
-export const GENERIC_SKILL: Skill = {
-  name: 'some things',
-  link: '#',
-};
-const NODE: Skill = {
-  name: 'Node.js',
-  link: 'https://nodejs.org/',
-};
-const EXPRESS: Skill = {
-  name: 'Express.js',
-  link: 'http://expressjs.com/',
-};
-const SQL: Skill = {
-  name: 'SQL',
-  link: 'http://www.mysql.com/',
-};
-const JADE: Skill = {
-  name: 'Jade',
-  link: 'http://jade-lang.com/',
-};
-const JAVASCRIPT: Skill = {
-  name: 'JavaScript',
-  link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
-};
-const JQUERY: Skill = {
-  name: 'jQuery',
-  link: 'https://jquery.com/',
-};
-const HTML: Skill = {
-  name: 'HTML',
-  link: 'https://www.w3.org/html/',
-};
-const CSS: Skill = {
-  name: 'CSS',
-  link: 'https://www.w3.org/Style/CSS/',
-};
-const REACT: Skill = {
-  name: 'React',
-  link: 'https://reactjs.org/',
-};
-const SOCKET: Skill = {
-  name: 'Socket.io',
-  link: 'http://socket.io/',
-};
-const FIREBASE: Skill = {
-  name: 'Firebase',
-  link: 'https://firebase.google.com/',
-};
-const CANVAS: Skill = {
-  name: 'Canvas',
-  link: 'https://jquery.com/',
-};
-const ANGULAR: Skill = {
-  name: 'AngularJS',
-  link: 'https://angularjs.org/',
+export const SKILLS: { [key: string]: Skill } = {
+  generic: {
+    name: 'some things',
+    link: '#',
+  },
+  node: {
+    name: 'Node.js',
+    link: 'https://nodejs.org/',
+  },
+  express: {
+    name: 'Express.js',
+    link: 'http://expressjs.com/',
+  },
+  sql: {
+    name: 'SQL',
+    link: 'https://en.wikipedia.org/wiki/SQL',
+  },
+  jade: {
+    name: 'Jade (aka Pug)',
+    link: 'http://jade-lang.com/',
+  },
+  javascript: {
+    name: 'JavaScript',
+    link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+  },
+  jquery: {
+    name: 'jQuery',
+    link: 'https://jquery.com/',
+  },
+  html: {
+    name: 'HTML',
+    link: 'https://developer.mozilla.org/en-US/docs/Web/HTML',
+  },
+  css: {
+    name: 'CSS',
+    link: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
+  },
+  react: {
+    name: 'React',
+    link: 'https://reactjs.org/',
+  },
+  socket: {
+    name: 'Socket.io',
+    link: 'http://socket.io/',
+  },
+  firebase: {
+    name: 'Firebase',
+    link: 'https://firebase.google.com/',
+  },
+  canvas: {
+    name: 'Canvas',
+    link: 'https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API',
+  },
+  angular: {
+    name: 'AngularJS',
+    link: 'https://angularjs.org/',
+  },
 };
 
-// Peeps
-const NIKO: Collaborator = {
-  name: 'Niko Savas',
-  link: 'https://savas.ca/',
-};
-const VICKY: Collaborator = {
-  name: 'Vicky Bilbily',
-  link: 'https://bickybilly.github.io/',
-};
-const YASH: Collaborator = {
-  name: 'Yash Kadaru',
-  link: 'http://yashkadaru.com/',
-};
-const SAMMY: Collaborator = {
-  name: 'Sam Nalwa',
-  link: 'http://nalwa.ca',
-};
-const NATTAWAT: Collaborator = {
-  name: 'Nattawat Nonsung',
-  link: 'https://github.com/nnattawat',
-};
-const STIJN: Collaborator = {
-  name: 'Stijn de Witt',
-  link: 'http://StijnDeWitt.com',
+export const COLLABORATORS: { [key: string]: Collaborator } = {
+  niko: {
+    name: 'Niko Savas',
+    link: 'https://savas.ca/',
+  },
+  vicky: {
+    name: 'Vicky Bilbily',
+    link: 'https://bickybilly.github.io/',
+  },
+  yash: {
+    name: 'Yash Kadaru',
+    link: 'http://yashkadaru.com/',
+  },
+  sammy: {
+    name: 'Sam Nalwa',
+    link: 'http://nalwa.ca',
+  },
+  nattawat: {
+    name: 'Nattawat Nonsung',
+    link: 'https://github.com/nnattawat',
+  },
+  stijn: {
+    name: 'Stijn de Witt',
+    link: 'http://StijnDeWitt.com',
+  },
 };
 
 export const WORK_ITEMS: WorkItem[] = [
   {
     name: 'WebTunes',
     image: webtunesBanner,
-    collaborators: [NIKO, SAMMY],
-    skills: [NODE, EXPRESS, SQL, JADE, JAVASCRIPT, JQUERY, HTML, CSS],
+    collaborators: [COLLABORATORS.niko, COLLABORATORS.sammy],
+    skills: [
+      SKILLS.node,
+      SKILLS.express,
+      SKILLS.sql,
+      SKILLS.jade,
+      SKILLS.javascript,
+      SKILLS.jquery,
+      SKILLS.html,
+      SKILLS.css,
+    ],
     description: 'An online service that lets you share your musical tastes.',
     longDescription: dedent(
       `An online service that lets you share your musical tastes. WebTunes
@@ -111,8 +122,21 @@ export const WORK_ITEMS: WorkItem[] = [
   {
     name: 'MacCoin',
     image: macCoinBanner,
-    skills: [REACT, JAVASCRIPT, NODE, EXPRESS, SOCKET, HTML, CSS, FIREBASE],
-    collaborators: [NIKO, VICKY, YASH],
+    skills: [
+      SKILLS.react,
+      SKILLS.javascript,
+      SKILLS.node,
+      SKILLS.express,
+      SKILLS.socket,
+      SKILLS.html,
+      SKILLS.css,
+      SKILLS.firebase,
+    ],
+    collaborators: [
+      COLLABORATORS.niko,
+      COLLABORATORS.vicky,
+      COLLABORATORS.yash,
+    ],
     description: 'A viral web application for a fake cryptocurrency.',
     longDescription: dedent(
       `A viral web application for a fake cryptocurrency. Built, amidst
@@ -132,8 +156,17 @@ export const WORK_ITEMS: WorkItem[] = [
   {
     name: 'Survival of the Fittest',
     image: survivalOfTheFittestBanner,
-    collaborators: [VICKY],
-    skills: [NODE, EXPRESS, SOCKET, JAVASCRIPT, JQUERY, CANVAS, HTML, CSS],
+    collaborators: [COLLABORATORS.vicky],
+    skills: [
+      SKILLS.node,
+      SKILLS.express,
+      SKILLS.socket,
+      SKILLS.javascript,
+      SKILLS.jquery,
+      SKILLS.canvas,
+      SKILLS.html,
+      SKILLS.css,
+    ],
     description:
       "A multiplayer take on the heavily studied cellular automaton, Conway's Game of Life.",
     longDescription: dedent(
@@ -153,8 +186,8 @@ export const WORK_ITEMS: WorkItem[] = [
   {
     name: 'jQuery Flip',
     image: jqueryFlipBanner,
-    collaborators: [NATTAWAT, STIJN],
-    skills: [JAVASCRIPT, JQUERY],
+    collaborators: [COLLABORATORS.nattawat, COLLABORATORS.stijn],
+    skills: [SKILLS.javascript, SKILLS.jquery],
     description:
       'A lightweight jQuery plugin to make 3D card flipping animations easy.',
     longDescription: dedent(
@@ -168,7 +201,7 @@ export const WORK_ITEMS: WorkItem[] = [
   {
     name: 'FontMe',
     image: fontMeBanner,
-    skills: [JAVASCRIPT, JQUERY, HTML, CSS],
+    skills: [SKILLS.javascript, SKILLS.jquery, SKILLS.html, SKILLS.css],
     description:
       'An extension that helps you discover what Font is being used on a given HTML element.',
     longDescription: dedent(
@@ -183,8 +216,14 @@ export const WORK_ITEMS: WorkItem[] = [
   {
     name: 'Flash Learn',
     image: flashLearnBanner,
-    collaborators: [VICKY],
-    skills: [ANGULAR, JAVASCRIPT, JQUERY, HTML, CSS],
+    collaborators: [COLLABORATORS.vicky],
+    skills: [
+      SKILLS.angular,
+      SKILLS.javascript,
+      SKILLS.jquery,
+      SKILLS.html,
+      SKILLS.css,
+    ],
     description: 'A crowdsourced flashcard platform.',
     longDescription: dedent(
       `Flash Learn is a crowdsourced flashcard platform. With Flash Learn
