@@ -4,7 +4,7 @@ import uniqBy from 'lodash.uniqby';
 import Select from './Select';
 
 import { WorkItem, Skill } from '../utils/constants';
-import { GENERIC_SKILL } from '../data/workItems';
+import { SKILLS } from '../data/workItems';
 
 interface iProps {
   workItems: WorkItem[];
@@ -46,7 +46,7 @@ const HomeHeader: React.FC<iProps> = ({
         }
       );
       // and finally, add the generic skill to the beginning
-      skills.unshift(GENERIC_SKILL);
+      skills.unshift(SKILLS.generic);
 
       return skills;
     },
@@ -77,7 +77,7 @@ const HomeHeader: React.FC<iProps> = ({
             getOptionLabel={getSkillText}
             getOptionValue={getSkillText}
             onSingleChange={handleSelectedSkillChange}
-            placeholder={GENERIC_SKILL.name}
+            placeholder={SKILLS.generic.name}
           />
           <span>.</span>
         </div>

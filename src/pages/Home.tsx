@@ -5,7 +5,7 @@ import WorkTiles, { SelectedWorkItemMapping } from '../components/WorkTiles';
 import Footer from '../components/Footer';
 
 import { WorkItem, Skill } from '../utils/constants';
-import { WORK_ITEMS, GENERIC_SKILL } from '../data/workItems';
+import { WORK_ITEMS, SKILLS } from '../data/workItems';
 
 interface iProps {}
 
@@ -23,7 +23,7 @@ const Home: React.FC<iProps> = (): ReactElement | null => {
             // When nothing is selected, we show everything
             !selectedSkill ||
             // When generic skill is selected, we show everything
-            selectedSkill.name === GENERIC_SKILL.name ||
+            selectedSkill.name === SKILLS.generic.name ||
             // Otherwise, select matching work items
             workItem.skills.some(
               (skill: Skill): boolean => skill.name === selectedSkill.name
