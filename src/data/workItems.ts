@@ -1,5 +1,5 @@
 import { WorkItem, Skill, Collaborator } from '../utils/constants';
-import { dedent } from '../utils';
+import { format } from '../utils';
 
 import webtunesBanner from '../assets/webtunes_banner.png';
 import survivalOfTheFittestBanner from '../assets/survival_fittest_banner.png';
@@ -8,6 +8,7 @@ import flashLearnBanner from '../assets/flash_learn_banner.png';
 import fontMeBanner from '../assets/font_me_banner.png';
 import macCoinBanner from '../assets/maccoin_banner.png';
 import jkjonesDotMeBanner from '../assets/jkjones_dot_me_banner.png';
+import akiraBanner from '../assets/akira_banner.svg';
 
 export const SKILLS: { [key: string]: Skill } = {
   generic: {
@@ -78,6 +79,30 @@ export const SKILLS: { [key: string]: Skill } = {
     name: 'Responsive Design',
     link: 'https://en.wikipedia.org/wiki/Responsive_web_design',
   },
+  redux: {
+    name: 'Redux',
+    link: 'https://redux.js.org/',
+  },
+  ruby: {
+    name: 'Ruby',
+    link: 'https://www.ruby-lang.org/en/',
+  },
+  grape: {
+    name: 'Grape',
+    link: 'https://github.com/ruby-grape/grape',
+  },
+  fastify: {
+    name: 'Fastify',
+    link: 'https://www.fastify.io/',
+  },
+  jest: {
+    name: 'Jest',
+    link: 'https://jestjs.io/',
+  },
+  rspec: {
+    name: 'RSpec',
+    link: 'https://rspec.info/',
+  },
 };
 
 export const COLLABORATORS: { [key: string]: Collaborator } = {
@@ -105,9 +130,56 @@ export const COLLABORATORS: { [key: string]: Collaborator } = {
     name: 'Stijn de Witt',
     link: 'http://StijnDeWitt.com',
   },
+  akiraTeam: {
+    name: 'The Akira Team',
+    link: 'https://akirahealth.ca/about.html',
+  },
 };
 
 export const WORK_ITEMS: WorkItem[] = [
+  {
+    name: 'Akira',
+    image: akiraBanner,
+    collaborators: [COLLABORATORS.akiraTeam],
+    dateInfo: 'November 2018 - present',
+    skills: [
+      SKILLS.typescript,
+      SKILLS.javascript,
+      SKILLS.react,
+      SKILLS.redux,
+      SKILLS.ruby,
+      SKILLS.rspec,
+      SKILLS.grape,
+      SKILLS.html,
+      SKILLS.css,
+      SKILLS.scss,
+      SKILLS.fastify,
+      SKILLS.node,
+      SKILLS.jest,
+    ],
+    description:
+      'A leading virtual care platform helping to reimagine healthcare in Canada.',
+    longDescription: format(
+      `A leading virtual care platform helping to reimagine healthcare in Canada.
+       Akira offer's Canadians on-demand access to friendly and knowledgeable primary
+       care providers anytime they need it, wherever they are. Using the Akira
+       mobile app, members can connect directly to primary care providers to get
+       and renew prescriptions, obtain specialist and lab referrals, and have
+       their health questions answered - 24/7, across the country, in French and English.
+
+
+       At Akira, I've worked on our multi-platform clinician and patient facing
+       suite of applications. My various contributions include taking a key role in
+       re-implementing and simplifying the patient onboarding system to handle
+       patients from varying sources with complex eligibility criteria. This
+       work helped to improve patient experience and reduce the load on clinicians/customer
+       support during the onboarding of tens of thousands of users. Other contributions
+       include creating an email templating microservice to handle delivering
+       critical emails with varying branding/messaging to patients.
+      `
+    ),
+    link: 'https://akirahealth.ca/',
+  },
   {
     name: 'WebTunes',
     image: webtunesBanner,
@@ -123,7 +195,7 @@ export const WORK_ITEMS: WorkItem[] = [
       SKILLS.css,
     ],
     description: 'An online service that lets you share your musical tastes.',
-    longDescription: dedent(
+    longDescription: format(
       `An online service that lets you share your musical tastes. WebTunes
        allows you to import your iTunes library to create an easily shareable online
        landing page for your music. Once you've chosen a username and uploaded
@@ -151,7 +223,7 @@ export const WORK_ITEMS: WorkItem[] = [
       COLLABORATORS.yash,
     ],
     description: 'A viral web application for a fake cryptocurrency.',
-    longDescription: dedent(
+    longDescription: format(
       `A viral web application for a fake cryptocurrency. Built, amidst
       cryptocurrency craze of 2018, over the course of 24 hours as a
       send-off prank from McMaster's Software Engineering class of 2018,
@@ -182,7 +254,7 @@ export const WORK_ITEMS: WorkItem[] = [
     ],
     description:
       "A multiplayer take on the heavily studied cellular automaton, Conway's Game of Life.",
-    longDescription: dedent(
+    longDescription: format(
       `A multiplayer take on the heavily studied cellular automaton, <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life" target="__blank">Conway's Game of Life</a>.
        In the original games concept a series of tiles in a 2x2 grid
        are initially set to one of 2 states (dead or alive). With
@@ -203,7 +275,7 @@ export const WORK_ITEMS: WorkItem[] = [
     skills: [SKILLS.javascript, SKILLS.jquery],
     description:
       'A lightweight jQuery plugin to make 3D card flipping animations easy.',
-    longDescription: dedent(
+    longDescription: format(
       `A lightweight jQuery plugin to make 3D card flipping animations easy.
        As one of a few maintainers on this project, I participated in the
        open source process to improve the API of this plugin, as well
@@ -217,7 +289,7 @@ export const WORK_ITEMS: WorkItem[] = [
     skills: [SKILLS.javascript, SKILLS.jquery, SKILLS.html, SKILLS.css],
     description:
       'An extension that helps you discover what Font is being used on a given HTML element.',
-    longDescription: dedent(
+    longDescription: format(
       `An extension that helps you discover what Font is being used on a given HTML element.
        FontMe makes it incredibly easy to discover fonts used on any webpage. Just right
        click on a piece of text, select 'FontMe', and FontMe will let you know what font
@@ -239,7 +311,7 @@ export const WORK_ITEMS: WorkItem[] = [
       SKILLS.responsiveDesign,
     ],
     description: "This portfolio site you're on right now!",
-    longDescription: dedent(
+    longDescription: format(
       `This portfolio site you're on right now! Purposely overengineered for what it is
        as a showcase of what I can do. Here I had a chance to publicly showcase
        my experience with modern web tech such as react and typescript, while
@@ -261,7 +333,7 @@ export const WORK_ITEMS: WorkItem[] = [
       SKILLS.css,
     ],
     description: 'A crowdsourced flashcard platform.',
-    longDescription: dedent(
+    longDescription: format(
       `Flash Learn is a crowdsourced flashcard platform. With Flash Learn
        users can study virtual flashcards on categories of their choosing by
        flipping through cards and their answers one at a time. Flash Learn keeps
