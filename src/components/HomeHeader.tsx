@@ -1,5 +1,13 @@
-import React, { useCallback, useMemo, ReactElement } from 'react';
+import React, {
+  useCallback,
+  useMemo,
+  useEffect,
+  ReactElement,
+  useState,
+} from 'react';
 import uniqBy from 'lodash.uniqby';
+import classNames from 'classnames';
+import throttle from 'lodash.throttle';
 
 import Select from './Select';
 
@@ -17,6 +25,25 @@ const HomeHeader: React.FC<iProps> = ({
   selectedSkill,
   onSelectedSkillChange,
 }): ReactElement | null => {
+  const [headerShrunk, setHeaderShrunk] = useState<boolean>(false);
+  useEffect((): (() => void) => {
+    const scrollListener = throttle((): void => {
+      // Shrink after 60pxs of scrolling
+      // determined mostly by experimenting..
+      if (window.scrollY > 60) {
+        setHeaderShrunk(true);
+      } else {
+        setHeaderShrunk(false);
+      }
+    }, 100);
+
+    window.addEventListener('scroll', scrollListener);
+
+    return (): void => {
+      window.removeEventListener('scroll', scrollListener);
+    };
+  }, []);
+
   const options: Skill[] = useMemo(
     (): Skill[] => {
       // Get the list of skills from each work item
@@ -67,7 +94,11 @@ const HomeHeader: React.FC<iProps> = ({
   );
 
   return (
-    <header className="home__header">
+    <header
+      className={classNames('home__header', {
+        shrunk: headerShrunk,
+      })}
+    >
       <div className="container">
         <span className="home__header__name">Jemar knows</span>
         <div className="home__header__search__control-container">

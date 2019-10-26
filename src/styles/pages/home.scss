@@ -1,23 +1,39 @@
 .home {
+  $header-height: 250px;
+  $header-height-medium: 180px;
+  $header-height-small: 127px;
+
   display: grid;
   grid-template-areas:
     'header'
     'main'
     'footer';
-  grid-template-rows: 250px 1fr 80px;
-  height: 100vh;
+  grid-template-rows: $header-height 1fr 80px;
+  min-height: 100vh;
 
   &__header {
     @include inverted-colors;
     @include bottom-box-shadow;
     display: flex;
+    position: sticky;
     z-index: $z-index-medium;
+    top: 0;
     grid-area: header;
     align-items: center;
+    height: $header-height;
+    transition: height 0.1s ease-in-out;
     font-size: 4rem;
 
     @include breakpoint(extra-small-only) {
       font-size: 3rem;
+    }
+
+    &.shrunk {
+      height: $header-height-medium;
+
+      @include breakpoint(extra-small-only, laptop) {
+        height: $header-height-small;
+      }
     }
 
     .container {
