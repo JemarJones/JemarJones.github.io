@@ -9,6 +9,7 @@ import fontMeBanner from '../assets/font_me_banner.png';
 import macCoinBanner from '../assets/maccoin_banner.png';
 import jkjonesDotMeBanner from '../assets/jkjones_dot_me_banner.png';
 import akiraBanner from '../assets/akira_banner.svg';
+import konradBanner from '../assets/konrad_banner.svg';
 
 export const SKILLS: { [key: string]: Skill } = {
   generic: {
@@ -21,7 +22,7 @@ export const SKILLS: { [key: string]: Skill } = {
   },
   express: {
     name: 'Express.js',
-    link: 'http://expressjs.com/',
+    link: 'https://expressjs.com/',
   },
   sql: {
     name: 'SQL',
@@ -53,7 +54,7 @@ export const SKILLS: { [key: string]: Skill } = {
   },
   socket: {
     name: 'Socket.io',
-    link: 'http://socket.io/',
+    link: 'https://socket.io/',
   },
   firebase: {
     name: 'Firebase',
@@ -103,6 +104,14 @@ export const SKILLS: { [key: string]: Skill } = {
     name: 'RSpec',
     link: 'https://rspec.info/',
   },
+  webpack: {
+    name: 'Webpack',
+    link: 'https://webpack.js.org/',
+  },
+  csharp: {
+    name: 'C#',
+    link: 'http://csharp.net/',
+  },
 };
 
 export const COLLABORATORS: { [key: string]: Collaborator } = {
@@ -128,17 +137,22 @@ export const COLLABORATORS: { [key: string]: Collaborator } = {
   },
   stijn: {
     name: 'Stijn de Witt',
-    link: 'http://StijnDeWitt.com',
+    link: 'https://StijnDeWitt.com',
   },
   akiraTeam: {
     name: 'The Akira Team',
     link: 'https://akirahealth.ca/about.html',
+  },
+  konradTeam: {
+    name: 'The Konrad Group Team',
+    link: 'https://www.konrad.com/about',
   },
 };
 
 export const WORK_ITEMS: WorkItem[] = [
   {
     name: 'Akira',
+    link: 'https://akirahealth.ca/',
     image: akiraBanner,
     collaborators: [COLLABORATORS.akiraTeam],
     dateInfo: 'November 2018 - present',
@@ -153,6 +167,7 @@ export const WORK_ITEMS: WorkItem[] = [
       SKILLS.html,
       SKILLS.css,
       SKILLS.scss,
+      SKILLS.responsiveDesign,
       SKILLS.fastify,
       SKILLS.node,
       SKILLS.jest,
@@ -175,13 +190,49 @@ export const WORK_ITEMS: WorkItem[] = [
        work helped to improve patient experience and reduce the load on clinicians/customer
        support during the onboarding of tens of thousands of users. Other contributions
        include creating an email templating microservice to handle delivering
-       critical emails with varying branding/messaging to patients.
-      `
+       critical emails with varying branding/messaging to patients.`
     ),
-    link: 'https://akirahealth.ca/',
+  },
+  {
+    name: 'Konrad Group',
+    link: 'https://www.konrad.com/',
+    image: konradBanner,
+    collaborators: [COLLABORATORS.konradTeam],
+    dateInfo:
+      'January 2017 – August 2017 (intern), May 2018 – November 2018 (full-time)',
+    skills: [
+      SKILLS.javascript,
+      SKILLS.react,
+      SKILLS.redux,
+      SKILLS.csharp,
+      SKILLS.html,
+      SKILLS.css,
+      SKILLS.scss,
+      SKILLS.responsiveDesign,
+      SKILLS.webpack,
+      SKILLS.node,
+      SKILLS.express,
+      SKILLS.jquery,
+      SKILLS.sql,
+      SKILLS.jest,
+    ],
+    description:
+      "A consulting agency working to bring digital expertise to client project's.",
+    longDescription: format(
+      `A consulting agency working to bring digital expertise to client projects.
+      As a software developer at Konrad Group, I worked on several projects in a
+      full-stack development role. Through this experience of moving between projects,
+      I was exposed to various technologies that I was able to ramp up on swiftly.
+      One project I was involved with was the company's internal portal, a suite
+      of web applications responsible for managing employee time off, project time
+      tracking, and the company directory, amongst other things. On this project,
+      I worked as the primary front-end developer, while also making contributions
+      across the technology stack.`
+    ),
   },
   {
     name: 'WebTunes',
+    link: 'http://webtunes.jkjones.me',
     image: webtunesBanner,
     collaborators: [COLLABORATORS.niko, COLLABORATORS.sammy],
     skills: [
@@ -202,10 +253,11 @@ export const WORK_ITEMS: WorkItem[] = [
        the metadata associated with your library, WebTunes will create a personalized
        page where your music can easily be listened to via Spotify and Last.fm.`
     ),
-    link: 'http://webtunes.jkjones.me',
   },
   {
     name: 'MacCoin',
+    link:
+      'https://medium.com/@savas/maccoin-a-fake-cryptocurrency-postmortem-eb5e9f2fc3d9',
     image: macCoinBanner,
     skills: [
       SKILLS.react,
@@ -235,11 +287,10 @@ export const WORK_ITEMS: WorkItem[] = [
       of a few days, MacCoin boasted 2,712 unique wallets, 840 transactions,
       and 4,737,081,027 mined coins.`
     ),
-    link:
-      'https://medium.com/@savas/maccoin-a-fake-cryptocurrency-postmortem-eb5e9f2fc3d9',
   },
   {
     name: 'Survival of the Fittest',
+    link: 'http://survival.jkjones.me',
     image: survivalOfTheFittestBanner,
     collaborators: [COLLABORATORS.vicky],
     skills: [
@@ -266,10 +317,10 @@ export const WORK_ITEMS: WorkItem[] = [
        the simulation begins and the winner is the team with the last
        living cells left standing.`
     ),
-    link: 'http://survival.jkjones.me',
   },
   {
     name: 'jQuery Flip',
+    link: 'https://nnattawat.github.io/flip/',
     image: jqueryFlipBanner,
     collaborators: [COLLABORATORS.nattawat, COLLABORATORS.stijn],
     skills: [SKILLS.javascript, SKILLS.jquery],
@@ -281,10 +332,11 @@ export const WORK_ITEMS: WorkItem[] = [
        open source process to improve the API of this plugin, as well
        as contributing various other features and maintenance over time.`
     ),
-    link: 'http://nnattawat.github.io/flip/',
   },
   {
     name: 'FontMe',
+    link:
+      'https://chrome.google.com/webstore/detail/fontme/jmflbifhkmjblfhmkpfdflfhphbinfjl',
     image: fontMeBanner,
     skills: [SKILLS.javascript, SKILLS.jquery, SKILLS.html, SKILLS.css],
     description:
@@ -295,8 +347,6 @@ export const WORK_ITEMS: WorkItem[] = [
        click on a piece of text, select 'FontMe', and FontMe will let you know what font
        is being used. Over the years FontMe has amassed over 1000 users.`
     ),
-    link:
-      'https://chrome.google.com/webstore/detail/fontme/jmflbifhkmjblfhmkpfdflfhphbinfjl',
   },
   {
     name: 'JKJones.me',
