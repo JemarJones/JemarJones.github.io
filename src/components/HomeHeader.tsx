@@ -25,13 +25,15 @@ const HomeHeader: React.FC<iProps> = ({
   selectedSkill,
   onSelectedSkillChange,
 }): ReactElement | null => {
-  const [headerStuck, setHeaderStuck] = useState<boolean>(false);
+  const [headerShrunk, setHeaderShrunk] = useState<boolean>(false);
   useEffect((): (() => void) => {
     const scrollListener = throttle((): void => {
+      // Shrink after 60pxs of scrolling
+      // determined mostly by experimenting..
       if (window.scrollY > 60) {
-        setHeaderStuck(true);
+        setHeaderShrunk(true);
       } else {
-        setHeaderStuck(false);
+        setHeaderShrunk(false);
       }
     }, 100);
 
@@ -94,7 +96,7 @@ const HomeHeader: React.FC<iProps> = ({
   return (
     <header
       className={classNames('home__header', {
-        stuck: headerStuck,
+        shrunk: headerShrunk,
       })}
     >
       <div className="container">
