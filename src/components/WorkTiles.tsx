@@ -195,7 +195,8 @@ const WorkTile: React.ForwardRefExoticComponent<
               <Link to={workItem.link}>
                 <h1>{workItem.name}</h1>
               </Link>
-              <div className="work-tiles__item__child__meta-links">
+              <div className="work-tiles__item__child__sub-headings">
+                {workItem.dateInfo ? <p>{workItem.dateInfo}</p> : null}
                 {workItem.skills.length > 0 ? (
                   <ExternalReferenceList
                     heading="Skills"
@@ -211,6 +212,7 @@ const WorkTile: React.ForwardRefExoticComponent<
               </div>
               <img src={workItem.image} alt={workItem.name} />
               <p
+                className="work-tiles__item__child__long-description"
                 // I promise it's not that dangerous.. there's no user input here :)
                 dangerouslySetInnerHTML={{ __html: workItem.longDescription }}
               />

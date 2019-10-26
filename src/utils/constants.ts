@@ -12,6 +12,7 @@ export interface Collaborator extends ExternalReference {}
 export interface WorkItem {
   name: string;
   image: string;
+  dateInfo?: string;
   collaborators?: Collaborator[];
   skills: Skill[];
   description: string;
