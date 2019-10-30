@@ -10,11 +10,11 @@ import macCoinBanner from '../assets/maccoin_banner.png';
 import jkjonesDotMeBanner from '../assets/jkjones_dot_me_banner.png';
 import akiraBanner from '../assets/akira_banner.svg';
 import konradBanner from '../assets/konrad_banner.svg';
+import liveLabsBanner from '../assets/live_labs_banner.png';
 
 export const SKILLS: { [key: string]: Skill } = {
   generic: {
     name: 'some things',
-    link: '#',
   },
   node: {
     name: 'Node.js',
@@ -112,6 +112,26 @@ export const SKILLS: { [key: string]: Skill } = {
     name: 'C#',
     link: 'http://csharp.net/',
   },
+  android: {
+    name: 'Android Development',
+    link: 'https://developer.android.com/docs',
+  },
+  gradle: {
+    name: 'Gradle',
+    link: 'https://gradle.org/',
+  },
+  springMvc: {
+    name: 'Spring MVC',
+    link: 'https://github.com/spring-projects/spring-framework',
+  },
+  python: {
+    name: 'Python',
+    link: 'https://www.python.org/',
+  },
+  nlp: {
+    name: 'NLP (Natural Language Processing)',
+    link: 'https://en.wikipedia.org/wiki/Natural_language_processing',
+  },
 };
 
 export const COLLABORATORS: { [key: string]: Collaborator } = {
@@ -146,6 +166,9 @@ export const COLLABORATORS: { [key: string]: Collaborator } = {
   konradTeam: {
     name: 'The Konrad Group Team',
     link: 'https://www.konrad.com/about',
+  },
+  liveLabsTeam: {
+    name: 'The CIBC Live Labs Team',
   },
 };
 
@@ -228,6 +251,36 @@ export const WORK_ITEMS: WorkItem[] = [
       tracking, and the company directory, amongst other things. On this project,
       I worked as the primary front-end developer, while also making contributions
       across the technology stack.`
+    ),
+  },
+  {
+    name: 'CIBC Live Labs',
+    // link: 'http://cibc.live', // Why is this a dead link???
+    // Could also maybe use `https://medium.com/cibc-live-labs/about` or
+    // `https://web.archive.org/web/20170519225446/https://www.cibc.com/ca/livelabs`?
+    // For now, i'll link here i guess.
+    link: 'https://www.cibc.com/en/about-cibc/careers/innovation-history.html',
+    image: liveLabsBanner,
+    collaborators: [COLLABORATORS.liveLabsTeam],
+    dateInfo: 'May 2016 – December 2016',
+    skills: [
+      SKILLS.android,
+      SKILLS.gradle,
+      SKILLS.firebase,
+      SKILLS.springMvc,
+      SKILLS.python,
+      SKILLS.sql,
+      SKILLS.nlp,
+    ],
+    description: "CIBC's Innovation & Digital Technology Lab.",
+    longDescription: format(
+      `Live Labs is CIBC's Innovation & Digital Technology Lab.
+       At Live Labs, we worked to iteratively formulate, design,
+       and prototype ideas for new products. In my role, I worked
+       on several projects from ideation to functional prototype.
+       Just a couple of which were an Android application built
+       from scratch and a multi-platform bot that made use of
+       Natural Language Processing.`
     ),
   },
   {

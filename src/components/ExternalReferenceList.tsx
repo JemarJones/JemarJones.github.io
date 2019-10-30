@@ -25,9 +25,13 @@ const ExternalReferenceList: React.FC<iExternalReferenceListProps> = ({
                 <span className="external-reference-list__and">and</span>
               ) : null}
               <li>
-                <Link to={externalReference.link}>
-                  {externalReference.name}
-                </Link>
+                {externalReference.link !== undefined ? (
+                  <Link to={externalReference.link}>
+                    {externalReference.name}
+                  </Link>
+                ) : (
+                  externalReference.name
+                )}
                 {/* For every element other than the last one, add a ','.
                 Add a '. for the last element. */}
                 {i !== externalReferences.length - 1 ? ',' : '.'}

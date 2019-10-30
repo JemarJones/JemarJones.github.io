@@ -2,7 +2,7 @@ import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 export interface ExternalReference {
   name: string;
-  link: string;
+  link?: string;
 }
 
 export interface Skill extends ExternalReference {}
