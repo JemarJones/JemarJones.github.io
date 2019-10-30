@@ -13,7 +13,9 @@
         ],
         "@typescript-eslint/explicit-function-return-type": "warn",
         "react/jsx-no-bind": "warn",
-        "react/jsx-key": "error"
-
+        "react/jsx-key": "error",
+        "no-console": "warn",
+        "no-var": "warn",
+        "prefer-const": "warn"
     }
 }
