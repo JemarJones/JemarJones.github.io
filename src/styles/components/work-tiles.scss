@@ -98,9 +98,14 @@
         margin-bottom: $primary-spacing/2;
       }
 
-      &__meta-links {
+      &__sub-headings {
         display: flex;
         flex-direction: column;
+
+      }
+
+      &__sub-headings > * {
+        margin: $primary-spacing/8 $primary-spacing;
       }
 
       img {
@@ -108,7 +113,7 @@
         margin-top: $primary-spacing/2;
       }
 
-      p {
+      &__long-description {
         margin: $primary-spacing/1.25 $primary-spacing;
       }
 

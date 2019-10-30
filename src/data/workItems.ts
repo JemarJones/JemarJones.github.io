@@ -1,5 +1,5 @@
 import { WorkItem, Skill, Collaborator } from '../utils/constants';
-import { dedent } from '../utils';
+import { format } from '../utils';
 
 import webtunesBanner from '../assets/webtunes_banner.png';
 import survivalOfTheFittestBanner from '../assets/survival_fittest_banner.png';
@@ -7,11 +7,14 @@ import jqueryFlipBanner from '../assets/jquery_flip_banner.png';
 import flashLearnBanner from '../assets/flash_learn_banner.png';
 import fontMeBanner from '../assets/font_me_banner.png';
 import macCoinBanner from '../assets/maccoin_banner.png';
+import jkjonesDotMeBanner from '../assets/jkjones_dot_me_banner.png';
+import akiraBanner from '../assets/akira_banner.svg';
+import konradBanner from '../assets/konrad_banner.svg';
+import liveLabsBanner from '../assets/live_labs_banner.png';
 
 export const SKILLS: { [key: string]: Skill } = {
   generic: {
     name: 'some things',
-    link: '#',
   },
   node: {
     name: 'Node.js',
@@ -19,7 +22,7 @@ export const SKILLS: { [key: string]: Skill } = {
   },
   express: {
     name: 'Express.js',
-    link: 'http://expressjs.com/',
+    link: 'https://expressjs.com/',
   },
   sql: {
     name: 'SQL',
@@ -51,7 +54,7 @@ export const SKILLS: { [key: string]: Skill } = {
   },
   socket: {
     name: 'Socket.io',
-    link: 'http://socket.io/',
+    link: 'https://socket.io/',
   },
   firebase: {
     name: 'Firebase',
@@ -64,6 +67,70 @@ export const SKILLS: { [key: string]: Skill } = {
   angular: {
     name: 'AngularJS',
     link: 'https://angularjs.org/',
+  },
+  typescript: {
+    name: 'TypeScript',
+    link: 'https://www.typescriptlang.org/',
+  },
+  scss: {
+    name: 'SCSS',
+    link: 'https://sass-lang.com/',
+  },
+  responsiveDesign: {
+    name: 'Responsive Design',
+    link: 'https://en.wikipedia.org/wiki/Responsive_web_design',
+  },
+  redux: {
+    name: 'Redux',
+    link: 'https://redux.js.org/',
+  },
+  ruby: {
+    name: 'Ruby',
+    link: 'https://www.ruby-lang.org/en/',
+  },
+  grape: {
+    name: 'Grape',
+    link: 'https://github.com/ruby-grape/grape',
+  },
+  fastify: {
+    name: 'Fastify',
+    link: 'https://www.fastify.io/',
+  },
+  jest: {
+    name: 'Jest',
+    link: 'https://jestjs.io/',
+  },
+  rspec: {
+    name: 'RSpec',
+    link: 'https://rspec.info/',
+  },
+  webpack: {
+    name: 'Webpack',
+    link: 'https://webpack.js.org/',
+  },
+  csharp: {
+    name: 'C#',
+    link: 'http://csharp.net/',
+  },
+  android: {
+    name: 'Android Development',
+    link: 'https://developer.android.com/docs',
+  },
+  gradle: {
+    name: 'Gradle',
+    link: 'https://gradle.org/',
+  },
+  springMvc: {
+    name: 'Spring MVC',
+    link: 'https://github.com/spring-projects/spring-framework',
+  },
+  python: {
+    name: 'Python',
+    link: 'https://www.python.org/',
+  },
+  nlp: {
+    name: 'NLP (Natural Language Processing)',
+    link: 'https://en.wikipedia.org/wiki/Natural_language_processing',
   },
 };
 
@@ -90,13 +157,133 @@ export const COLLABORATORS: { [key: string]: Collaborator } = {
   },
   stijn: {
     name: 'Stijn de Witt',
-    link: 'http://StijnDeWitt.com',
+    link: 'https://StijnDeWitt.com',
+  },
+  akiraTeam: {
+    name: 'The Akira Team',
+  },
+  konradTeam: {
+    name: 'The Konrad Group Team',
+  },
+  liveLabsTeam: {
+    name: 'The CIBC Live Labs Team',
   },
 };
 
 export const WORK_ITEMS: WorkItem[] = [
   {
+    name: 'Akira',
+    link: 'https://akirahealth.ca/',
+    image: akiraBanner,
+    collaborators: [COLLABORATORS.akiraTeam],
+    dateInfo: 'November 2018 - present',
+    skills: [
+      SKILLS.typescript,
+      SKILLS.javascript,
+      SKILLS.react,
+      SKILLS.redux,
+      SKILLS.ruby,
+      SKILLS.rspec,
+      SKILLS.grape,
+      SKILLS.html,
+      SKILLS.css,
+      SKILLS.scss,
+      SKILLS.responsiveDesign,
+      SKILLS.fastify,
+      SKILLS.node,
+      SKILLS.jest,
+    ],
+    description:
+      'A leading virtual care platform helping to reimagine healthcare in Canada.',
+    longDescription: format(
+      `A leading virtual care platform helping to reimagine healthcare in Canada.
+       Akira offer's Canadians on-demand access to friendly and knowledgeable primary
+       care providers anytime they need it, wherever they are. Using the Akira
+       mobile app, members can connect directly to primary care providers to get
+       and renew prescriptions, obtain specialist and lab referrals, and have
+       their health questions answered - 24/7, across the country, in French and English.
+
+
+       At Akira, I've worked on our multi-platform clinician and patient facing
+       suite of applications. My various contributions include taking a key role in
+       re-implementing and simplifying the patient onboarding system to handle
+       patients from varying sources with complex eligibility criteria. This
+       work helped to improve patient experience and reduce the load on clinicians/customer
+       support during the onboarding of tens of thousands of users. Other contributions
+       include creating an email templating microservice to handle delivering
+       critical emails with varying branding/messaging to patients.`
+    ),
+  },
+  {
+    name: 'Konrad Group',
+    link: 'https://www.konrad.com/',
+    image: konradBanner,
+    collaborators: [COLLABORATORS.konradTeam],
+    dateInfo:
+      'January 2017 – August 2017 (intern), May 2018 – November 2018 (full-time)',
+    skills: [
+      SKILLS.javascript,
+      SKILLS.react,
+      SKILLS.redux,
+      SKILLS.csharp,
+      SKILLS.html,
+      SKILLS.css,
+      SKILLS.scss,
+      SKILLS.responsiveDesign,
+      SKILLS.webpack,
+      SKILLS.node,
+      SKILLS.express,
+      SKILLS.jquery,
+      SKILLS.sql,
+      SKILLS.jest,
+    ],
+    description:
+      "A consulting agency working to bring digital expertise to client project's.",
+    longDescription: format(
+      `A consulting agency working to bring digital expertise to client projects.
+      As a software developer at Konrad Group, I worked on several projects in a
+      full-stack development role. Through this experience of moving between projects,
+      I was exposed to various technologies that I was able to ramp up on swiftly.
+      One project I was involved with was the company's internal portal, a suite
+      of web applications responsible for managing employee time off, project time
+      tracking, and the company directory, amongst other things. On this project,
+      I worked as the primary front-end developer, while also making contributions
+      across the technology stack.`
+    ),
+  },
+  {
+    name: 'CIBC Live Labs',
+    // link: 'http://cibc.live', // Why is this a dead link???
+    // Could also maybe use `https://medium.com/cibc-live-labs/about` or
+    // `https://web.archive.org/web/20170519225446/https://www.cibc.com/ca/livelabs`?
+    // For now, i'll link here i guess.
+    link: 'https://www.cibc.com/en/about-cibc/careers/innovation-history.html',
+    image: liveLabsBanner,
+    collaborators: [COLLABORATORS.liveLabsTeam],
+    dateInfo: 'May 2016 – December 2016',
+    skills: [
+      SKILLS.android,
+      SKILLS.gradle,
+      SKILLS.firebase,
+      SKILLS.springMvc,
+      SKILLS.python,
+      SKILLS.sql,
+      SKILLS.nlp,
+    ],
+    description: "CIBC's Innovation & Digital Technology Lab.",
+    longDescription: format(
+      `Live Labs is CIBC's Innovation & Digital Technology Lab.
+       At Live Labs, we worked to iteratively formulate, design,
+       and prototype ideas for new products. In my role, I worked
+       on several projects from ideation to functional prototype.
+       Just a couple of which were an Android application built
+       from scratch and a multi-platform bot that made use of
+       Natural Language Processing.`
+    ),
+  },
+  {
     name: 'WebTunes',
+    link: 'http://webtunes.jkjones.me',
     image: webtunesBanner,
     collaborators: [COLLABORATORS.niko, COLLABORATORS.sammy],
     skills: [
@@ -110,17 +297,18 @@ export const WORK_ITEMS: WorkItem[] = [
       SKILLS.css,
     ],
     description: 'An online service that lets you share your musical tastes.',
-    longDescription: dedent(
+    longDescription: format(
       `An online service that lets you share your musical tastes. WebTunes
        allows you to import your iTunes library to create an easily shareable online
        landing page for your music. Once you've chosen a username and uploaded
        the metadata associated with your library, WebTunes will create a personalized
        page where your music can easily be listened to via Spotify and Last.fm.`
     ),
-    link: 'http://webtunes.jkjones.me',
   },
   {
     name: 'MacCoin',
+    link:
+      'https://medium.com/@savas/maccoin-a-fake-cryptocurrency-postmortem-eb5e9f2fc3d9',
     image: macCoinBanner,
     skills: [
       SKILLS.react,
@@ -138,7 +326,7 @@ export const WORK_ITEMS: WorkItem[] = [
       COLLABORATORS.yash,
     ],
     description: 'A viral web application for a fake cryptocurrency.',
-    longDescription: dedent(
+    longDescription: format(
       `A viral web application for a fake cryptocurrency. Built, amidst
       cryptocurrency craze of 2018, over the course of 24 hours as a
       send-off prank from McMaster's Software Engineering class of 2018,
@@ -150,11 +338,10 @@ export const WORK_ITEMS: WorkItem[] = [
       of a few days, MacCoin boasted 2,712 unique wallets, 840 transactions,
       and 4,737,081,027 mined coins.`
     ),
-    link:
-      'https://medium.com/@savas/maccoin-a-fake-cryptocurrency-postmortem-eb5e9f2fc3d9',
   },
   {
     name: 'Survival of the Fittest',
+    link: 'http://survival.jkjones.me',
     image: survivalOfTheFittestBanner,
     collaborators: [COLLABORATORS.vicky],
     skills: [
@@ -169,7 +356,7 @@ export const WORK_ITEMS: WorkItem[] = [
     ],
     description:
       "A multiplayer take on the heavily studied cellular automaton, Conway's Game of Life.",
-    longDescription: dedent(
+    longDescription: format(
       `A multiplayer take on the heavily studied cellular automaton, <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life" target="__blank">Conway's Game of Life</a>.
        In the original games concept a series of tiles in a 2x2 grid
        are initially set to one of 2 states (dead or alive). With
@@ -181,37 +368,59 @@ export const WORK_ITEMS: WorkItem[] = [
        the simulation begins and the winner is the team with the last
        living cells left standing.`
     ),
-    link: 'http://survival.jkjones.me',
   },
   {
     name: 'jQuery Flip',
+    link: 'https://nnattawat.github.io/flip/',
     image: jqueryFlipBanner,
     collaborators: [COLLABORATORS.nattawat, COLLABORATORS.stijn],
-    skills: [SKILLS.javascript, SKILLS.jquery],
+    skills: [SKILLS.javascript, SKILLS.jquery, SKILLS.css],
     description:
       'A lightweight jQuery plugin to make 3D card flipping animations easy.',
-    longDescription: dedent(
+    longDescription: format(
       `A lightweight jQuery plugin to make 3D card flipping animations easy.
        As one of a few maintainers on this project, I participated in the
        open source process to improve the API of this plugin, as well
        as contributing various other features and maintenance over time.`
     ),
-    link: 'http://nnattawat.github.io/flip/',
   },
   {
     name: 'FontMe',
+    link:
+      'https://chrome.google.com/webstore/detail/fontme/jmflbifhkmjblfhmkpfdflfhphbinfjl',
     image: fontMeBanner,
     skills: [SKILLS.javascript, SKILLS.jquery, SKILLS.html, SKILLS.css],
     description:
       'An extension that helps you discover what Font is being used on a given HTML element.',
-    longDescription: dedent(
+    longDescription: format(
       `An extension that helps you discover what Font is being used on a given HTML element.
        FontMe makes it incredibly easy to discover fonts used on any webpage. Just right
        click on a piece of text, select 'FontMe', and FontMe will let you know what font
        is being used. Over the years FontMe has amassed over 1000 users.`
     ),
-    link:
-      'https://chrome.google.com/webstore/detail/fontme/jmflbifhkmjblfhmkpfdflfhphbinfjl',
+  },
+  {
+    name: 'JKJones.me',
+    image: jkjonesDotMeBanner,
+    skills: [
+      SKILLS.react,
+      SKILLS.typescript,
+      SKILLS.javascript,
+      SKILLS.scss,
+      SKILLS.css,
+      SKILLS.html,
+      SKILLS.responsiveDesign,
+    ],
+    description: "This portfolio site you're on right now!",
+    longDescription: format(
+      `This portfolio site you're on right now! Purposely overengineered for what it is
+       as a showcase of what I can do. Here I had a chance to publicly showcase
+       my experience with modern web tech such as react and typescript, while
+       also experimenting with the new CSS Grid API, and even throwing my hat
+       in the ring with some responsive UI/UX design. Take a peak at the link
+       above for a look under the hood on GitHub!`
+    ),
+    link: 'https://github.com/JemarJones/JemarJones.github.io',
   },
   {
     name: 'Flash Learn',
@@ -225,7 +434,7 @@ export const WORK_ITEMS: WorkItem[] = [
       SKILLS.css,
     ],
     description: 'A crowdsourced flashcard platform.',
-    longDescription: dedent(
+    longDescription: format(
       `Flash Learn is a crowdsourced flashcard platform. With Flash Learn
        users can study virtual flashcards on categories of their choosing by
        flipping through cards and their answers one at a time. Flash Learn keeps
