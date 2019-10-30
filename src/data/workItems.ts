@@ -132,6 +132,10 @@ export const SKILLS: { [key: string]: Skill } = {
     name: 'NLP (Natural Language Processing)',
     link: 'https://en.wikipedia.org/wiki/Natural_language_processing',
   },
+  i18n: {
+    name: 'Internationalization',
+    link: 'https://en.wikipedia.org/wiki/Internationalization_and_localization',
+  },
 };
 
 export const COLLABORATORS: { [key: string]: Collaborator } = {
@@ -192,6 +196,7 @@ export const WORK_ITEMS: WorkItem[] = [
       SKILLS.fastify,
       SKILLS.node,
       SKILLS.jest,
+      SKILLS.i18n,
     ],
     description:
       'A leading virtual care platform helping to reimagine healthcare in Canada.',
@@ -236,6 +241,7 @@ export const WORK_ITEMS: WorkItem[] = [
       SKILLS.jquery,
       SKILLS.sql,
       SKILLS.jest,
+      SKILLS.i18n,
     ],
     description:
       "A consulting agency working to bring digital expertise to client project's.",
