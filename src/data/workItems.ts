@@ -161,11 +161,9 @@ export const COLLABORATORS: { [key: string]: Collaborator } = {
   },
   akiraTeam: {
     name: 'The Akira Team',
-    link: 'https://akirahealth.ca/about.html',
   },
   konradTeam: {
     name: 'The Konrad Group Team',
-    link: 'https://www.konrad.com/about',
   },
   liveLabsTeam: {
     name: 'The CIBC Live Labs Team',
