@@ -376,7 +376,7 @@ export const WORK_ITEMS: WorkItem[] = [
     link: 'https://nnattawat.github.io/flip/',
     image: jqueryFlipBanner,
     collaborators: [COLLABORATORS.nattawat, COLLABORATORS.stijn],
-    skills: [SKILLS.javascript, SKILLS.jquery],
+    skills: [SKILLS.javascript, SKILLS.jquery, SKILLS.css],
     description:
       'A lightweight jQuery plugin to make 3D card flipping animations easy.',
     longDescription: format(
