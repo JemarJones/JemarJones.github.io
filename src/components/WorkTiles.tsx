@@ -175,6 +175,9 @@ const WorkTile: React.ForwardRefExoticComponent<
         {/* Through experimentation it seems that animate-css-grid
         only works if the item has one child ¯\_(ツ)_/¯ */}
         <div className="work-tiles__item__child">
+          <div className="work-tiles__item__child__indicator">
+            {workItem.isProfessional ? 'Work' : 'Project'}
+          </div>
           {!selected ? (
             <>
               <div className="work-tiles__item__child__text-content">

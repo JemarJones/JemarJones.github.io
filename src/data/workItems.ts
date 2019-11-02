@@ -178,6 +178,7 @@ export const WORK_ITEMS: WorkItem[] = [
   {
     name: 'Akira',
     link: 'https://akirahealth.ca/',
+    isProfessional: true,
     image: akiraBanner,
     collaborators: [COLLABORATORS.akiraTeam],
     dateInfo: 'November 2018 - present',
@@ -222,6 +223,7 @@ export const WORK_ITEMS: WorkItem[] = [
   {
     name: 'Konrad Group',
     link: 'https://www.konrad.com/',
+    isProfessional: true,
     image: konradBanner,
     collaborators: [COLLABORATORS.konradTeam],
     dateInfo:
@@ -264,6 +266,7 @@ export const WORK_ITEMS: WorkItem[] = [
     // `https://web.archive.org/web/20170519225446/https://www.cibc.com/ca/livelabs`?
     // For now, i'll link here i guess.
     link: 'https://www.cibc.com/en/about-cibc/careers/innovation-history.html',
+    isProfessional: true,
     image: liveLabsBanner,
     collaborators: [COLLABORATORS.liveLabsTeam],
     dateInfo: 'May 2016 – December 2016',
