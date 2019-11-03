@@ -5,7 +5,7 @@
   justify-content: center;
   height: 100%;
 
-  @include breakpoint(tablet) {
+  @include breakpoint(above-tablet) {
     grid-template-columns: repeat(auto-fill, $desktop-tile-length);
 
     &__item {

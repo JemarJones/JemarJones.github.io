@@ -2,7 +2,7 @@
   &__control {
     @include focus-hover-1;
 
-    @include breakpoint(extra-small-only) {
+    @include breakpoint(mobile) {
       font-size: 3rem;
     }
   }
@@ -10,7 +10,7 @@
   &__value-container {
     justify-content: center;
 
-    @include breakpoint(small-laptop) {
+    @include breakpoint(above-small-laptop) {
       @include center-horizontal;
       justify-content: initial;
     }
