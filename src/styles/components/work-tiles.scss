@@ -18,6 +18,7 @@
     @include rounded-border-1;
     height: $mobile-tile-length;
     padding: $primary-spacing;
+    overflow: hidden;
     transition: box-shadow 0.2s ease-in-out;
     border: 1px solid $border-color;
     background-color: $white;
@@ -34,7 +35,6 @@
     }
 
     &--collapsed {
-      overflow: hidden;
       cursor: pointer;
       // Get rid of weird blue highlight on click
       -webkit-tap-highlight-color: rgba($white, 0);
@@ -98,7 +98,6 @@
       width: 80%;
       height: 50%;
       padding: $primary-spacing/4;
-      overflow: hidden;
     }
 
     &--selected.work-tiles__item--expanding &__child {
