@@ -4,7 +4,7 @@ export const SOCIAL_INFO: SocialMediaItem[] = [
   {
     name: 'Resume',
     description: 'Resume',
-    link: './resume.pdf',
+    link: '/resume.pdf',
     icon: 'file-alt',
   },
   {
