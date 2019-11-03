@@ -70,7 +70,7 @@
 
     &__child {
       &__indicator {
-        // FIXME #39: While collapsing on mobile it still seems to do a funny thing
+        // FIXME #39: While collapsing it still seems to do a funny thing
         @include box-shadow(true, false, true, false);
         position: absolute;
         padding: $primary-spacing/4 0;
