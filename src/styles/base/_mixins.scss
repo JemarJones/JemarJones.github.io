@@ -61,8 +61,7 @@
   transition: filter 0.2s ease-in-out;
 
   &:hover,
-  &:focus,
-  &[class$='--is-focused'] {
+  &:focus {
     filter: drop-shadow(6px 6px 2px rgba($black, 0.5));
     outline: none;
   }
@@ -70,8 +69,7 @@
 
 @mixin focus-hover-2 {
   &:hover,
-  &:focus,
-  &[class$='--is-focused'] {
+  &:focus {
     color: $shaded-dark-color;
   }
 }

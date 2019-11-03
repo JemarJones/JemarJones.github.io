@@ -27,6 +27,9 @@ const Footer: React.FC<iProps> = ({ className }): ReactElement | null => {
                   aria-label={item.description}
                 >
                   <FontAwesomeIcon icon={item.icon} title={item.description} />
+                  <span className="footer__social-links__text">
+                    {item.name}
+                  </span>
                 </a>
               </li>
             )

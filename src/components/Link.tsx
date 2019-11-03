@@ -13,7 +13,12 @@ const Link: React.FC<iLinkProps> = ({
   children,
 }): ReactElement | null => {
   return (
-    <a className="link" href={to} target={!internal ? '__blank' : undefined}>
+    <a
+      className="link"
+      href={to}
+      target={!internal ? '__blank' : undefined}
+      rel={!internal ? 'noopener noreferrer' : undefined}
+    >
       {children}
       <FontAwesomeIcon className="link__icon" icon="link" />
     </a>
