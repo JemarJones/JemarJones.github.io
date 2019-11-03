@@ -4,6 +4,7 @@ import {
   faPhone,
   faLink,
   faTimes,
+  faFileAlt,
 } from '@fortawesome/free-solid-svg-icons';
 import {
   faGithub,
@@ -14,6 +15,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 
 export const setupFontAwesome = (): void => {
+  library.add(faFileAlt);
   library.add(faGithub);
   library.add(faLinkedinIn);
   library.add(faInstagram);

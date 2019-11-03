@@ -19,8 +19,26 @@
 
     a {
       @include focus-hover-1;
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      align-items: center;
       color: $light-color;
       text-decoration: none;
+    }
+
+    &__text {
+      position: absolute;
+      bottom: -17px;
+      transition: opacity 0.2s ease-in-out;
+      opacity: 0;
+      font-size: 0.7rem;
+      white-space: pre;
+    }
+
+    a:hover &__text,
+    a:focus &__text {
+      opacity: 1;
     }
   }
 }
