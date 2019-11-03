@@ -2,7 +2,7 @@ html {
   font-family: $font-family;
   font-size: $base-font-size;
 
-  @include breakpoint(extra-small-only) {
+  @include breakpoint(mobile) {
     font-size: $mobile-font-size;
   }
 }

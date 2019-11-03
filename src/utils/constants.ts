@@ -18,6 +18,7 @@ export interface WorkItem {
   description: string;
   longDescription: string;
   link: string;
+  isProfessional?: boolean;
 }
 
 export interface SocialMediaItem {

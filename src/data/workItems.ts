@@ -132,6 +132,10 @@ export const SKILLS: { [key: string]: Skill } = {
     name: 'NLP (Natural Language Processing)',
     link: 'https://en.wikipedia.org/wiki/Natural_language_processing',
   },
+  i18n: {
+    name: 'Internationalization',
+    link: 'https://en.wikipedia.org/wiki/Internationalization_and_localization',
+  },
 };
 
 export const COLLABORATORS: { [key: string]: Collaborator } = {
@@ -174,6 +178,7 @@ export const WORK_ITEMS: WorkItem[] = [
   {
     name: 'Akira',
     link: 'https://akirahealth.ca/',
+    isProfessional: true,
     image: akiraBanner,
     collaborators: [COLLABORATORS.akiraTeam],
     dateInfo: 'November 2018 - present',
@@ -192,6 +197,7 @@ export const WORK_ITEMS: WorkItem[] = [
       SKILLS.fastify,
       SKILLS.node,
       SKILLS.jest,
+      SKILLS.i18n,
     ],
     description:
       'A leading virtual care platform helping to reimagine healthcare in Canada.',
@@ -217,6 +223,7 @@ export const WORK_ITEMS: WorkItem[] = [
   {
     name: 'Konrad Group',
     link: 'https://www.konrad.com/',
+    isProfessional: true,
     image: konradBanner,
     collaborators: [COLLABORATORS.konradTeam],
     dateInfo:
@@ -236,6 +243,7 @@ export const WORK_ITEMS: WorkItem[] = [
       SKILLS.jquery,
       SKILLS.sql,
       SKILLS.jest,
+      SKILLS.i18n,
     ],
     description:
       "A consulting agency working to bring digital expertise to client project's.",
@@ -258,6 +266,7 @@ export const WORK_ITEMS: WorkItem[] = [
     // `https://web.archive.org/web/20170519225446/https://www.cibc.com/ca/livelabs`?
     // For now, i'll link here i guess.
     link: 'https://www.cibc.com/en/about-cibc/careers/innovation-history.html',
+    isProfessional: true,
     image: liveLabsBanner,
     collaborators: [COLLABORATORS.liveLabsTeam],
     dateInfo: 'May 2016 – December 2016',

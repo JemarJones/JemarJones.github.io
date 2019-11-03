@@ -5,7 +5,12 @@ module.exports = {
   ],
   rules: {
     'order/properties-alphabetical-order': null,
-    'max-nesting-depth': 3,
+    'max-nesting-depth': [
+      3,
+      {
+        ignoreAtRules: ['include'],
+      },
+    ],
     'selector-class-pattern': [
       // Just a simple pattern to allow all the characters in BEM
       '^[a-zA-Z0-9_-]+$',

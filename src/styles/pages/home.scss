@@ -24,14 +24,14 @@
     transition: height 0.1s ease-in-out;
     font-size: 4rem;
 
-    @include breakpoint(extra-small-only) {
+    @include breakpoint(mobile) {
       font-size: 3rem;
     }
 
     &.shrunk {
       height: $header-height-medium;
 
-      @include breakpoint(extra-small-only, laptop) {
+      @include breakpoint(mobile, above-laptop) {
         height: $header-height-small;
       }
     }
@@ -41,7 +41,7 @@
       flex-direction: column;
       align-items: center;
 
-      @include breakpoint(small-laptop) {
+      @include breakpoint(above-small-laptop) {
         @include center-horizontal;
         align-items: baseline;
       }
