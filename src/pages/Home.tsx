@@ -1,8 +1,9 @@
-import React, { useState, useMemo, ReactElement } from 'react';
+import React, { useMemo, ReactElement, useCallback } from 'react';
 
 import HomeHeader from '../components/HomeHeader';
 import WorkTiles, { SelectedWorkItemMapping } from '../components/WorkTiles';
 import Footer from '../components/Footer';
+import useQueryParamState from '../hooks/useQueryParamState';
 
 import { WorkItem, Skill } from '../utils/constants';
 import { WORK_ITEMS, SKILLS } from '../data/workItems';
@@ -10,7 +11,18 @@ import { WORK_ITEMS, SKILLS } from '../data/workItems';
 interface iProps {}
 
 const Home: React.FC<iProps> = (): ReactElement | null => {
-  const [selectedSkill, setSelectedSkill] = useState<Skill | undefined>();
+  const [selectedSkill, setSelectedSkill] = useQueryParamState<Skill>(
+    'jemarKnows',
+    SKILLS.generic,
+    useCallback((s: Skill): string => s.name, []),
+    useCallback(
+      (name: string): Skill | null =>
+        Object.values(SKILLS).find(
+          (s): boolean => s.name.toLowerCase() === name.toLowerCase()
+        ) || null,
+      []
+    )
+  );
 
   const selectedWorkItemMapping = useMemo(
     (): SelectedWorkItemMapping => {
