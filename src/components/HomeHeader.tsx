@@ -16,8 +16,8 @@ import { SKILLS } from '../data/workItems';
 
 interface iProps {
   workItems: WorkItem[];
-  onSelectedSkillChange: (skill: Skill | undefined) => void;
-  selectedSkill?: Skill;
+  onSelectedSkillChange: (skill: Skill) => void;
+  selectedSkill: Skill;
 }
 
 const HomeHeader: React.FC<iProps> = ({
@@ -86,9 +86,7 @@ const HomeHeader: React.FC<iProps> = ({
 
   const handleSelectedSkillChange = useCallback(
     (skill: Skill | undefined | null): void => {
-      // We've either not selected a skill yet, or we have.
-      // No need for null in this case.
-      onSelectedSkillChange(skill || undefined);
+      onSelectedSkillChange(skill || SKILLS.generic);
     },
     [onSelectedSkillChange]
   );
@@ -104,7 +102,7 @@ const HomeHeader: React.FC<iProps> = ({
         <div className="home__header__search__control-container">
           <Select
             options={options}
-            value={selectedSkill || options[0]}
+            value={selectedSkill}
             getOptionLabel={getSkillText}
             getOptionValue={getSkillText}
             onSingleChange={handleSelectedSkillChange}
