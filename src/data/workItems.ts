@@ -354,6 +354,29 @@ export const WORK_ITEMS: WorkItem[] = [
     ),
   },
   {
+    name: 'JKJones.me',
+    image: jkjonesDotMeBanner,
+    skills: [
+      SKILLS.react,
+      SKILLS.typescript,
+      SKILLS.javascript,
+      SKILLS.scss,
+      SKILLS.css,
+      SKILLS.html,
+      SKILLS.responsiveDesign,
+    ],
+    description: "This portfolio site you're on right now!",
+    longDescription: format(
+      `This portfolio site you're on right now! Purposely overengineered for what it is
+       as a showcase of what I can do. Here I had a chance to publicly showcase
+       my experience with modern web tech such as react and typescript, while
+       also experimenting with the new CSS Grid API, and even throwing my hat
+       in the ring with some responsive UI/UX design. Take a peak at the link
+       above for a look under the hood on GitHub!`
+    ),
+    link: 'https://github.com/JemarJones/JemarJones.github.io',
+  },
+  {
     name: 'Survival of the Fittest',
     link: 'http://survival.jkjones.me',
     image: survivalOfTheFittestBanner,
@@ -439,29 +462,6 @@ export const WORK_ITEMS: WorkItem[] = [
        click on a piece of text, select 'FontMe', and FontMe will let you know what font
        is being used. Over the years FontMe has amassed over 1000 users.`
     ),
-  },
-  {
-    name: 'JKJones.me',
-    image: jkjonesDotMeBanner,
-    skills: [
-      SKILLS.react,
-      SKILLS.typescript,
-      SKILLS.javascript,
-      SKILLS.scss,
-      SKILLS.css,
-      SKILLS.html,
-      SKILLS.responsiveDesign,
-    ],
-    description: "This portfolio site you're on right now!",
-    longDescription: format(
-      `This portfolio site you're on right now! Purposely overengineered for what it is
-       as a showcase of what I can do. Here I had a chance to publicly showcase
-       my experience with modern web tech such as react and typescript, while
-       also experimenting with the new CSS Grid API, and even throwing my hat
-       in the ring with some responsive UI/UX design. Take a peak at the link
-       above for a look under the hood on GitHub!`
-    ),
-    link: 'https://github.com/JemarJones/JemarJones.github.io',
   },
   {
     name: 'Flash Learn',
