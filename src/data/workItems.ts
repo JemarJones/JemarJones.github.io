@@ -11,8 +11,9 @@ import jkjonesDotMeBanner from '../assets/jkjones_dot_me_banner.png';
 import akiraBanner from '../assets/akira_banner.svg';
 import konradBanner from '../assets/konrad_banner.svg';
 import liveLabsBanner from '../assets/live_labs_banner.png';
+import yaacBanner from '../assets/yaac.png';
 
-export const SKILLS: { [key: string]: Skill } = {
+export const SKILLS = {
   generic: {
     name: 'some things',
   },
@@ -138,7 +139,7 @@ export const SKILLS: { [key: string]: Skill } = {
   },
 };
 
-export const COLLABORATORS: { [key: string]: Collaborator } = {
+export const COLLABORATORS = {
   niko: {
     name: 'Niko Savas',
     link: 'https://savas.ca/',
@@ -376,6 +377,33 @@ export const WORK_ITEMS: WorkItem[] = [
        their team on each side of the grid. Once both players are ready,
        the simulation begins and the winner is the team with the last
        living cells left standing.`
+    ),
+  },
+  {
+    name: 'YAAC',
+    link: 'http://yaac.jkjones.me/',
+    image: yaacBanner,
+    collaborators: [COLLABORATORS.yash, COLLABORATORS.vicky],
+    skills: [
+      SKILLS.node,
+      SKILLS.express,
+      SKILLS.socket,
+      SKILLS.javascript,
+      SKILLS.jquery,
+      SKILLS.canvas,
+      SKILLS.html,
+      SKILLS.css,
+    ],
+    description: 'A clone of the game Agar.io, written from scratch.',
+    longDescription: format(
+      `A clone of the game <a href="Agar.io" target="__blank">Agar.io</a>, written from scratch.
+       Affectionally called YAAC (Yet Another Agar Clone), this project
+       is exactly as it says on the tin! When the craze around this
+       game was at an all-time high, we loved it enough to want to build
+       own copy. Starting as a small blob, players gain size by
+       moving around to consume food and other smaller players. Making
+       use of a Quadtree implementation built from the ground up for
+       efficient collision detection.`
     ),
   },
   {
