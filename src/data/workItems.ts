@@ -13,7 +13,7 @@ import konradBanner from '../assets/konrad_banner.svg';
 import liveLabsBanner from '../assets/live_labs_banner.png';
 import yaacBanner from '../assets/yaac.png';
 
-export const SKILLS = {
+const _SKILLS = {
   generic: {
     name: 'some things',
   },
@@ -138,8 +138,9 @@ export const SKILLS = {
     link: 'https://en.wikipedia.org/wiki/Internationalization_and_localization',
   },
 };
+export const SKILLS: { [key in keyof typeof _SKILLS]: Skill } = _SKILLS;
 
-export const COLLABORATORS = {
+const _COLLABORATORS = {
   niko: {
     name: 'Niko Savas',
     link: 'https://savas.ca/',
@@ -174,6 +175,9 @@ export const COLLABORATORS = {
     name: 'The CIBC Live Labs Team',
   },
 };
+export const COLLABORATORS: {
+  [key in keyof typeof _COLLABORATORS]: Collaborator
+} = _COLLABORATORS;
 
 export const WORK_ITEMS: WorkItem[] = [
   {
