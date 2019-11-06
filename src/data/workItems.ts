@@ -404,10 +404,10 @@ export const WORK_ITEMS: WorkItem[] = [
        Affectionally called YAAC (Yet Another Agar Clone), this project
        is exactly as it says on the tin! When the craze around this
        game was at an all-time high, we loved it enough to want to build
-       own copy. Starting as a small blob, players gain size by
-       moving around to consume food and other smaller players. Making
-       use of a Quadtree implementation built from the ground up for
-       efficient collision detection.`
+       own copy. Making use of a Quadtree implementation built from
+       the ground up for efficient collision detection. Starting as a
+       small blob, players gain size by moving around to consume food
+       and other smaller players.`
     ),
   },
   {
