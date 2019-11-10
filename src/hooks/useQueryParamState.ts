@@ -61,27 +61,24 @@ function useQueryParamState<T extends {}>(
     [paramName, valueSerializer]
   );
 
-  useEffect(
-    (): (() => void) => {
-      const updateStateFromQueryParam = (location: Location): void => {
-        // Read the current value from teh query param and update state to
-        // track it accordingly.
-        const paramValue = new URLSearchParams(location.search).get(paramName);
-        const value =
-          paramValue != null
-            ? valueDeserializer(paramValue) || fallbackValue
-            : fallbackValue;
-        setState(value);
-      };
+  useEffect((): (() => void) => {
+    const updateStateFromQueryParam = (location: Location): void => {
+      // Read the current value from teh query param and update state to
+      // track it accordingly.
+      const paramValue = new URLSearchParams(location.search).get(paramName);
+      const value =
+        paramValue != null
+          ? valueDeserializer(paramValue) || fallbackValue
+          : fallbackValue;
+      setState(value);
+    };
 
-      // Make sure initial value is correctly tracking query param value.
-      updateStateFromQueryParam(history.location);
+    // Make sure initial value is correctly tracking query param value.
+    updateStateFromQueryParam(history.location);
 
-      // When location changes, make sure to update internal state accordingly.
-      return history.listen(updateStateFromQueryParam);
-    },
-    [paramName, valueDeserializer, fallbackValue]
-  );
+    // When location changes, make sure to update internal state accordingly.
+    return history.listen(updateStateFromQueryParam);
+  }, [paramName, valueDeserializer, fallbackValue]);
 
   return [state, setQueryParam];
 }

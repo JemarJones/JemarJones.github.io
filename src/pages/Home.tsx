@@ -24,30 +24,27 @@ const Home: React.FC<iProps> = (): ReactElement | null => {
     )
   );
 
-  const selectedWorkItemMapping = useMemo(
-    (): SelectedWorkItemMapping => {
-      return WORK_ITEMS.reduce(
-        (
-          mapping: SelectedWorkItemMapping,
-          workItem: WorkItem
-        ): SelectedWorkItemMapping => {
-          const selected =
-            // When nothing is selected, we show everything
-            !selectedSkill ||
-            // When generic skill is selected, we show everything
-            selectedSkill.name === SKILLS.generic.name ||
-            // Otherwise, select matching work items
-            workItem.skills.some(
-              (skill: Skill): boolean => skill.name === selectedSkill.name
-            );
-          mapping[workItem.name] = selected;
-          return mapping;
-        },
-        {}
-      );
-    },
-    [selectedSkill]
-  );
+  const selectedWorkItemMapping = useMemo((): SelectedWorkItemMapping => {
+    return WORK_ITEMS.reduce(
+      (
+        mapping: SelectedWorkItemMapping,
+        workItem: WorkItem
+      ): SelectedWorkItemMapping => {
+        const selected =
+          // When nothing is selected, we show everything
+          !selectedSkill ||
+          // When generic skill is selected, we show everything
+          selectedSkill.name === SKILLS.generic.name ||
+          // Otherwise, select matching work items
+          workItem.skills.some(
+            (skill: Skill): boolean => skill.name === selectedSkill.name
+          );
+        mapping[workItem.name] = selected;
+        return mapping;
+      },
+      {}
+    );
+  }, [selectedSkill]);
 
   return (
     <div className="home">

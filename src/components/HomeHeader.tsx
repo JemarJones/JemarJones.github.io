@@ -44,41 +44,36 @@ const HomeHeader: React.FC<iProps> = ({
     };
   }, []);
 
-  const options: Skill[] = useMemo(
-    (): Skill[] => {
-      // Get the list of skills from each work item
-      let skills: Skill[] = workItems
-        .map((p: WorkItem): Skill[] => p.skills)
-        .flat();
+  const options: Skill[] = useMemo((): Skill[] => {
+    // Get the list of skills from each work item
+    let skills: Skill[] = workItems
+      .map((p: WorkItem): Skill[] => p.skills)
+      .flat();
 
-      // Create a map of skill -> number of occurances,
-      // to be used for sorting skills by frequency
-      interface SkillFrequencyMap {
-        [skillName: string]: number;
-      }
-      const skillFreqMap: SkillFrequencyMap = skills.reduce(
-        (skillFreqMap: SkillFrequencyMap, skill: Skill): SkillFrequencyMap => {
-          skillFreqMap[skill.name] = (skillFreqMap[skill.name] || 0) + 1;
-          return skillFreqMap;
-        },
-        {}
-      );
+    // Create a map of skill -> number of occurances,
+    // to be used for sorting skills by frequency
+    interface SkillFrequencyMap {
+      [skillName: string]: number;
+    }
+    const skillFreqMap: SkillFrequencyMap = skills.reduce(
+      (skillFreqMap: SkillFrequencyMap, skill: Skill): SkillFrequencyMap => {
+        skillFreqMap[skill.name] = (skillFreqMap[skill.name] || 0) + 1;
+        return skillFreqMap;
+      },
+      {}
+    );
 
-      // Dedupe the list of skills
-      skills = uniqBy(skills, (skill: Skill): string => skill.name);
-      // Sort by frequency of skill occurance
-      skills.sort(
-        (a: Skill, b: Skill): number => {
-          return skillFreqMap[b.name] - skillFreqMap[a.name];
-        }
-      );
-      // and finally, add the generic skill to the beginning
-      skills.unshift(SKILLS.generic);
+    // Dedupe the list of skills
+    skills = uniqBy(skills, (skill: Skill): string => skill.name);
+    // Sort by frequency of skill occurance
+    skills.sort((a: Skill, b: Skill): number => {
+      return skillFreqMap[b.name] - skillFreqMap[a.name];
+    });
+    // and finally, add the generic skill to the beginning
+    skills.unshift(SKILLS.generic);
 
-      return skills;
-    },
-    [workItems]
-  );
+    return skills;
+  }, [workItems]);
 
   const getSkillText = useCallback((skill: Skill): string => {
     return skill.name;

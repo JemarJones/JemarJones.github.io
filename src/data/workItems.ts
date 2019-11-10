@@ -176,7 +176,7 @@ const _COLLABORATORS = {
   },
 };
 export const COLLABORATORS: {
-  [key in keyof typeof _COLLABORATORS]: Collaborator
+  [key in keyof typeof _COLLABORATORS]: Collaborator;
 } = _COLLABORATORS;
 
 export const WORK_ITEMS: WorkItem[] = [

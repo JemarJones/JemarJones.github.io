@@ -43,12 +43,9 @@ const WorkTiles: React.FC<iProps> = ({
     setExpandedItem(item);
   }, []);
 
-  const handleOutsideClick = useCallback(
-    (): void => {
-      handleSettingWorkItem(null);
-    },
-    [handleSettingWorkItem]
-  );
+  const handleOutsideClick = useCallback((): void => {
+    handleSettingWorkItem(null);
+  }, [handleSettingWorkItem]);
   useOnClickOutside(selectedTileRef, handleOutsideClick);
 
   // Animation handling
@@ -110,30 +107,23 @@ interface iWorkTileProps {
   expanding: boolean;
 }
 
-const WorkTile: React.ForwardRefExoticComponent<
-  iWorkTileProps & React.RefAttributes<HTMLElement>
-> = forwardRef<HTMLElement, iWorkTileProps>(
+const WorkTile: React.ForwardRefExoticComponent<iWorkTileProps &
+  React.RefAttributes<HTMLElement>> = forwardRef<HTMLElement, iWorkTileProps>(
   (
     { workItem, setWorkItem, visible, selected, expanding },
     ref
   ): ReactElement | null => {
-    const handleWorkItemChosen = useCallback(
-      (): void => {
-        if (!selected) {
-          setWorkItem(workItem);
-        }
-      },
-      [selected, setWorkItem, workItem]
-    );
+    const handleWorkItemChosen = useCallback((): void => {
+      if (!selected) {
+        setWorkItem(workItem);
+      }
+    }, [selected, setWorkItem, workItem]);
 
-    const handleClose = useCallback(
-      (): void => {
-        if (selected) {
-          setWorkItem(null);
-        }
-      },
-      [selected, setWorkItem]
-    );
+    const handleClose = useCallback((): void => {
+      if (selected) {
+        setWorkItem(null);
+      }
+    }, [selected, setWorkItem]);
 
     const handleKeyDown = useCallback(
       (e: React.KeyboardEvent<HTMLDivElement>): void => {
@@ -147,15 +137,12 @@ const WorkTile: React.ForwardRefExoticComponent<
     );
 
     // Set 'body--with-modal' class on body when selected
-    useLayoutEffect(
-      (): (() => void) => {
-        document.body.className = selected ? 'body--with-modal' : '';
-        return (): void => {
-          document.body.className = '';
-        };
-      },
-      [selected]
-    );
+    useLayoutEffect((): (() => void) => {
+      document.body.className = selected ? 'body--with-modal' : '';
+      return (): void => {
+        document.body.className = '';
+      };
+    }, [selected]);
 
     return (
       <article

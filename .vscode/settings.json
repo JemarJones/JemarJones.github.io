@@ -4,4 +4,5 @@
         "src/styles/**/*.css": true
     },
     "eslint.enable": true,
+    "typescript.tsdk": "node_modules/typescript/lib",
 }
