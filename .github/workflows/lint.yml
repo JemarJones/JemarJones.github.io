@@ -8,9 +8,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
+      - id: get-version
+        name: Get node version from engines.node field in package.json
+        run: echo ::set-output name=node::$(cat ./package.json | grep '"node"' | cut -d '"' -f 4)
       - uses: actions/setup-node@v1
         with:
-            node-version: '8.11.3'
+            node-version: ${{steps.get-version.outputs.node}}
       - name: Install
         run: yarn install
       - name: Lint TypeScript
