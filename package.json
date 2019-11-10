@@ -4,8 +4,8 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": ">=12.13",
-    "yarn": ">=1.19.1"
+    "node": "12.13.0",
+    "yarn": "1.19.1"
   },
   "scripts": {
     "predeploy": "npm run build",
