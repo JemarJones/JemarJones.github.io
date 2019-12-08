@@ -19,7 +19,7 @@ jobs:
             node-version: ${{steps.get-node-version.outputs.node}}
       - name: Install
         run: |
-          yarn policies set-version ${{steps.get-yarn-version.outputs.node}}
+          yarn policies set-version ${{steps.get-yarn-version.outputs.yarn}}
           yarn install
       - name: Lint TypeScript
         run: yarn lint-ts --max-warnings 0
