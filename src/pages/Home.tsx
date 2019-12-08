@@ -19,7 +19,7 @@ const Home: React.FC<iProps> = (): ReactElement | null => {
       (name: string): Skill | null =>
         Object.values(SKILLS).find(
           (s): boolean => s.name.toLowerCase() === name.toLowerCase()
-        ) || null,
+        ) ?? null,
       []
     )
   );

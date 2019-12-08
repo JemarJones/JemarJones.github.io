@@ -68,7 +68,7 @@ function useQueryParamState<T extends {}>(
       const paramValue = new URLSearchParams(location.search).get(paramName);
       const value =
         paramValue != null
-          ? valueDeserializer(paramValue) || fallbackValue
+          ? valueDeserializer(paramValue) ?? fallbackValue
           : fallbackValue;
       setState(value);
     };

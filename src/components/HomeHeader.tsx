@@ -57,7 +57,7 @@ const HomeHeader: React.FC<iProps> = ({
     }
     const skillFreqMap: SkillFrequencyMap = skills.reduce(
       (skillFreqMap: SkillFrequencyMap, skill: Skill): SkillFrequencyMap => {
-        skillFreqMap[skill.name] = (skillFreqMap[skill.name] || 0) + 1;
+        skillFreqMap[skill.name] = (skillFreqMap[skill.name] ?? 0) + 1;
         return skillFreqMap;
       },
       {}
@@ -81,7 +81,7 @@ const HomeHeader: React.FC<iProps> = ({
 
   const handleSelectedSkillChange = useCallback(
     (skill: Skill | undefined | null): void => {
-      onSelectedSkillChange(skill || SKILLS.generic);
+      onSelectedSkillChange(skill ?? SKILLS.generic);
     },
     [onSelectedSkillChange]
   );
