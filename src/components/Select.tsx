@@ -4,10 +4,13 @@ import React, {
   ReactElement,
   CSSProperties,
 } from 'react';
-import ReactSelect from 'react-select';
-import { Props } from 'react-select/lib/Select';
-import { Theme, ValueType, ActionMeta } from 'react-select/lib/types';
-import { Styles } from 'react-select/lib/styles';
+import ReactSelect, {
+  Props,
+  Theme,
+  ValueType,
+  ActionMeta,
+  Styles,
+} from 'react-select';
 import classNames from 'classnames';
 
 /**
