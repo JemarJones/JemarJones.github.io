@@ -8,14 +8,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - id: get-version
+      - id: get-node-version
         name: Get node version from engines.node field in package.json
         run: echo ::set-output name=node::$(cat ./package.json | grep '"node"' | cut -d '"' -f 4)
+      - id: get-yarn-version
+        name: Get yarn version from engines.yarn field in package.json
+        run: echo ::set-output name=yarn::$(cat ./package.json | grep '"yarn"' | cut -d '"' -f 4)
       - uses: actions/setup-node@v1
         with:
-            node-version: ${{steps.get-version.outputs.node}}
+            node-version: ${{steps.get-node-version.outputs.node}}
       - name: Install
-        run: yarn install
+        run: |
+          yarn policies set-version ${{steps.get-yarn-version.outputs.node}}
+          yarn install
       - name: Lint TypeScript
         run: yarn lint-ts --max-warnings 0
       - name: Lint Styles
