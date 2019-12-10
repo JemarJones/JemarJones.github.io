@@ -1,5 +1,7 @@
+import React from 'react';
+
+import Link from '../components/Link';
 import { WorkItem, Skill, Collaborator } from '../utils/constants';
-import { format } from '../utils';
 
 import webtunesBanner from '../assets/webtunes_banner.png';
 import survivalOfTheFittestBanner from '../assets/survival_fittest_banner.png';
@@ -206,23 +208,27 @@ export const WORK_ITEMS: WorkItem[] = [
     ],
     description:
       'A leading virtual care platform helping to reimagine healthcare in Canada.',
-    longDescription: format(
-      `A leading virtual care platform helping to reimagine healthcare in Canada.
-       Akira offer's Canadians on-demand access to friendly and knowledgeable primary
-       care providers anytime they need it, wherever they are. Using the Akira
-       mobile app, members can connect directly to primary care providers to get
-       and renew prescriptions, obtain specialist and lab referrals, and have
-       their health questions answered - 24/7, across the country, in French and English.
-
-
-       At Akira, I've worked on our multi-platform clinician and patient facing
-       suite of applications. My various contributions include taking a key role in
-       re-implementing and simplifying the patient onboarding system to handle
-       patients from varying sources with complex eligibility criteria. This
-       work helped to improve patient experience and reduce the load on clinicians/customer
-       support during the onboarding of tens of thousands of users. Other contributions
-       include creating an email templating microservice to handle delivering
-       critical emails with varying branding/messaging to patients.`
+    longDescription: (
+      <>
+        A leading virtual care platform helping to reimagine healthcare in
+        Canada. Akira offer's Canadians on-demand access to friendly and
+        knowledgeable primary care providers anytime they need it, wherever they
+        are. Using the Akira mobile app, members can connect directly to primary
+        care providers to get and renew prescriptions, obtain specialist and lab
+        referrals, and have their health questions answered - 24/7, across the
+        country, in French and English.
+        <br />
+        <br />
+        At Akira, I've worked on our multi-platform clinician and patient facing
+        suite of applications. My various contributions include taking a key
+        role in re-implementing and simplifying the patient onboarding system to
+        handle patients from varying sources with complex eligibility criteria.
+        This work helped to improve patient experience and reduce the load on
+        clinicians/customer support during the onboarding of tens of thousands
+        of users. Other contributions include creating an email templating
+        microservice to handle delivering critical emails with varying
+        branding/messaging to patients.
+      </>
     ),
   },
   {
@@ -252,16 +258,19 @@ export const WORK_ITEMS: WorkItem[] = [
     ],
     description:
       "A consulting agency working to bring digital expertise to client project's.",
-    longDescription: format(
-      `A consulting agency working to bring digital expertise to client projects.
-      As a software developer at Konrad Group, I worked on several projects in a
-      full-stack development role. Through this experience of moving between projects,
-      I was exposed to various technologies that I was able to ramp up on swiftly.
-      One project I was involved with was the company's internal portal, a suite
-      of web applications responsible for managing employee time off, project time
-      tracking, and the company directory, amongst other things. On this project,
-      I worked as the primary front-end developer, while also making contributions
-      across the technology stack.`
+    longDescription: (
+      <>
+        A consulting agency working to bring digital expertise to client
+        projects. As a software developer at Konrad Group, I worked on several
+        projects in a full-stack development role. Through this experience of
+        moving between projects, I was exposed to various technologies that I
+        was able to ramp up on swiftly. One project I was involved with was the
+        company's internal portal, a suite of web applications responsible for
+        managing employee time off, project time tracking, and the company
+        directory, amongst other things. On this project, I worked as the
+        primary front-end developer, while also making contributions across the
+        technology stack.
+      </>
     ),
   },
   {
@@ -285,14 +294,15 @@ export const WORK_ITEMS: WorkItem[] = [
       SKILLS.nlp,
     ],
     description: "CIBC's Innovation & Digital Technology Lab.",
-    longDescription: format(
-      `Live Labs is CIBC's Innovation & Digital Technology Lab.
-       At Live Labs, we worked to iteratively formulate, design,
-       and prototype ideas for new products. In my role, I worked
-       on several projects from ideation to functional prototype.
-       Just a couple of which were an Android application built
-       from scratch and a multi-platform bot that made use of
-       Natural Language Processing.`
+    longDescription: (
+      <>
+        Live Labs is CIBC's Innovation & Digital Technology Lab. At Live Labs,
+        we worked to iteratively formulate, design, and prototype ideas for new
+        products. In my role, I worked on several projects from ideation to
+        functional prototype. Just a couple of which were an Android application
+        built from scratch and a multi-platform bot that made use of Natural
+        Language Processing.
+      </>
     ),
   },
   {
@@ -311,12 +321,15 @@ export const WORK_ITEMS: WorkItem[] = [
       SKILLS.css,
     ],
     description: 'An online service that lets you share your musical tastes.',
-    longDescription: format(
-      `An online service that lets you share your musical tastes. WebTunes
-       allows you to import your iTunes library to create an easily shareable online
-       landing page for your music. Once you've chosen a username and uploaded
-       the metadata associated with your library, WebTunes will create a personalized
-       page where your music can easily be listened to via Spotify and Last.fm.`
+    longDescription: (
+      <>
+        An online service that lets you share your musical tastes. WebTunes
+        allows you to import your iTunes library to create an easily shareable
+        online landing page for your music. Once you've chosen a username and
+        uploaded the metadata associated with your library, WebTunes will create
+        a personalized page where your music can easily be listened to via
+        Spotify and Last.fm.
+      </>
     ),
   },
   {
@@ -340,17 +353,19 @@ export const WORK_ITEMS: WorkItem[] = [
       COLLABORATORS.yash,
     ],
     description: 'A viral web application for a fake cryptocurrency.',
-    longDescription: format(
-      `A viral web application for a fake cryptocurrency. Built, amidst
-      cryptocurrency craze of 2018, over the course of 24 hours as a
-      send-off prank from McMaster's Software Engineering class of 2018,
-      MacCoin was a web application that playfully simulated the crypto
-      experience for students across McMaster's campus. MacCoin offered
-      users the ability to mine and transfer coins amongst themselves.
-      A live leaderboard was included to showcase which faculty factions
-      had amassed the most MacCoin. While only truly living for a period
-      of a few days, MacCoin boasted 2,712 unique wallets, 840 transactions,
-      and 4,737,081,027 mined coins.`
+    longDescription: (
+      <>
+        A viral web application for a fake cryptocurrency. Built, amidst
+        cryptocurrency craze of 2018, over the course of 24 hours as a send-off
+        prank from McMaster's Software Engineering class of 2018, MacCoin was a
+        web application that playfully simulated the crypto experience for
+        students across McMaster's campus. MacCoin offered users the ability to
+        mine and transfer coins amongst themselves. A live leaderboard was
+        included to showcase which faculty factions had amassed the most
+        MacCoin. While only truly living for a period of a few days, MacCoin
+        boasted 2,712 unique wallets, 840 transactions, and 4,737,081,027 mined
+        coins.
+      </>
     ),
   },
   {
@@ -366,13 +381,15 @@ export const WORK_ITEMS: WorkItem[] = [
       SKILLS.responsiveDesign,
     ],
     description: "This portfolio site you're on right now!",
-    longDescription: format(
-      `This portfolio site you're on right now! Purposely overengineered for what it is
-       as a showcase of what I can do. Here I had a chance to publicly showcase
-       my experience with modern web tech such as react and typescript, while
-       also experimenting with the new CSS Grid API, and even throwing my hat
-       in the ring with some responsive UI/UX design. Take a peak at the link
-       above for a look under the hood on GitHub!`
+    longDescription: (
+      <>
+        This portfolio site you're on right now! Purposely overengineered for
+        what it is as a showcase of what I can do. Here I had a chance to
+        publicly showcase my experience with modern web tech such as react and
+        typescript, while also experimenting with the new CSS Grid API, and even
+        throwing my hat in the ring with some responsive UI/UX design. Take a
+        peak at the link above for a look under the hood on GitHub!
+      </>
     ),
     link: 'https://github.com/JemarJones/JemarJones.github.io',
   },
@@ -393,17 +410,21 @@ export const WORK_ITEMS: WorkItem[] = [
     ],
     description:
       "A multiplayer take on the heavily studied cellular automaton, Conway's Game of Life.",
-    longDescription: format(
-      `A multiplayer take on the heavily studied cellular automaton, <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life" target="__blank">Conway's Game of Life</a>.
-       In the original games concept a series of tiles in a 2x2 grid
-       are initially set to one of 2 states (dead or alive). With
-       these initial conditions set and the simulation triggered,
-       each squares fate is determined based on a set of rules which
-       simulate over and under population. In this twist on the classic
-       concept, 2 players choose which squares to bring to life for
-       their team on each side of the grid. Once both players are ready,
-       the simulation begins and the winner is the team with the last
-       living cells left standing.`
+    longDescription: (
+      <>
+        A multiplayer take on the heavily studied cellular automaton,{' '}
+        <Link to="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">
+          Conway's Game of Life
+        </Link>
+        . In the original games concept a series of tiles in a 2x2 grid are
+        initially set to one of 2 states (dead or alive). With these initial
+        conditions set and the simulation triggered, each squares fate is
+        determined based on a set of rules which simulate over and under
+        population. In this twist on the classic concept, 2 players choose which
+        squares to bring to life for their team on each side of the grid. Once
+        both players are ready, the simulation begins and the winner is the team
+        with the last living cells left standing.
+      </>
     ),
   },
   {
@@ -422,15 +443,16 @@ export const WORK_ITEMS: WorkItem[] = [
       SKILLS.css,
     ],
     description: 'A clone of the game Agar.io, written from scratch.',
-    longDescription: format(
-      `A clone of the game <a href="Agar.io" target="__blank">Agar.io</a>, written from scratch.
-       Affectionally called YAAC (Yet Another Agar Clone), this project
-       is exactly as it says on the tin! When the craze around this
-       game was at an all-time high, we loved it enough to want to build
-       own copy. Making use of a Quadtree implementation built from
-       the ground up for efficient collision detection. Starting as a
-       small blob, players gain size by moving around to consume food
-       and other smaller players.`
+    longDescription: (
+      <>
+        A clone of the game <Link to="https://agar.io/">Agar.io</Link>, written
+        from scratch. Affectionally called YAAC (Yet Another Agar Clone), this
+        project is exactly as it says on the tin! When the craze around this
+        game was at an all-time high, we loved it enough to want to build own
+        copy. Making use of a Quadtree implementation built from the ground up
+        for efficient collision detection. Starting as a small blob, players
+        gain size by moving around to consume food and other smaller players.
+      </>
     ),
   },
   {
@@ -441,11 +463,13 @@ export const WORK_ITEMS: WorkItem[] = [
     skills: [SKILLS.javascript, SKILLS.jquery, SKILLS.css],
     description:
       'A lightweight jQuery plugin to make 3D card flipping animations easy.',
-    longDescription: format(
-      `A lightweight jQuery plugin to make 3D card flipping animations easy.
-       As one of a few maintainers on this project, I participated in the
-       open source process to improve the API of this plugin, as well
-       as contributing various other features and maintenance over time.`
+    longDescription: (
+      <>
+        A lightweight jQuery plugin to make 3D card flipping animations easy. As
+        one of a few maintainers on this project, I participated in the open
+        source process to improve the API of this plugin, as well as
+        contributing various other features and maintenance over time.
+      </>
     ),
   },
   {
@@ -456,11 +480,14 @@ export const WORK_ITEMS: WorkItem[] = [
     skills: [SKILLS.javascript, SKILLS.jquery, SKILLS.html, SKILLS.css],
     description:
       'An extension that helps you discover what Font is being used on a given HTML element.',
-    longDescription: format(
-      `An extension that helps you discover what Font is being used on a given HTML element.
-       FontMe makes it incredibly easy to discover fonts used on any webpage. Just right
-       click on a piece of text, select 'FontMe', and FontMe will let you know what font
-       is being used. Over the years FontMe has amassed over 1000 users.`
+    longDescription: (
+      <>
+        An extension that helps you discover what Font is being used on a given
+        HTML element. FontMe makes it incredibly easy to discover fonts used on
+        any webpage. Just right click on a piece of text, select 'FontMe', and
+        FontMe will let you know what font is being used. Over the years FontMe
+        has amassed over 1000 users.
+      </>
     ),
   },
   {
@@ -475,12 +502,14 @@ export const WORK_ITEMS: WorkItem[] = [
       SKILLS.css,
     ],
     description: 'A crowdsourced flashcard platform.',
-    longDescription: format(
-      `Flash Learn is a crowdsourced flashcard platform. With Flash Learn
-       users can study virtual flashcards on categories of their choosing by
-       flipping through cards and their answers one at a time. Flash Learn keeps
-       users engaged with playful animations (powered by jQuery Flip), and an easy
-       to use interface.`
+    longDescription: (
+      <>
+        Flash Learn is a crowdsourced flashcard platform. With Flash Learn users
+        can study virtual flashcards on categories of their choosing by flipping
+        through cards and their answers one at a time. Flash Learn keeps users
+        engaged with playful animations (powered by jQuery Flip), and an easy to
+        use interface.
+      </>
     ),
     link: 'http://flashlearn.jkjones.me',
   },
