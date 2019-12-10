@@ -24,21 +24,12 @@ import history from '../utils/history';
  *
  * @returns Current state and a state setter, same as similar to useState.
  */
-function useQueryParamState<T extends {}>(
+function useQueryParamState<T>(
   paramName: string,
   fallbackValue: T,
   valueSerializer: (value: T) => string,
-  valueDeserializer: (value: string) => T | null
+  valueDeserializer: (value: string) => T
 ): [T, React.Dispatch<T>] {
-  if (valueDeserializer(valueSerializer(fallbackValue)) === null) {
-    // If the fallback value winds up being deserialized to null,
-    // we're then going to fallback to the fallback value itself..
-    // so this is disallowed.
-    throw new Error(
-      'Fallback value must be deserializable to a non-null value.'
-    );
-  }
-
   // Internal state variable, should be 'controlled'
   // by the query param state.
   const [state, setState] = useState<T>(fallbackValue);
@@ -67,9 +58,7 @@ function useQueryParamState<T extends {}>(
       // track it accordingly.
       const paramValue = new URLSearchParams(location.search).get(paramName);
       const value =
-        paramValue != null
-          ? valueDeserializer(paramValue) ?? fallbackValue
-          : fallbackValue;
+        paramValue !== null ? valueDeserializer(paramValue) : fallbackValue;
       setState(value);
     };
 

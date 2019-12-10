@@ -16,10 +16,10 @@ const Home: React.FC<iProps> = (): ReactElement | null => {
     SKILLS.generic,
     useCallback((s: Skill): string => s.name, []),
     useCallback(
-      (name: string): Skill | null =>
+      (name: string): Skill =>
         Object.values(SKILLS).find(
           (s): boolean => s.name.toLowerCase() === name.toLowerCase()
-        ) ?? null,
+        ) ?? SKILLS.generic,
       []
     )
   );

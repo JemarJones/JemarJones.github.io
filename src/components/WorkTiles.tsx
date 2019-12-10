@@ -14,6 +14,7 @@ import ExternalReferenceList from './ExternalReferenceList';
 import Link from './Link';
 
 import useOnClickOutside from '../hooks/useOnClickOutside';
+import useQueryParamState from '../hooks/useQueryParamState';
 import { KeyCode } from '../utils';
 import { WorkItem } from '../utils/constants';
 
@@ -30,7 +31,20 @@ const WorkTiles: React.FC<iProps> = ({
   workItems,
   selectedWorkItemMapping,
 }): ReactElement | null => {
-  const [expandedItem, setExpandedItem] = useState<WorkItem | null>(null);
+  const [expandedItem, setExpandedItem] = useQueryParamState<WorkItem | null>(
+    'tile',
+    null,
+    useCallback((item: WorkItem | null): string => item?.name ?? 'none', []),
+    useCallback(
+      (name: string): WorkItem | null =>
+        Object.values(workItems).find(
+          (item): boolean =>
+            selectedWorkItemMapping[item.name] &&
+            item.name.toLowerCase() === name.toLowerCase()
+        ) ?? null,
+      [selectedWorkItemMapping, workItems]
+    )
+  );
   const [isExpandingItem, setIsExpandingItem] = useState<boolean>(false);
 
   // Used to work with the selected tile for animation purposes and
@@ -38,10 +52,13 @@ const WorkTiles: React.FC<iProps> = ({
   const selectedTileRef = useRef<HTMLElement>(null);
 
   // Handle controlling what the expanded work item is.
-  const handleSettingWorkItem = useCallback((item: WorkItem | null): void => {
-    setIsExpandingItem(Boolean(item));
-    setExpandedItem(item);
-  }, []);
+  const handleSettingWorkItem = useCallback(
+    (item: WorkItem | null): void => {
+      setIsExpandingItem(Boolean(item));
+      setExpandedItem(item);
+    },
+    [setExpandedItem]
+  );
 
   const handleOutsideClick = useCallback((): void => {
     handleSettingWorkItem(null);
