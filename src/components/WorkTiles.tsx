@@ -201,11 +201,9 @@ const WorkTile: React.ForwardRefExoticComponent<iWorkTileProps &
                 ) : null}
               </div>
               <img src={workItem.image} alt={workItem.name} />
-              <p
-                className="work-tiles__item__child__long-description"
-                // I promise it's not that dangerous.. there's no user input here :)
-                dangerouslySetInnerHTML={{ __html: workItem.longDescription }}
-              />
+              <p className="work-tiles__item__child__long-description">
+                {workItem.longDescription}
+              </p>
             </>
           )}
         </div>

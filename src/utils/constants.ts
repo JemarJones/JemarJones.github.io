@@ -1,4 +1,5 @@
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { ReactNode } from 'react';
 
 export interface ExternalReference {
   name: string;
@@ -16,7 +17,7 @@ export interface WorkItem {
   collaborators?: Collaborator[];
   skills: Skill[];
   description: string;
-  longDescription: string;
+  longDescription: ReactNode;
   link: string;
   isProfessional?: boolean;
 }
