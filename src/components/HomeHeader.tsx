@@ -93,9 +93,12 @@ const HomeHeader: React.FC<iProps> = ({
       })}
     >
       <div className="container">
-        <span className="home__header__name">Jemar knows</span>
+        <span className="home__header__name" id="home__header__name">
+          Jemar knows
+        </span>
         <div className="home__header__search__control-container">
           <Select
+            aria-labelledby="home__header__name"
             options={options}
             value={selectedSkill}
             getOptionLabel={getSkillText}
