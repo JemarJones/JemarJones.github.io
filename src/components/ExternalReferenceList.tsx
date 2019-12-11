@@ -43,11 +43,7 @@ const ExternalReferenceList: React.FC<iExternalReferenceListProps> = ({
               // This items top is the same as the previous,
               // that means its in the same row. Add to the
               // current rows length.
-              rowLengths.splice(
-                -1,
-                1,
-                rowLengths.slice(-1)[0] + itemRect.width
-              );
+              rowLengths[rowLengths.length - 1] += itemRect.width;
             }
             prevItem = itemRect;
 
