@@ -36,8 +36,9 @@ const ExternalReferenceList: React.FC<iExternalReferenceListProps> = ({
           (rowLengths: number[], item): number[] => {
             const itemRect: DOMRect = item.getBoundingClientRect();
             if (prevItem && prevItem.top < itemRect.top) {
-              // This items top is larger, that means its in a new row.
-              // Start the new row length with this items length.
+              // This items top position is larger (farther down),
+              // that means its in a new row. Start the new row
+              // length with this items length.
               rowLengths.push(itemRect.width);
             } else {
               // This items top is the same as the previous,
@@ -51,6 +52,7 @@ const ExternalReferenceList: React.FC<iExternalReferenceListProps> = ({
           },
           [0]
         );
+        // Set the UL width to the length of the largest row.
         const width: number = rowLengths.reduce((a, b) => Math.max(a, b));
         ulRef.current.style.width = `${width}px`;
       }
