@@ -1,4 +1,5 @@
 import React, { ReactElement, useRef, useLayoutEffect } from 'react';
+import throttle from 'lodash.throttle';
 
 import Link from './Link';
 
@@ -16,7 +17,7 @@ const ExternalReferenceList: React.FC<iExternalReferenceListProps> = ({
   const ulRef = useRef<HTMLUListElement>(null);
 
   useLayoutEffect(() => {
-    const calculateAndSetULWidth = (): void => {
+    const calculateAndSetULWidth = throttle((): void => {
       // https://stackoverflow.com/a/37413580/4236924
       // Basically, containers with flex-wrap are not able
       // to determine their children rows lengths and therefore
@@ -57,7 +58,7 @@ const ExternalReferenceList: React.FC<iExternalReferenceListProps> = ({
         const width: number = rowLengths.reduce((a, b) => Math.max(a, b));
         ulRef.current.style.width = `${width}px`;
       }
-    };
+    }, 100);
 
     calculateAndSetULWidth();
     window.addEventListener('resize', calculateAndSetULWidth);
