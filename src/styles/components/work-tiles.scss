@@ -90,13 +90,13 @@
     &--selected {
       position: fixed;
       z-index: $z-index-high;
-      top: 25%;
+      top: 17.5%;
       left: 10%;
       // I'd love to set max width/heights for this guy
       // But it proves difficult to do that and still center
       // while being position fixed :/
       width: 80%;
-      height: 50%;
+      height: 65%;
       padding: $primary-spacing/4;
     }
 
@@ -109,10 +109,10 @@
       flex-direction: column;
       align-items: center;
       max-width: 700px;
-      // Set height to 100% - the margin top (aka $primary-spacing*1.5).
-      height: calc(100% - #{$primary-spacing*1.5});
-      margin: auto;
-      margin-top: $primary-spacing*1.5;
+      // Set height to 100% - the top and bottom margin (aka $primary-spacing*3).
+      height: calc(100% - #{$primary-spacing*3});
+      // margin: auto;
+      margin: $primary-spacing*1.5 auto;
       overflow-y: scroll;
 
       h1 {
