@@ -3,12 +3,12 @@ import React from 'react';
 import Link from '../components/Link';
 import { WorkItem, Skill, Collaborator } from '../utils/constants';
 
-import webtunesBanner from '../assets/webtunes_banner.png';
-import survivalOfTheFittestBanner from '../assets/survival_fittest_banner.png';
+import webtunesBanner from '../assets/webtunes_banner.svg';
+import survivalOfTheFittestBanner from '../assets/survival_of_the_fittest_banner.svg';
 import jqueryFlipBanner from '../assets/jquery_flip_banner.png';
-import flashLearnBanner from '../assets/flash_learn_banner.png';
-import fontMeBanner from '../assets/font_me_banner.png';
-import macCoinBanner from '../assets/maccoin_banner.png';
+import flashLearnBanner from '../assets/flash_learn_banner.svg';
+import fontMeBanner from '../assets/font_me_banner.svg';
+import macCoinBanner from '../assets/maccoin_banner.svg';
 import jkjonesDotMeBanner from '../assets/jkjones_dot_me_banner.png';
 import akiraBanner from '../assets/akira_banner.svg';
 import konradBanner from '../assets/konrad_banner.svg';
