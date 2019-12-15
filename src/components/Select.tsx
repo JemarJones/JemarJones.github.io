@@ -3,6 +3,8 @@ import React, {
   useMemo,
   ReactElement,
   CSSProperties,
+  useEffect,
+  useState,
 } from 'react';
 import ReactSelect, {
   Props,
@@ -12,6 +14,8 @@ import ReactSelect, {
   Styles,
 } from 'react-select';
 import classNames from 'classnames';
+
+import useMedia from '../hooks/useMedia';
 
 /**
  * Light wrapper around react-select, mostly just for styling.
@@ -32,6 +36,21 @@ const Select = <OptionType extends {}>({
   onChange,
   ...props
 }: iProps<OptionType>): ReactElement | null => {
+  const mobile = useMedia('(max-width: 425px)');
+  const [key, setKey] = useState(`select-${Date.now()}`);
+
+  useEffect(() => {
+    // react-select uses react-input-autosize internally,
+    // which doesn't automatically reflect changes in style:
+    // (https://github.com/JedWatson/react-input-autosize#changing-the-styles-at-runtime).
+    // One of the suggested resolutions is to force a full re-render with a change in
+    // `key` when styles change, so that's what we're doing here.
+    // Specifically we reset the key when hitting this mobile breakpoint
+    // because at this breakpoint the base font-size changes, which the styles
+    // below rely upon due to their usage of rem's.
+    setKey(`select-${Date.now()}`);
+  }, [mobile]);
+
   const getSearchTheme = useCallback(
     (theme: Theme): Theme => ({
       ...theme,
@@ -91,6 +110,7 @@ const Select = <OptionType extends {}>({
           ? state.theme.colors.neutral50
           : provided.backgroundColor,
         fontSize: '3rem',
+        overflowWrap: 'break-word',
       }),
     }),
     []
@@ -120,6 +140,7 @@ const Select = <OptionType extends {}>({
       {...props}
       onChange={handleChange}
       className={classNames('jkj-select', props.className)}
+      key={key}
     />
   );
 };
