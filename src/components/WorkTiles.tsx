@@ -12,6 +12,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import ExternalReferenceList from './ExternalReferenceList';
 import Link from './Link';
+import FocusTrap from './FocusTrap';
 
 import useOnClickOutside from '../hooks/useOnClickOutside';
 import useQueryParamState from '../hooks/useQueryParamState';
@@ -171,14 +172,11 @@ const WorkTile: React.ForwardRefExoticComponent<iWorkTileProps &
           'work-tiles__item--selected': selected,
           'work-tiles__item--expanding': expanding,
         })}
-        aria-hidden={!visible}
         tabIndex={0}
         onKeyDown={handleKeyDown}
         onClick={handleWorkItemChosen}
       >
-        {/* Through experimentation it seems that animate-css-grid
-        only works if the item has one child ¯\_(ツ)_/¯ */}
-        <div className="work-tiles__item__child">
+        <FocusTrap active={selected} className="work-tiles__item__child">
           <div className="work-tiles__item__child__indicator">
             {workItem.isProfessional ? 'Work' : 'Project'}
           </div>
@@ -223,7 +221,7 @@ const WorkTile: React.ForwardRefExoticComponent<iWorkTileProps &
               </p>
             </>
           )}
-        </div>
+        </FocusTrap>
       </article>
     );
   }

@@ -53,12 +53,12 @@ const Home: React.FC<iProps> = (): ReactElement | null => {
         onSelectedSkillChange={setSelectedSkill}
         selectedSkill={selectedSkill}
       />
-      <section className="home__main container">
+      <main role="main" className="home__main container">
         <WorkTiles
           workItems={WORK_ITEMS}
           selectedWorkItemMapping={selectedWorkItemMapping}
         />
-      </section>
+      </main>
       <Footer className="home__footer" />
     </div>
   );

@@ -11,7 +11,7 @@ interface iProps {
 
 const Footer: React.FC<iProps> = ({ className }): ReactElement | null => {
   return (
-    <footer className={classNames('footer', className)}>
+    <footer role="contentinfo" className={classNames('footer', className)}>
       <div className="container">
         <ul
           className="footer__social-links"
