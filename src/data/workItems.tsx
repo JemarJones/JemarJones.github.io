@@ -393,9 +393,10 @@ export const WORK_ITEMS: WorkItem[] = [
         This portfolio site you're on right now! Purposely overengineered for
         what it is as a showcase of what I can do. Here I had a chance to
         publicly showcase my experience with modern web tech such as react and
-        typescript, while also experimenting with the new CSS Grid API, and even
-        throwing my hat in the ring with some responsive UI/UX design. Take a
-        peak at the link above for a look under the hood on GitHub!
+        typescript, while also experimenting with the new CSS Grid API, ensuring
+        an accessible exerience, and even throwing my hat in the ring with some
+        responsive UI/UX design. Take a peak at the link above for a look under
+        the hood on GitHub!
       </>
     ),
     link: 'https://github.com/JemarJones/JemarJones.github.io',
