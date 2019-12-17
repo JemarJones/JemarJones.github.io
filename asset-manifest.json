@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.15a842b2.chunk.css",
+    "main.css": "/static/css/main.126025b6.chunk.css",
     "main.js": "/static/js/main.efa7b4af.chunk.js",
     "main.js.map": "/static/js/main.efa7b4af.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.443f3000.js",
@@ -8,9 +8,9 @@
     "static/js/2.c071d87e.chunk.js": "/static/js/2.c071d87e.chunk.js",
     "static/js/2.c071d87e.chunk.js.map": "/static/js/2.c071d87e.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.cb9f8a8c3a221914865f91b1607419aa.js": "/precache-manifest.cb9f8a8c3a221914865f91b1607419aa.js",
+    "precache-manifest.5044bac1e12e64ed27acaf7c8ed00420.js": "/precache-manifest.5044bac1e12e64ed27acaf7c8ed00420.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.15a842b2.chunk.css.map": "/static/css/main.15a842b2.chunk.css.map",
+    "static/css/main.126025b6.chunk.css.map": "/static/css/main.126025b6.chunk.css.map",
     "static/js/2.c071d87e.chunk.js.LICENSE": "/static/js/2.c071d87e.chunk.js.LICENSE",
     "static/media/akira_banner.svg": "/static/media/akira_banner.9176d0e7.svg",
     "static/media/flash_learn_banner.svg": "/static/media/flash_learn_banner.ce7dc9ee.svg",
@@ -26,7 +26,7 @@
   "entrypoints": [
     "static/js/runtime-main.443f3000.js",
     "static/js/2.c071d87e.chunk.js",
-    "static/css/main.15a842b2.chunk.css",
+    "static/css/main.126025b6.chunk.css",
     "static/js/main.efa7b4af.chunk.js"
   ]
 }
