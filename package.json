@@ -9,7 +9,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b master -d build -m 'Upates to build for deploying to github pages'",
+    "deploy": "gh-pages -b master -d build -m \"Upates to build for deploying to github pages from: $(git rev-parse --short HEAD)\"",
     "start": "EXTEND_ESLINT=true react-scripts start",
     "build": "EXTEND_ESLINT=true react-scripts build",
     "test": "react-scripts test --env=jsdom",
