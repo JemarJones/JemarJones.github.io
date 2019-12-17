@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6acaa4a81695217a42db292cc775a056",
+    "revision": "5bdc7baa465223891b39776b0ef6eda3",
     "url": "/index.html"
   },
   {
-    "revision": "666bd179b237dcea3a03",
+    "revision": "15171b7fd811ccf53e79",
     "url": "/static/css/main.126025b6.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/2.c071d87e.chunk.js.LICENSE"
   },
   {
-    "revision": "666bd179b237dcea3a03",
-    "url": "/static/js/main.efa7b4af.chunk.js"
+    "revision": "15171b7fd811ccf53e79",
+    "url": "/static/js/main.cac53fb1.chunk.js"
   },
   {
     "revision": "bdd694767d1bdc4ad698",
@@ -48,8 +48,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/live_labs_banner.64c00f23.png"
   },
   {
-    "revision": "d401f83ba1fd6b9bb14ab2292039d07b",
-    "url": "/static/media/maccoin_banner.d401f83b.svg"
+    "revision": "2f941b8608eeec9be20e22d9bafbb898",
+    "url": "/static/media/maccoin_banner.2f941b86.svg"
   },
   {
     "revision": "582d32ddd96174519c1a0bd905ce7616",
