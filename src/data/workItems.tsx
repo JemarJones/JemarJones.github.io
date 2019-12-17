@@ -139,6 +139,10 @@ const _SKILLS = {
     name: 'Internationalization',
     link: 'https://en.wikipedia.org/wiki/Internationalization_and_localization',
   },
+  a11y: {
+    name: 'Accessibility',
+    link: 'https://developer.mozilla.org/en-US/docs/Web/Accessibility',
+  },
 };
 export const SKILLS: { [key in keyof typeof _SKILLS]: Skill } = _SKILLS;
 
@@ -205,6 +209,7 @@ export const WORK_ITEMS: WorkItem[] = [
       SKILLS.node,
       SKILLS.jest,
       SKILLS.i18n,
+      SKILLS.a11y,
     ],
     description:
       'A leading virtual care platform helping to reimagine healthcare in Canada.',
@@ -255,6 +260,7 @@ export const WORK_ITEMS: WorkItem[] = [
       SKILLS.sql,
       SKILLS.jest,
       SKILLS.i18n,
+      SKILLS.a11y,
     ],
     description:
       "A consulting agency working to bring digital expertise to client project's.",
@@ -379,6 +385,7 @@ export const WORK_ITEMS: WorkItem[] = [
       SKILLS.css,
       SKILLS.html,
       SKILLS.responsiveDesign,
+      SKILLS.a11y,
     ],
     description: "This portfolio site you're on right now!",
     longDescription: (

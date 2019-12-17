@@ -12,6 +12,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import ExternalReferenceList from './ExternalReferenceList';
 import Link from './Link';
+import FocusTrap from './FocusTrap';
 
 import useOnClickOutside from '../hooks/useOnClickOutside';
 import useQueryParamState from '../hooks/useQueryParamState';
@@ -92,7 +93,7 @@ const WorkTiles: React.FC<iProps> = ({
   );
 
   return (
-    <div className="work-tiles" ref={wrapGripRef}>
+    <div className="work-tiles" ref={wrapGripRef} aria-live="assertive">
       {workItems.map(
         (workItem: WorkItem): JSX.Element => {
           const isSelected: boolean = expandedItem === workItem;
@@ -108,6 +109,7 @@ const WorkTiles: React.FC<iProps> = ({
               // If we're explanding the selected item and this is the selected item
               // then this item is expanding.
               expanding={isExpandingItem && isSelected}
+              hiddenBehindSelectedItem={!!expandedItem && !isSelected}
             />
           );
         }
@@ -122,12 +124,20 @@ interface iWorkTileProps {
   visible: boolean;
   selected: boolean;
   expanding: boolean;
+  hiddenBehindSelectedItem: boolean;
 }
 
 const WorkTile: React.ForwardRefExoticComponent<iWorkTileProps &
   React.RefAttributes<HTMLElement>> = forwardRef<HTMLElement, iWorkTileProps>(
   (
-    { workItem, setWorkItem, visible, selected, expanding },
+    {
+      workItem,
+      setWorkItem,
+      visible,
+      selected,
+      expanding,
+      hiddenBehindSelectedItem,
+    },
     ref
   ): ReactElement | null => {
     const handleWorkItemChosen = useCallback((): void => {
@@ -171,14 +181,12 @@ const WorkTile: React.ForwardRefExoticComponent<iWorkTileProps &
           'work-tiles__item--selected': selected,
           'work-tiles__item--expanding': expanding,
         })}
-        aria-hidden={!visible}
-        tabIndex={0}
+        tabIndex={hiddenBehindSelectedItem ? -1 : 0}
+        aria-hidden={hiddenBehindSelectedItem}
         onKeyDown={handleKeyDown}
         onClick={handleWorkItemChosen}
       >
-        {/* Through experimentation it seems that animate-css-grid
-        only works if the item has one child ¯\_(ツ)_/¯ */}
-        <div className="work-tiles__item__child">
+        <FocusTrap active={selected} className="work-tiles__item__child">
           <div className="work-tiles__item__child__indicator">
             {workItem.isProfessional ? 'Work' : 'Project'}
           </div>
@@ -223,7 +231,7 @@ const WorkTile: React.ForwardRefExoticComponent<iWorkTileProps &
               </p>
             </>
           )}
-        </div>
+        </FocusTrap>
       </article>
     );
   }
