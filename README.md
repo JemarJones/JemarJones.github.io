@@ -1,5 +1,5 @@
 # JKJones.me - My personal site
 
-## Technology used:
+Technology used: React, TypeScript, JavaScript, SCSS, CSS, and HTML.
 
-It's a CRA: https://facebook.github.io/create-react-app/
+It's also responsive and accessible!
