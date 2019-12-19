@@ -12,6 +12,8 @@
   min-height: 100vh;
 
   &__header {
+    $header-transition-duration: 0.1s;
+
     @include inverted-colors;
     @include bottom-box-shadow;
     display: flex;
@@ -22,7 +24,7 @@
     flex-direction: column;
     justify-content: center;
     height: $header-height;
-    transition: height 0.1s ease-in-out;
+    transition: height $header-transition-duration ease-in-out;
     font-size: 4rem;
 
     @include breakpoint(tablet-and-below) {
@@ -70,14 +72,22 @@
 
     &__intro {
       @include center-horizontal;
-      padding: 0 $primary-spacing*2;
+      max-height: 60px;
       padding: 0 $primary-spacing*2 $primary-spacing $primary-spacing*2;
+      overflow: hidden;
+      transition: height $header-transition-duration ease-in-out
+        , padding $header-transition-duration ease-in-out
+        , margin $header-transition-duration ease-in-out
+        , opacity $header-transition-duration ease-in-out;
       font-size: 1.5rem;
       text-align: center;
     }
 
     &.shrunk &__intro {
-      display: none;
+      max-height: 0;
+      margin: 0;
+      padding: 0;
+      opacity: 0;
     }
   }
 

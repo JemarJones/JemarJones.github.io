@@ -109,7 +109,7 @@ const HomeHeader: React.FC<iProps> = ({
           <span>.</span>
         </div>
       </div>
-      <p className="home__header__intro">
+      <p className="home__header__intro" aria-hidden={headerShrunk}>
         Hey! I'm a Developer located in Toronto, and I love building impactful
         software.
       </p>
