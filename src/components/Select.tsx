@@ -36,7 +36,7 @@ const Select = <OptionType extends {}>({
   onChange,
   ...props
 }: iProps<OptionType>): ReactElement | null => {
-  const mobile = useMedia('(max-width: 425px)');
+  const mobile = useMedia('(max-width: 768px)');
   const [key, setKey] = useState(`select-${Date.now()}`);
 
   useEffect(() => {

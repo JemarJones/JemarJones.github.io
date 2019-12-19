@@ -134,7 +134,7 @@
       }
 
       &__long-description {
-        margin: $primary-spacing/1.25 $primary-spacing;
+        margin: $primary-spacing*1.25 $primary-spacing $primary-spacing/1.25 $primary-spacing;
       }
 
       &__close-btn {

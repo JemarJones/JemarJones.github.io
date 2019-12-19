@@ -2,6 +2,10 @@
   &__control {
     @include focus-hover-1;
 
+    @include breakpoint(tablet-and-below) {
+      font-size: 2.625rem;
+    }
+
     @include breakpoint(mobile) {
       font-size: 3rem;
     }
