@@ -1,14 +1,18 @@
 .work-tiles {
+  $tile-padding: $primary-spacing;
+
   display: grid;
   grid-gap: $primary-spacing;
   grid-template-columns: repeat(auto-fill, $mobile-tile-length);
+  grid-template-rows: repeat(auto-fit, $mobile-tile-length + $tile-padding*2);
   justify-content: center;
   height: 100%;
 
   @include breakpoint(above-tablet) {
     grid-template-columns: repeat(auto-fill, $desktop-tile-length);
+    grid-template-rows: repeat(auto-fit, $desktop-tile-length + $tile-padding*2);
 
-    &__item {
+    &__item.work-tiles__item--collapsed {
       height: $desktop-tile-length;
     }
   }
@@ -17,7 +21,7 @@
     @include box-shadow(false, true, true, false);
     @include rounded-border-1;
     height: $mobile-tile-length;
-    padding: $primary-spacing;
+    padding: $tile-padding;
     overflow: hidden;
     transition: box-shadow 0.2s ease-in-out;
     border: 1px solid $border-color;
@@ -88,6 +92,7 @@
     }
 
     &--selected {
+      display: flex;
       position: fixed;
       z-index: $z-index-high;
       top: 17.5%;
@@ -114,6 +119,10 @@
       margin: $primary-spacing*1.5 auto;
       overflow-y: scroll;
 
+      > * {
+        flex-shrink: 0;
+      }
+
       h1 {
         margin-top: 0;
         margin-bottom: $primary-spacing/2;
@@ -129,6 +138,7 @@
       }
 
       img {
+        flex-shrink: 1;
         max-height: 25%;
         margin-top: $primary-spacing/2;
       }
