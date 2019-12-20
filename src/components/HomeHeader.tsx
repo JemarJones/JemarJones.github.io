@@ -48,7 +48,9 @@ const HomeHeader: React.FC<iProps> = ({
     // Get the list of skills from each work item
     let skills: Skill[] = workItems
       .map((p: WorkItem): Skill[] => p.skills)
-      .flat();
+      .reduce((accSkills, currSkills) => {
+        return accSkills.concat(currSkills);
+      }, []);
 
     // Create a map of skill -> number of occurances,
     // to be used for sorting skills by frequency
