@@ -1,10 +1,10 @@
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
   faEnvelopeOpen,
-  faPhone,
   faLink,
   faTimes,
   faFileAlt,
+  faFilm,
 } from '@fortawesome/free-solid-svg-icons';
 import {
   faGithub,
@@ -21,10 +21,10 @@ export const setupFontAwesome = (): void => {
   library.add(faInstagram);
   library.add(faSpotify);
   library.add(faEnvelopeOpen);
-  library.add(faPhone);
   library.add(faStackOverflow);
   library.add(faLink);
   library.add(faTimes);
+  library.add(faFilm);
 };
 
 export const resetFontAwesome = library.reset;

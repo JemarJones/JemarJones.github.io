@@ -26,6 +26,12 @@ export const SOCIAL_INFO: SocialMediaItem[] = [
     icon: ['fab', 'stack-overflow'],
   },
   {
+    name: 'Letterboxd',
+    description: 'Letterboxd Profile',
+    link: 'https://letterboxd.com/jemarjones/',
+    icon: 'film',
+  },
+  {
     name: 'Instagram',
     description: 'Instagram Profile',
     link: 'https://www.instagram.com/therealjkjones/',
@@ -42,11 +48,5 @@ export const SOCIAL_INFO: SocialMediaItem[] = [
     description: 'Contact via email',
     link: 'mailto:JemarKJones@gmail.com',
     icon: 'envelope-open',
-  },
-  {
-    name: 'Phone',
-    description: 'Contact via phone',
-    link: 'tel:+4163014732',
-    icon: 'phone',
   },
 ];
