@@ -14,6 +14,7 @@ import akiraBanner from '../assets/akira_banner.svg';
 import konradBanner from '../assets/konrad_banner.svg';
 import liveLabsBanner from '../assets/live_labs_banner.png';
 import yaacBanner from '../assets/yaac.png';
+import motyBanner from '../assets/moty_banner.png';
 
 const _SKILLS = {
   generic: {
@@ -98,6 +99,14 @@ const _SKILLS = {
   fastify: {
     name: 'Fastify',
     link: 'https://www.fastify.io/',
+  },
+  nestjs: {
+    name: 'NestJS',
+    link: 'https://nestjs.com/',
+  },
+  typeorm: {
+    name: 'TypeORM',
+    link: 'https://typeorm.io/',
   },
   jest: {
     name: 'Jest',
@@ -308,6 +317,34 @@ export const WORK_ITEMS: WorkItem[] = [
         functional prototype. Just a couple of which were an Android application
         built from scratch and a multi-platform bot that made use of Natural
         Language Processing.
+      </>
+    ),
+  },
+  {
+    name: 'MOTY',
+    link: 'https://manageroftheyear.me/',
+    image: motyBanner,
+    skills: [
+      SKILLS.typescript,
+      SKILLS.javascript,
+      SKILLS.node,
+      SKILLS.nestjs,
+      SKILLS.typeorm,
+      SKILLS.sql,
+      SKILLS.react,
+      SKILLS.webpack,
+      SKILLS.html,
+      SKILLS.scss,
+      SKILLS.css,
+      SKILLS.responsiveDesign,
+    ],
+    description: 'A niche web application for running fantasy leagues.',
+    longDescription: (
+      <>
+        A niche web application for running fantasy leagues. Lets users create
+        and join leagues, run a snake draft, make trades, and automatically
+        accumulate points based on centrally entered match results. Actively
+        used by about 100 users.
       </>
     ),
   },
