@@ -331,6 +331,7 @@ export const WORK_ITEMS: WorkItem[] = [
       SKILLS.nestjs,
       SKILLS.typeorm,
       SKILLS.sql,
+      SKILLS.firebase,
       SKILLS.react,
       SKILLS.webpack,
       SKILLS.html,
