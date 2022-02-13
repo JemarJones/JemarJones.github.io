@@ -342,37 +342,14 @@ export const WORK_ITEMS: WorkItem[] = [
     description: 'A niche web application for running fantasy leagues.',
     longDescription: (
       <>
-        A niche web application for running fantasy leagues. Lets users create
-        and join leagues, run a snake draft, make trades, and automatically
-        accumulate points based on centrally entered match results. Actively
-        used by about 100 users.
-      </>
-    ),
-  },
-  {
-    name: 'WebTunes',
-    link: 'http://webtunes.jkjones.me',
-    image: webtunesBanner,
-    collaborators: [COLLABORATORS.niko, COLLABORATORS.sammy],
-    skills: [
-      SKILLS.node,
-      SKILLS.express,
-      SKILLS.sql,
-      SKILLS.jade,
-      SKILLS.javascript,
-      SKILLS.jquery,
-      SKILLS.html,
-      SKILLS.css,
-    ],
-    description: 'An online service that lets you share your musical tastes.',
-    longDescription: (
-      <>
-        An online service that lets you share your musical tastes. WebTunes
-        allows you to import your iTunes library to create an easily shareable
-        online landing page for your music. Once you've chosen a username and
-        uploaded the metadata associated with your library, WebTunes will create
-        a personalized page where your music can easily be listened to via
-        Spotify and Last.fm.
+        Since 2017 I've been obsessively following a competitive movie trivia
+        show. One thing myself and others have taken to doing is participating
+        in yearly fantasy leagues for this show, complete with drafts of
+        competitors. In the past, these have usually been run by hand, which
+        really isn't my style. So I built a web app to organize and automate
+        these fantasy leagues and now have about 100 users. It's a responsive
+        site built with TypeScript, Node.js, NestJS, TypeORM, PostgreSQL, React,
+        Webpack, HTML, and SCSS.
       </>
     ),
   },
@@ -413,6 +390,33 @@ export const WORK_ITEMS: WorkItem[] = [
     ),
   },
   {
+    name: 'WebTunes',
+    link: 'http://webtunes.jkjones.me',
+    image: webtunesBanner,
+    collaborators: [COLLABORATORS.niko, COLLABORATORS.sammy],
+    skills: [
+      SKILLS.node,
+      SKILLS.express,
+      SKILLS.sql,
+      SKILLS.jade,
+      SKILLS.javascript,
+      SKILLS.jquery,
+      SKILLS.html,
+      SKILLS.css,
+    ],
+    description: 'An online service that lets you share your musical tastes.',
+    longDescription: (
+      <>
+        An online service that lets you share your musical tastes. WebTunes
+        allows you to import your iTunes library to create an easily shareable
+        online landing page for your music. Once you've chosen a username and
+        uploaded the metadata associated with your library, WebTunes will create
+        a personalized page where your music can easily be listened to via
+        Spotify and Last.fm.
+      </>
+    ),
+  },
+  {
     name: 'JKJones.me',
     image: jkjonesDotMeBanner,
     skills: [
@@ -438,6 +442,41 @@ export const WORK_ITEMS: WorkItem[] = [
       </>
     ),
     link: 'https://github.com/JemarJones/JemarJones.github.io',
+  },
+  {
+    name: 'FontMe',
+    link:
+      'https://chrome.google.com/webstore/detail/fontme/jmflbifhkmjblfhmkpfdflfhphbinfjl',
+    image: fontMeBanner,
+    skills: [SKILLS.javascript, SKILLS.jquery, SKILLS.html, SKILLS.css],
+    description:
+      'A popular extension that helps you discover what Font is being used on a given HTML element.',
+    longDescription: (
+      <>
+        An extension that helps you discover what Font is being used on a given
+        HTML element. FontMe makes it incredibly easy to discover fonts used on
+        any webpage. Just right click on a piece of text, select 'FontMe', and
+        FontMe will let you know what font is being used. Over the years FontMe
+        has amassed over 1000 users.
+      </>
+    ),
+  },
+  {
+    name: 'jQuery Flip',
+    link: 'https://nnattawat.github.io/flip/',
+    image: jqueryFlipBanner,
+    collaborators: [COLLABORATORS.nattawat, COLLABORATORS.stijn],
+    skills: [SKILLS.javascript, SKILLS.jquery, SKILLS.css],
+    description:
+      'A lightweight jQuery plugin to make 3D card flipping animations easy.',
+    longDescription: (
+      <>
+        A lightweight jQuery plugin to make 3D card flipping animations easy. As
+        one of a few maintainers on this project, I participated in the open
+        source process to improve the API of this plugin, as well as
+        contributing various other features and maintenance over time.
+      </>
+    ),
   },
   {
     name: 'Survival of the Fittest',
@@ -498,41 +537,6 @@ export const WORK_ITEMS: WorkItem[] = [
         copy. Making use of a Quadtree implementation built from the ground up
         for efficient collision detection. Starting as a small blob, players
         gain size by moving around to consume food and other smaller players.
-      </>
-    ),
-  },
-  {
-    name: 'jQuery Flip',
-    link: 'https://nnattawat.github.io/flip/',
-    image: jqueryFlipBanner,
-    collaborators: [COLLABORATORS.nattawat, COLLABORATORS.stijn],
-    skills: [SKILLS.javascript, SKILLS.jquery, SKILLS.css],
-    description:
-      'A lightweight jQuery plugin to make 3D card flipping animations easy.',
-    longDescription: (
-      <>
-        A lightweight jQuery plugin to make 3D card flipping animations easy. As
-        one of a few maintainers on this project, I participated in the open
-        source process to improve the API of this plugin, as well as
-        contributing various other features and maintenance over time.
-      </>
-    ),
-  },
-  {
-    name: 'FontMe',
-    link:
-      'https://chrome.google.com/webstore/detail/fontme/jmflbifhkmjblfhmkpfdflfhphbinfjl',
-    image: fontMeBanner,
-    skills: [SKILLS.javascript, SKILLS.jquery, SKILLS.html, SKILLS.css],
-    description:
-      'An extension that helps you discover what Font is being used on a given HTML element.',
-    longDescription: (
-      <>
-        An extension that helps you discover what Font is being used on a given
-        HTML element. FontMe makes it incredibly easy to discover fonts used on
-        any webpage. Just right click on a piece of text, select 'FontMe', and
-        FontMe will let you know what font is being used. Over the years FontMe
-        has amassed over 1000 users.
       </>
     ),
   },
