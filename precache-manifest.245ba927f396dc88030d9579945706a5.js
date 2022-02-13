@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c6e06843fdd96f0af74d1caddbc08701",
+    "revision": "c0919a24b73ecf37e544e212e14757b0",
     "url": "/index.html"
   },
   {
-    "revision": "26363d9f2a1a1453b723",
+    "revision": "5cc72f5d86c6444e5fae",
     "url": "/static/css/main.676cbcdb.chunk.css"
   },
   {
-    "revision": "40da22eb54b332eb844b",
-    "url": "/static/js/2.92ffcf63.chunk.js"
+    "revision": "089860e9e9a8f31f25bf",
+    "url": "/static/js/2.9a1758cc.chunk.js"
   },
   {
     "revision": "dd65fa3cbe6ade16f81900d990817c3f",
-    "url": "/static/js/2.92ffcf63.chunk.js.LICENSE"
+    "url": "/static/js/2.9a1758cc.chunk.js.LICENSE"
   },
   {
-    "revision": "26363d9f2a1a1453b723",
-    "url": "/static/js/main.c952b4ec.chunk.js"
+    "revision": "5cc72f5d86c6444e5fae",
+    "url": "/static/js/main.a2ed7f9d.chunk.js"
   },
   {
     "revision": "bdd694767d1bdc4ad698",
@@ -50,6 +50,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "2f941b8608eeec9be20e22d9bafbb898",
     "url": "/static/media/maccoin_banner.2f941b86.svg"
+  },
+  {
+    "revision": "2a8e929d64394c8d630de98e5bf62342",
+    "url": "/static/media/moty_banner.2a8e929d.png"
   },
   {
     "revision": "582d32ddd96174519c1a0bd905ce7616",
