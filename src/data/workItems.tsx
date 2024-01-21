@@ -15,6 +15,7 @@ import konradBanner from '../assets/konrad_banner.svg';
 import liveLabsBanner from '../assets/live_labs_banner.png';
 import yaacBanner from '../assets/yaac.png';
 import motyBanner from '../assets/moty_banner.png';
+import squareBanner from '../assets/square_banner.svg';
 
 const _SKILLS = {
   generic: {
@@ -152,6 +153,34 @@ const _SKILLS = {
     name: 'Accessibility',
     link: 'https://developer.mozilla.org/en-US/docs/Web/Accessibility',
   },
+  java: {
+    name: 'Java',
+    link: 'https://www.java.com/',
+  },
+  grpc: {
+    name: 'gRPC',
+    link: 'https://grpc.io/',
+  },
+  dynamodb: {
+    name: 'Amazon DynamoDB',
+    link: 'https://aws.amazon.com/dynamodb/',
+  },
+  sqs: {
+    name: 'Amazon SQS',
+    link: 'https://aws.amazon.com/sqs/',
+  },
+  kafka: {
+    name: 'Apache Kafka',
+    link: 'https://kafka.apache.org/',
+  },
+  ember: {
+    name: 'Ember.js',
+    link: 'https://emberjs.com/',
+  },
+  distributedSystems: {
+    name: 'Distributed Systems',
+    link: 'https://en.wikipedia.org/wiki/Distributed_computing',
+  },
 };
 export const SKILLS: { [key in keyof typeof _SKILLS]: Skill } = _SKILLS;
 
@@ -189,6 +218,9 @@ const _COLLABORATORS = {
   liveLabsTeam: {
     name: 'The CIBC Live Labs Team',
   },
+  squareTeam: {
+    name: 'The Square Team',
+  },
 };
 export const COLLABORATORS: {
   [key in keyof typeof _COLLABORATORS]: Collaborator;
@@ -196,17 +228,62 @@ export const COLLABORATORS: {
 
 export const WORK_ITEMS: WorkItem[] = [
   {
+    name: 'Square',
+    link: 'https://squareup.com/ca/en/software/loyalty',
+    isProfessional: true,
+    image: squareBanner,
+    collaborators: [COLLABORATORS.squareTeam],
+    dateInfo: 'October 2022 - present',
+    skills: [
+      SKILLS.distributedSystems,
+      SKILLS.java,
+      SKILLS.grpc,
+      SKILLS.sql,
+      SKILLS.dynamodb,
+      SKILLS.sqs,
+      SKILLS.kafka,
+      SKILLS.ember,
+      SKILLS.typescript,
+      SKILLS.javascript,
+      SKILLS.html,
+      SKILLS.css,
+      SKILLS.scss,
+      SKILLS.responsiveDesign,
+      SKILLS.jest,
+      SKILLS.i18n,
+      SKILLS.a11y,
+    ],
+    description: 'Square helps millions of sellers run their businesses.',
+    longDescription: (
+      <>
+        At Square I've contributed to the Square Loyalty product. In my role
+        I've led the delivery of new product features, and made improvements to
+        the existing product. <br /> <br /> My contributions have included
+        leading an effort to revamp the Square Loyalty onboarding flow. This
+        project introduced personalized recommendations and reward suggestions
+        to streamline the process, which resulted in a statistically significant
+        15% increase in conversion rates measured by an A/B test. During my time
+        on the team I also identified flaws in asynchronous flows which had
+        rendered ~116k loyalty accounts inaccessible to businesses. I then
+        advocated for and implemented solutions to recover these accounts and
+        prevent further instances.
+      </>
+    ),
+  },
+  {
     name: 'Akira',
     link: 'https://akirahealth.ca/',
     isProfessional: true,
     image: akiraBanner,
     collaborators: [COLLABORATORS.akiraTeam],
-    dateInfo: 'November 2018 - present',
+    dateInfo: 'November 2018 - September 2022',
     skills: [
       SKILLS.typescript,
       SKILLS.javascript,
       SKILLS.react,
       SKILLS.redux,
+      SKILLS.webpack,
+      SKILLS.distributedSystems,
       SKILLS.ruby,
       SKILLS.rspec,
       SKILLS.grape,
@@ -300,6 +377,7 @@ export const WORK_ITEMS: WorkItem[] = [
     collaborators: [COLLABORATORS.liveLabsTeam],
     dateInfo: 'May 2016 – December 2016',
     skills: [
+      SKILLS.java,
       SKILLS.android,
       SKILLS.gradle,
       SKILLS.firebase,
