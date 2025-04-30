@@ -5,11 +5,11 @@
   "private": true,
   "engines": {
     "node": "12.13.0",
-    "yarn": "1.19.1"
+    "yarn": "1.22.19"
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b master -d build -m \"Updates to build for deploying $(git rev-parse --short HEAD) to github pages\"",
+    "deploy": "gh-pages -f -b master -d build -m \"Updates to build for deploying $(git rev-parse --short HEAD) to github pages\"",
     "start": "EXTEND_ESLINT=true react-scripts start",
     "build": "EXTEND_ESLINT=true react-scripts build",
     "test": "react-scripts test --env=jsdom",
