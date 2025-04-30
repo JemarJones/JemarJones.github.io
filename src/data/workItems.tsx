@@ -256,17 +256,25 @@ export const WORK_ITEMS: WorkItem[] = [
     description: 'Square helps millions of sellers run their businesses.',
     longDescription: (
       <>
-        At Square I've contributed to the Square Loyalty product. In my role
-        I've led the delivery of new product features, and made improvements to
-        the existing product. <br /> <br /> My contributions have included
-        leading an effort to revamp the Square Loyalty onboarding flow. This
-        project introduced personalized recommendations and reward suggestions
-        to streamline the process, which resulted in a statistically significant
-        15% increase in conversion rates measured by an A/B test. During my time
-        on the team I also identified flaws in asynchronous flows which had
-        rendered ~116k loyalty accounts inaccessible to businesses. I then
-        advocated for and implemented solutions to recover these accounts and
-        prevent further instances.
+        At Square I've contributed to the Square Loyalty product. Some of my
+        accomplishments include:
+        <ul>
+          <li>
+            Leading and architecting a full rebuild of Square Loyalty's
+            customer-facing web portal, laying the foundation for a centralized
+            surface for customers to manage their relationship with a business.
+          </li>
+          <li>
+            Leading a revamp of the Square Loyalty onboarding flow, introducing
+            personalized recommendations to streamline the process, resulting in
+            a 15% boost in conversion rates as measured by A/B testing.
+          </li>
+          <li>
+            Identifying flaws in async flows that rendered ~116k loyalty
+            accounts inaccessible to businesses, Advocated for and implemented
+            solutions to recover them and prevent recurrence.
+          </li>
+        </ul>
       </>
     ),
   },

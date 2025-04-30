@@ -112,8 +112,8 @@ const HomeHeader: React.FC<iProps> = ({
         </div>
       </div>
       <p className="home__header__intro" aria-hidden={headerShrunk}>
-        Hey! I'm a Developer located in Toronto, and I love building impactful
-        software.
+        Hey! I'm a Senior Software Developer located in Toronto, and I love
+        building impactful software.
       </p>
     </header>
   );

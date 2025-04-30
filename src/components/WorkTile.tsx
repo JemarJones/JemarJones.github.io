@@ -84,7 +84,7 @@ const WorkTile: React.ForwardRefExoticComponent<iWorkTileProps &
       >
         <FocusTrap active={selected} className="work-tiles__item__child">
           <div className="work-tiles__item__child__indicator">
-            {workItem.isProfessional ? 'Work' : 'Project'}
+            {workItem.isProfessional ? 'Industry' : 'Hobby'}
           </div>
           {!selected ? (
             <>
