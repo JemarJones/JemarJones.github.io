@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/static/css/main.2232fabe.chunk.css",
+    "main.js": "/static/js/main.4816f379.chunk.js",
+    "main.js.map": "/static/js/main.4816f379.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.443f3000.js",
+    "runtime-main.js.map": "/static/js/runtime-main.443f3000.js.map",
+    "static/js/2.f6d984fa.chunk.js": "/static/js/2.f6d984fa.chunk.js",
+    "static/js/2.f6d984fa.chunk.js.map": "/static/js/2.f6d984fa.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.bf8eec10eb610a2d0f0760cd44b3ae04.js": "/precache-manifest.bf8eec10eb610a2d0f0760cd44b3ae04.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.2232fabe.chunk.css.map": "/static/css/main.2232fabe.chunk.css.map",
+    "static/js/2.f6d984fa.chunk.js.LICENSE": "/static/js/2.f6d984fa.chunk.js.LICENSE",
+    "static/media/akira_banner.svg": "/static/media/akira_banner.9176d0e7.svg",
+    "static/media/flash_learn_banner.svg": "/static/media/flash_learn_banner.ce7dc9ee.svg",
+    "static/media/font_me_banner.svg": "/static/media/font_me_banner.d108be84.svg",
+    "static/media/jkjones_dot_me_banner.png": "/static/media/jkjones_dot_me_banner.bb62bc52.png",
+    "static/media/konrad_banner.svg": "/static/media/konrad_banner.7744064e.svg",
+    "static/media/live_labs_banner.png": "/static/media/live_labs_banner.64c00f23.png",
+    "static/media/maccoin_banner.svg": "/static/media/maccoin_banner.2f941b86.svg",
+    "static/media/moty_banner.png": "/static/media/moty_banner.2a8e929d.png",
+    "static/media/square_banner.svg": "/static/media/square_banner.72d91d40.svg",
+    "static/media/survival_of_the_fittest_banner.svg": "/static/media/survival_of_the_fittest_banner.582d32dd.svg",
+    "static/media/webtunes_banner.svg": "/static/media/webtunes_banner.4842df36.svg",
+    "static/media/yaac.png": "/static/media/yaac.4ede50d6.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.443f3000.js",
+    "static/js/2.f6d984fa.chunk.js",
+    "static/css/main.2232fabe.chunk.css",
+    "static/js/main.4816f379.chunk.js"
+  ]
+}
